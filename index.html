@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vishnu MK — UI/UX Designer</title>
+<meta name="description" content="Vishnu MK — UI/UX Designer based in Pollachi. Designing experiences that feel effortless." />
+<link rel="stylesheet" href="styles.css?v=9" />
+<style>
+/* ============================ HOME ============================ */
+
+/* ---------- HERO ---------- */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 90px;
+  overflow: hidden;
+}
+/* giant ghost wordmark — bright metallic, spans the hero width */
+.hero__ghost {
+  position: absolute;
+  top: 22%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(3rem, 12vw, 13rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  background: linear-gradient(180deg, #f4f4f6 0%, #c9c9ce 38%, #86868d 68%, #45454b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  filter: drop-shadow(0 6px 40px rgba(255,255,255,0.06));
+  z-index: 1;
+  user-select: none;
+  pointer-events: none;
+}
+/* silhouette */
+.hero__photo {
+  position: relative;
+  z-index: 2;
+  height: min(82vh, 760px);
+  width: auto;
+  filter: drop-shadow(0 0 80px rgba(255,210,150,0.10));
+}
+.hero__photo-wrap {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+/* radial glow under photo */
+.hero__glow {
+  position: absolute;
+  z-index: 1;
+  top: 44%; left: 50%;
+  transform: translate(-50%,-50%);
+  width: min(54vh, 520px);
+  height: min(54vh, 520px);
+  background: radial-gradient(circle, rgba(255,200,140,0.16), rgba(255,150,80,0.05) 45%, transparent 70%);
+  filter: blur(20px);
+  pointer-events: none;
+}
+.hero__vignette {
+  position: absolute; inset: 0; z-index: 3; pointer-events: none;
+  background:
+    radial-gradient(120% 80% at 50% 38%, transparent 45%, rgba(5,5,6,0.55) 100%),
+    linear-gradient(180deg, transparent 60%, var(--bg) 99%);
+}
+
+/* floating cards — constrained to the same container width as the rest of the site */
+.hero__ui {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  z-index: 4;
+  pointer-events: none;
+}
+.hero__ui > * { pointer-events: auto; }
+.hero__card {
+  position: absolute;
+  z-index: 4;
+  padding: 22px 24px;
+}
+.hero__card--role {
+  top: 42%;
+  right: var(--gutter);
+  max-width: 240px;
+}
+.hero__card--role h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.18rem;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+.hero__card--role p { font-size: 0.86rem; color: var(--text-dim); margin-top: 2px; }
+
+.hero__card--about {
+  bottom: clamp(40px, 8vh, 90px);
+  left: var(--gutter);
+  max-width: 340px;
+}
+.hero__card--about h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.45rem;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.hero__card--about p { font-size: 0.92rem; color: var(--text-dim); }
+
+.hero__ctas {
+  position: absolute;
+  z-index: 4;
+  bottom: clamp(28px, 5vh, 56px);
+  right: var(--gutter);
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+/* ---------- QUICK INTRO ---------- */
+.intro__grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: clamp(40px, 7vw, 110px);
+  align-items: start;
+}
+.intro__lead {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.9rem, 3.6vw, 3rem);
+  line-height: 1.05;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+.intro__body p { color: var(--text-dim); font-size: 1.06rem; max-width: 56ch; }
+.intro__body p + p { margin-top: 22px; }
+.intro__sig {
+  margin-top: 30px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+/* ---------- NUMBERS: open stat strip (see styles.css .stats) ---------- */
+
+/* ---------- MADE VISIBLE ---------- */
+.visible { overflow: hidden; }
+.visible__head {
+  display: grid;
+  grid-template-columns: 1.2fr 0.05fr 0.9fr;
+  gap: clamp(24px, 4vw, 56px);
+  align-items: center;
+  position: relative;
+}
+.visible__glow {
+  position: absolute;
+  z-index: 0;
+  top: 50%; left: 28%;
+  transform: translate(-50%,-50%);
+  width: 560px; height: 360px;
+  background: radial-gradient(ellipse, rgba(255,255,255,0.10), transparent 65%);
+  pointer-events: none;
+}
+.visible__title { position: relative; z-index: 1; }
+.visible__title .eyebrow { color: var(--text-dim); margin-bottom: 16px; }
+.visible__title .eyebrow::before { display:none; }
+.visible__title .display { font-size: clamp(3rem, 8vw, 6.4rem); }
+.visible__rule {
+  width: 2px;
+  height: clamp(80px, 11vw, 140px);
+  background: linear-gradient(180deg, transparent, #fff, transparent);
+  justify-self: center;
+  position: relative; z-index: 1;
+}
+.visible__copy {
+  position: relative; z-index: 1;
+  color: var(--text-dim);
+  font-size: 1.06rem;
+  line-height: 1.7;
+  max-width: 42ch;
+}
+
+/* ---------- FEATURE CARDS ---------- */
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: clamp(56px, 8vw, 100px);
+}
+.feature { padding: clamp(28px, 3vw, 40px); }
+.feature:hover { transform: translateY(-6px); border-color: var(--border-strong); }
+.feature__icon {
+  width: 56px; height: 56px;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--border-strong);
+  border-radius: 14px;
+  margin-bottom: 30px;
+}
+.feature__icon svg { width: 28px; height: 28px; stroke: #fff; fill: none; stroke-width: 1.6; }
+.feature h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  margin-bottom: 14px;
+}
+.feature p { color: var(--text-dim); font-size: 0.96rem; }
+
+/* ---------- FEATURED PROJECTS: interactive index rows (see styles.css .plist) ---------- */
+.projects__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: clamp(40px, 5vw, 64px);
+}
+
+@media (max-width: 980px) {
+  .intro__grid { grid-template-columns: 1fr; }
+  .visible__head { grid-template-columns: 1fr; }
+  .visible__rule { display: none; }
+  .features { grid-template-columns: 1fr; }
+}
+@media (max-width: 720px) {
+  /* keep the silhouette's aspect ratio — scale it down instead of squishing */
+  .hero__photo { height: auto; width: min(78vw, 380px); }
+  /* lift the silhouette up toward the VISHNU MK wordmark (mobile only) */
+  .hero__photo-wrap { margin-top: clamp(-110px, -9vh, -40px); }
+  .hero__card--about { max-width: min(78vw, 340px); bottom: 162px; }
+  .hero__card--role { right: 50%; transform: translateX(50%); top: auto; bottom: 200px; text-align:center; }
+  .hero__ctas { left: var(--gutter); right: var(--gutter); justify-content: center; bottom: 16px; }
+}
+@media (max-width: 560px) {
+  .hero__card--about { bottom: 156px; }
+}
+@media (max-width: 560px) {
+  .hero__card--role { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" data-screen-label="Home nav">
+  <div class="nav__inner container">
+    <a href="index.html" class="nav__logo">Vishnu MK</a>
+  <div class="nav__links">
+    <a href="index.html" class="nav__link active">Home</a>
+    <a href="work.html" class="nav__link">Work</a>
+    <a href="about.html" class="nav__link">About</a>
+    <a href="process.html" class="nav__link">Process</a>
+    <a href="skills.html" class="nav__link">Skills</a>
+    <a href="contact.html" class="btn-pill">Let's Talk</a>
+  </div>
+  <button class="nav__toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" data-screen-label="Hero">
+  <div class="hero__ghost">VISHNU MK</div>
+  <div class="hero__glow"></div>
+  <div class="hero__photo-wrap">
+    <img class="hero__photo" src="assets/hero-silhouette.png" alt="Vishnu MK, silhouette portrait with a glowing ring" />
+  </div>
+  <div class="hero__vignette"></div>
+
+  <div class="hero__ui">
+  <div class="hero__card glass hero__card--role">
+    <h3 style="font-size: 16px">THOUGHTFUL DESIGN</h3>
+    <p>Meaningful Experiences</p>
+  </div>
+
+  <div class="hero__card glass hero__card--about">
+    <h3>About Me</h3>
+    <p>Merging design thinking with human insight to create digital experiences that don't just look great—they perform effortlessly.</p>
+  </div>
+
+  <div class="hero__ctas">
+    <a href="work.html" class="btn-accent">View My Work
+      <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <a href="contact.html" class="btn-ghost">Contact Me</a>
+  </div>
+  </div>
+</header>
+
+<!-- QUICK INTRO -->
+<section class="section-pad" data-screen-label="Quick Intro">
+  <div class="container intro__grid">
+    <div class="intro__lead">
+      <span class="eyebrow reveal" style="margin-bottom:20px;">Quick Introduction</span><br><br>
+      <span data-split>Designing experiences<br>that feel <span class="chrome-text">effortless</span>.</span>
+    </div>
+    <div class="intro__body reveal d1">
+      <p>Hi, I'm Vishnu — a UI/UX Designer passionate about crafting intuitive and visually engaging digital experiences.</p>
+      <p>My journey started with graphic design and evolved into user experience design, where I discovered the impact of creating products that solve real user problems.</p>
+      <p>Today, I focus on designing meaningful experiences that balance usability, business goals, and aesthetics — while exploring AI-assisted workflows to enhance creativity and efficiency.</p>
+      <div class="intro__sig">— Vishnu MK</div>
+    </div>
+  </div>
+</section>
+
+<!-- NUMBERS -->
+<section class="container" data-screen-label="Numbers" style="padding-bottom: clamp(72px,11vw,150px);">
+  <div class="stats">
+    <div class="stat reveal"><div class="stat__rule"></div><div class="stat__k"><span class="chrome-text" data-count="2">2</span><span class="unit">+</span></div><div class="stat__l">Years Design Experience</div></div>
+    <div class="stat reveal"><div class="stat__rule"></div><div class="stat__k"><span class="chrome-text" data-count="3">3</span><span class="unit">+</span></div><div class="stat__l">Companies Worked With</div></div>
+    <div class="stat reveal"><div class="stat__rule"></div><div class="stat__k"><span class="chrome-text" data-count="20">20</span><span class="unit">+</span></div><div class="stat__l">Projects Designed</div></div>
+    <div class="stat reveal"><div class="stat__rule"></div><div class="stat__k"><span class="accent">AI</span></div><div class="stat__l">Integrated Workflow</div></div>
+  </div>
+</section>
+
+<!-- MADE VISIBLE -->
+<section class="section-pad visible" data-screen-label="Made Visible">
+  <div class="container">
+    <div class="visible__head">
+      <div class="visible__glow"></div>
+      <div class="visible__title">
+        <span class="eyebrow reveal">Design is structured thinking</span>
+        <div class="display" data-split><span class="dim">Made</span> <span class="chrome-text">Visible</span></div>
+      </div>
+      <div class="visible__rule reveal d1"></div>
+      <p class="visible__copy reveal d2">I design digital products by understanding user behavior, simplifying interaction flows, and building scalable systems that solve real problems — not just create visuals.</p>
+    </div>
+
+    <div class="features">
+      <article class="card feature reveal" data-tilt>
+        <div class="feature__icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 9v12"/></svg>
+        </div>
+        <h3>Systems Thinking</h3>
+        <p>I design structured UI systems that ensure consistency, scalability, and seamless user flows across products.</p>
+      </article>
+      <article class="card feature reveal d1" data-tilt>
+        <div class="feature__icon">
+          <svg viewBox="0 0 24 24"><path d="M12 19l7-7-4-4-7 7-3 7 7-3z"/><path d="M15 8l1-1"/></svg>
+        </div>
+        <h3>Visual Intelligence</h3>
+        <p>I apply typography, spacing, and layout systems to improve clarity, hierarchy, and usability.</p>
+      </article>
+      <article class="card feature reveal d2" data-tilt>
+        <div class="feature__icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        </div>
+        <h3>Problem-Led Design</h3>
+        <p>I identify user friction and redesign experiences to make interactions simpler, faster, and more intuitive.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PROJECTS -->
+<section class="section-pad" data-screen-label="Featured Projects" style="padding-top:0;">
+  <div class="container">
+    <div class="projects__head">
+      <div class="reveal">
+        <span class="eyebrow">Featured</span>
+        <div class="display" style="font-size:clamp(2.6rem,7vw,5.5rem); margin-top:12px;"><span class="chrome-text">Projects</span></div>
+        <p class="dim" style="margin-top:14px;">Selected works showcasing strategy and execution.</p>
+      </div>
+      <a href="work.html" class="btn-ghost reveal d1">View All Work
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+    <div class="plist">
+      <a href="work-healthcare.html" class="plist__item plist__item--p1 reveal">
+        <span class="plist__idx" aria-hidden="true">01</span>
+        <span class="plist__right">
+          <span class="plist__thumb"><img src="assets/proj-healthcare.svg" alt="Healthcare platform — patient dashboard preview"></span>
+          <span class="plist__main">
+            <span class="plist__name">Healthcare Platform</span>
+            <span class="plist__desc">Improving accessibility and patient experience across the care journey.</span>
+          </span>
+          <span class="plist__side">
+            <span class="plist__meta">Healthcare · UX</span>
+            <span class="plist__arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </span>
+        </span>
+        <span class="plist__bg" aria-hidden="true"></span>
+      </a>
+
+      <a href="work-finance.html" class="plist__item plist__item--p2 reveal">
+        <span class="plist__idx" aria-hidden="true">02</span>
+        <span class="plist__right">
+          <span class="plist__thumb"><img src="assets/proj-finance.svg" alt="AI finance dashboard — analytics preview"></span>
+          <span class="plist__main">
+            <span class="plist__name">AI Finance Dashboard</span>
+            <span class="plist__desc">Making complex financial insights easier to understand and act on.</span>
+          </span>
+          <span class="plist__side">
+            <span class="plist__meta">SaaS · Dashboard</span>
+            <span class="plist__arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </span>
+        </span>
+        <span class="plist__bg" aria-hidden="true"></span>
+      </a>
+
+      <a href="work-ev.html" class="plist__item plist__item--p3 reveal">
+        <span class="plist__idx" aria-hidden="true">03</span>
+        <span class="plist__right">
+          <span class="plist__thumb"><img src="assets/proj-ev.svg" alt="EV battery monitoring — fleet dashboard preview"></span>
+          <span class="plist__main">
+            <span class="plist__name">EV Battery Monitoring</span>
+            <span class="plist__desc">Transforming complex real-time data into clear, actionable insights for operators.</span>
+          </span>
+          <span class="plist__side">
+            <span class="plist__meta">Enterprise · SaaS</span>
+            <span class="plist__arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </span>
+        </span>
+        <span class="plist__bg" aria-hidden="true"></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<!-- FOOTER -->
+<footer class="footer" data-screen-label="Footer">
+  <div class="footer__glow"></div>
+  <div class="container">
+    <div class="footer__main">
+      <div class="footer__lead">
+        <span class="eyebrow">Let's create</span>
+        <div class="display chrome-text">Something<span class="line2">Meaningful.</span></div>
+        <a class="footer__email" href="mailto:vishnu46mk@gmail.com">vishnu46mk@gmail.com
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="footer__cta-row">
+          <a href="contact.html" class="btn-accent">Start a Conversation
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+      <nav class="footer__nav" aria-label="Footer">
+        <div class="footer__col">
+          <h4>Sitemap</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="process.html">Process</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.linkedin.com/in/vishnu-mk-a056a72b9/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21H18.6v-5.3c0-1.27-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.8V21H10z"/></svg>LinkedIn</a></li>
+            <li><a href="https://www.behance.net/vishnu_mk" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5.2 7.3c-.9 0-1.7.5-2.1 1.3-.4-.8-1.2-1.3-2.1-1.3-1.5 0-2.6 1.2-2.6 2.7s1.1 2.7 2.6 2.7c.9 0 1.7-.5 2.1-1.3.4.8 1.2 1.3 2.1 1.3 1.5 0 2.6-1.2 2.6-2.7s-1.1-2.7-2.6-2.7z"/></svg>Behance</a></li>
+            <li><a href="mailto:vishnu46mk@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Email</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Currently</h4>
+          <div class="footer__status"><span class="footer__dot"></span>Available for work</div>
+          <p class="footer__loc">UI/UX Designer based in Pollachi, Tamil Nadu.</p>
+        </div>
+      </nav>
+    </div>
+
+    <div class="footer__word">VISHNU MK</div>
+
+    <div class="footer__bottom">
+      <div class="footer__socials">
+        <a href="https://www.linkedin.com/in/vishnu-mk-a056a72b9/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21H18.6v-5.3c0-1.27-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.8V21H10z"/></svg>LinkedIn</a>
+        <a href="https://www.behance.net/vishnu_mk" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5.2 7.3c-.9 0-1.7.5-2.1 1.3-.4-.8-1.2-1.3-2.1-1.3-1.5 0-2.6 1.2-2.6 2.7s1.1 2.7 2.6 2.7c.9 0 1.7-.5 2.1-1.3.4.8 1.2 1.3 2.1 1.3 1.5 0 2.6-1.2 2.6-2.7s-1.1-2.7-2.6-2.7z"/></svg>Behance</a>
+        <a href="mailto:vishnu46mk@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Email</a>
+      </div>
+      <div class="footer__copy">© 2025 Vishnu MK · All Rights Reserved</div>
+      <a href="#" class="footer__top">Back to top
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="vendor/three.min.js"></script>
+<script src="site.js?v=6"></script>
+<script src="motion.js?v=1"></script>
+</body>
+</html>

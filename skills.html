@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Skills & Tools — Vishnu MK</title>
+<link rel="stylesheet" href="styles.css?v=9" />
+<style>
+/* ============================ SKILLS ============================ */
+.page-hero {
+  padding-top: clamp(150px, 20vh, 230px);
+  padding-bottom: clamp(40px, 6vw, 72px);
+  position: relative; overflow: hidden;
+}
+.page-hero__glow {
+  position: absolute; z-index:0; top: 35%; left: 65%;
+  transform: translate(-50%,-50%); width: 600px; height: 420px;
+  background: radial-gradient(ellipse, rgba(255,255,255,0.07), transparent 65%);
+  pointer-events:none;
+}
+.page-hero .eyebrow { margin-bottom: 22px; }
+.page-hero__title {
+  font-family: var(--font-display); font-weight: 800; text-transform: uppercase;
+  font-size: clamp(3rem, 9vw, 7.5rem); line-height: 0.9; letter-spacing: -0.02em;
+  position: relative; z-index:1;
+}
+.page-hero__sub {
+  margin-top: 26px; color: var(--text-dim); font-size: clamp(1.05rem, 2vw, 1.3rem);
+  max-width: 52ch; position: relative; z-index:1;
+}
+
+/* core skills */
+.skillset {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.skillcol { padding: clamp(28px, 2.6vw, 38px); }
+.skillcol__h {
+  display:flex; align-items:center; gap: 14px;
+  margin-bottom: 26px; padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+.skillcol__h svg { width: 26px; height: 26px; stroke: var(--accent); fill:none; stroke-width:1.7; }
+.skillcol__h h3 {
+  font-family: var(--font-display); font-weight: 700; text-transform: uppercase;
+  font-size: 1.2rem; letter-spacing: 0.005em;
+}
+.skillcol ul { list-style:none; display:flex; flex-direction:column; gap: 14px; }
+.skillcol li {
+  display:flex; align-items:center; gap: 12px;
+  font-size: 1.04rem; color: var(--text);
+}
+.skillcol li::before {
+  content:""; width: 6px; height: 6px; border-radius:50%;
+  background: var(--text-faint); flex-shrink:0;
+}
+
+/* AI band */
+.ai-sec { background: var(--bg-2); border-block: 1px solid var(--border); }
+.ai__top {
+  display:grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 7vw, 110px);
+  align-items:center; margin-bottom: clamp(40px,5vw,56px);
+}
+.ai__top .display { font-size: clamp(2.4rem, 6vw, 4.6rem); }
+.ai__top p { color: var(--text-dim); font-size: 1.1rem; max-width: 50ch; }
+.chips { display:flex; flex-wrap:wrap; gap: 12px; }
+.chip {
+  font-size: 0.92rem; font-weight: 600;
+  padding: 13px 22px; border-radius: 100px;
+  border: 1px solid var(--border); background: var(--surface);
+  transition: all .28s;
+}
+.chip:hover { border-color: var(--accent); color: #fff; background: var(--accent-soft); transform: translateY(-3px); }
+
+/* AI platforms */
+.ai-subhead {
+  margin-top: clamp(44px, 5vw, 64px);
+  margin-bottom: 22px;
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--text-faint);
+}
+.ai-apps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.ai-app {
+  display: flex; align-items: center; gap: 18px;
+  padding: 20px 22px;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--surface);
+  transition: transform .3s, border-color .3s;
+}
+.ai-app:hover { transform: translateY(-5px); border-color: var(--border-strong); }
+.ai-app:hover .app-icon { transform: translateY(-2px); box-shadow: 0 10px 26px -10px color-mix(in oklab, var(--brand) 60%, transparent); }
+.ai-app__name { font-family: var(--font-display); font-weight: 700; font-size: 1.06rem; }
+.ai-app__cat { font-size: 0.82rem; color: var(--text-dim); margin-top: 3px; }
+
+/* tools grid */
+.tools {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.tool {
+  display:flex; flex-direction:column; gap: 18px;
+  padding: 26px 24px;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--surface);
+  transition: transform .3s, border-color .3s;
+}
+.tool:hover { transform: translateY(-5px); border-color: var(--border-strong); }
+.tool:hover .app-icon { transform: translateY(-2px); box-shadow: 0 10px 26px -10px color-mix(in oklab, var(--brand) 60%, transparent); }
+.tool__name { font-family: var(--font-display); font-weight: 700; font-size: 1.04rem; }
+.tool__cat { font-size: 0.82rem; color: var(--text-dim); margin-top: 3px; }
+
+@media (max-width: 680px) { .ai-apps { grid-template-columns: 1fr; } }
+
+@media (max-width: 900px) {
+  .skillset { grid-template-columns: 1fr; }
+  .ai__top { grid-template-columns: 1fr; }
+  .tools { grid-template-columns: repeat(2,1fr); }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__inner container">
+    <a href="index.html" class="nav__logo">Vishnu MK</a>
+  <div class="nav__links">
+    <a href="index.html" class="nav__link">Home</a>
+    <a href="work.html" class="nav__link">Work</a>
+    <a href="about.html" class="nav__link">About</a>
+    <a href="process.html" class="nav__link">Process</a>
+    <a href="skills.html" class="nav__link active">Skills</a>
+    <a href="contact.html" class="btn-pill">Let's Talk</a>
+  </div>
+  <button class="nav__toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="page-hero" data-screen-label="Skills hero">
+  <div class="page-hero__glow"></div>
+  <div class="container">
+    <span class="eyebrow reveal">Capabilities</span>
+    <h1 class="page-hero__title" data-split>Skills <span class="dim">&amp;</span><br><span class="chrome-text">Tools</span></h1>
+    <p class="page-hero__sub reveal d2">A versatile toolkit spanning research, interface design, visual craft, and AI-assisted workflows.</p>
+  </div>
+</section>
+
+<!-- CORE SKILLS -->
+<section class="section-pad" data-screen-label="Core Skills" style="padding-top:clamp(20px,3vw,40px);">
+  <div class="container">
+    <div class="sec-head reveal" style="margin-bottom:clamp(32px,4vw,48px);">
+      <span class="eyebrow">Core Skills</span>
+      <div class="display" style="font-size:clamp(2.2rem,5.5vw,4.2rem); margin-top:12px;">What I <span class="chrome-text">Do</span></div>
+    </div>
+    <div class="skillset">
+      <article class="card skillcol reveal" data-tilt>
+        <div class="skillcol__h">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          <h3>User Experience</h3>
+        </div>
+        <ul><li>User Research</li><li>Information Architecture</li><li>User Flows</li><li>Wireframing</li><li>Usability Testing</li></ul>
+      </article>
+      <article class="card skillcol reveal d1" data-tilt>
+        <div class="skillcol__h">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          <h3>User Interface</h3>
+        </div>
+        <ul><li>Mobile App Design</li><li>Web Design</li><li>Dashboard Design</li><li>Design Systems</li><li>Responsive Design</li></ul>
+      </article>
+      <article class="card skillcol reveal d2" data-tilt>
+        <div class="skillcol__h">
+          <svg viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="13" r="2.5"/><circle cx="8.5" cy="7.5" r="2.5"/><circle cx="6.5" cy="14" r="2.5"/><path d="M12 22a10 10 0 110-20"/></svg>
+          <h3>Visual Design</h3>
+        </div>
+        <ul><li>Branding</li><li>Typography</li><li>Color Systems</li><li>Iconography</li><li>Visual Hierarchy</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- AI-ASSISTED -->
+<section class="ai-sec section-pad" data-screen-label="AI Assisted">
+  <div class="container">
+    <div class="ai__top">
+      <div class="reveal">
+        <span class="eyebrow" style="margin-bottom:16px;">Modern Workflow</span>
+        <div class="display">AI-Assisted <span class="chrome-text">Design</span></div>
+      </div>
+      <p class="reveal d1">I actively explore AI-powered workflows to enhance creativity and efficiency throughout the design process — from ideation to visual exploration.</p>
+    </div>
+    <div class="chips reveal d1">
+      <span class="chip">AI Image Generation</span>
+      <span class="chip">Prompt Engineering</span>
+      <span class="chip">AI Content Creation</span>
+      <span class="chip">Rapid Design Exploration</span>
+      <span class="chip">AI-Assisted Ideation</span>
+      <span class="chip">Visual Concept Development</span>
+    </div>
+
+    <div class="ai-subhead reveal d1">Platforms I work with</div>
+    <div class="ai-apps reveal d1">
+      <div class="ai-app" data-tilt>
+        <div class="app-icon" style="--brand:#7c89ff">Mj</div>
+        <div><div class="ai-app__name">Midjourney</div><div class="ai-app__cat">Image generation</div></div>
+      </div>
+      <div class="ai-app" data-tilt>
+        <div class="app-icon" style="--brand:#10a37f">Gp</div>
+        <div><div class="ai-app__name">ChatGPT</div><div class="ai-app__cat">Ideation &amp; copy</div></div>
+      </div>
+      <div class="ai-app" data-tilt>
+        <div class="app-icon" style="--brand:#d97757">Cl</div>
+        <div><div class="ai-app__name">Claude</div><div class="ai-app__cat">Research &amp; writing</div></div>
+      </div>
+      <div class="ai-app" data-tilt>
+        <div class="app-icon" style="--brand:#b88cff">Fy</div>
+        <div><div class="ai-app__name">Adobe Firefly</div><div class="ai-app__cat">Generative fill</div></div>
+      </div>
+      <div class="ai-app" data-tilt>
+        <div class="app-icon" style="--brand:#2bd47d">Rw</div>
+        <div><div class="ai-app__name">Runway</div><div class="ai-app__cat">Motion &amp; video</div></div>
+      </div>
+      <div class="ai-app" data-tilt>
+        <div class="app-icon" style="--brand:#38c5c5">Le</div>
+        <div><div class="ai-app__name">Leonardo AI</div><div class="ai-app__cat">Concept art</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section class="section-pad" data-screen-label="Tools">
+  <div class="container">
+    <div class="sec-head reveal" style="margin-bottom:clamp(32px,4vw,48px);">
+      <span class="eyebrow">Tools &amp; Applications</span>
+      <div class="display" style="font-size:clamp(2.2rem,5.5vw,4.2rem); margin-top:12px;">My <span class="chrome-text">Stack</span></div>
+    </div>
+    <div class="tools">
+      <div class="tool reveal" data-tilt><div class="app-icon" style="--brand:#a259ff">Fig</div><div><div class="tool__name">Figma</div><div class="tool__cat">UI &amp; Prototyping</div></div></div>
+      <div class="tool reveal" data-tilt><div class="app-icon" style="--brand:#ff9a00">Ai</div><div><div class="tool__name">Illustrator</div><div class="tool__cat">Vector &amp; Logos</div></div></div>
+      <div class="tool reveal" data-tilt><div class="app-icon" style="--brand:#31a8ff">Ps</div><div><div class="tool__name">Photoshop</div><div class="tool__cat">Photo &amp; Raster</div></div></div>
+      <div class="tool reveal" data-tilt><div class="app-icon" style="--brand:#fd3699">Id</div><div><div class="tool__name">InDesign</div><div class="tool__cat">Layout &amp; Print</div></div></div>
+      <div class="tool reveal" data-tilt><div class="app-icon" style="--brand:#ff61f6">Xd</div><div><div class="tool__name">Adobe XD</div><div class="tool__cat">UX Design</div></div></div>
+      <div class="tool reveal" data-tilt><div class="app-icon" style="--brand:#9999ff">Ae</div><div><div class="tool__name">After Effects</div><div class="tool__cat">Motion Design</div></div></div>
+      <div class="tool reveal" data-tilt><div class="app-icon" style="--brand:#b6c2d9">Dv</div><div><div class="tool__name">DaVinci Resolve</div><div class="tool__cat">Video Editing</div></div></div>
+      <div class="tool reveal" data-tilt><div class="app-icon" style="--brand:#1b9cfc">Af</div><div><div class="tool__name">Affinity Designer</div><div class="tool__cat">Vector Design</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<!-- FOOTER -->
+<footer class="footer" data-screen-label="Footer">
+  <div class="footer__glow"></div>
+  <div class="container">
+    <div class="footer__main">
+      <div class="footer__lead">
+        <span class="eyebrow">Let's create</span>
+        <div class="display chrome-text">Something<span class="line2">Meaningful.</span></div>
+        <a class="footer__email" href="mailto:vishnu46mk@gmail.com">vishnu46mk@gmail.com
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="footer__cta-row">
+          <a href="contact.html" class="btn-accent">Start a Conversation
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+      <nav class="footer__nav" aria-label="Footer">
+        <div class="footer__col">
+          <h4>Sitemap</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="process.html">Process</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.linkedin.com/in/vishnu-mk-a056a72b9/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21H18.6v-5.3c0-1.27-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.8V21H10z"/></svg>LinkedIn</a></li>
+            <li><a href="https://www.behance.net/vishnu_mk" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5.2 7.3c-.9 0-1.7.5-2.1 1.3-.4-.8-1.2-1.3-2.1-1.3-1.5 0-2.6 1.2-2.6 2.7s1.1 2.7 2.6 2.7c.9 0 1.7-.5 2.1-1.3.4.8 1.2 1.3 2.1 1.3 1.5 0 2.6-1.2 2.6-2.7s-1.1-2.7-2.6-2.7z"/></svg>Behance</a></li>
+            <li><a href="mailto:vishnu46mk@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Email</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Currently</h4>
+          <div class="footer__status"><span class="footer__dot"></span>Available for work</div>
+          <p class="footer__loc">UI/UX Designer based in Pollachi, Tamil Nadu.</p>
+        </div>
+      </nav>
+    </div>
+
+    <div class="footer__word">VISHNU MK</div>
+
+    <div class="footer__bottom">
+      <div class="footer__socials">
+        <a href="https://www.linkedin.com/in/vishnu-mk-a056a72b9/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21H18.6v-5.3c0-1.27-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.8V21H10z"/></svg>LinkedIn</a>
+        <a href="https://www.behance.net/vishnu_mk" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5.2 7.3c-.9 0-1.7.5-2.1 1.3-.4-.8-1.2-1.3-2.1-1.3-1.5 0-2.6 1.2-2.6 2.7s1.1 2.7 2.6 2.7c.9 0 1.7-.5 2.1-1.3.4.8 1.2 1.3 2.1 1.3 1.5 0 2.6-1.2 2.6-2.7s-1.1-2.7-2.6-2.7z"/></svg>Behance</a>
+        <a href="mailto:vishnu46mk@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Email</a>
+      </div>
+      <div class="footer__copy">© 2025 Vishnu MK · All Rights Reserved</div>
+      <a href="#" class="footer__top">Back to top
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="vendor/three.min.js"></script>
+<script src="site.js?v=6"></script>
+<script src="motion.js?v=1"></script>
+</body>
+</html>

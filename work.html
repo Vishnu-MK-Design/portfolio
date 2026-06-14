@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Work — Vishnu MK</title>
+<link rel="stylesheet" href="styles.css?v=9" />
+<style>
+/* ============================ WORK ============================ */
+.page-hero {
+  padding-top: clamp(150px, 20vh, 230px);
+  padding-bottom: clamp(40px, 6vw, 72px);
+  position: relative; overflow: hidden;
+}
+.page-hero__glow {
+  position: absolute; z-index:0; top: 40%; left: 60%;
+  transform: translate(-50%,-50%);
+  width: 600px; height: 420px;
+  background: radial-gradient(ellipse, rgba(255,255,255,0.07), transparent 65%);
+  pointer-events:none;
+}
+.page-hero .eyebrow { margin-bottom: 22px; }
+.page-hero__title {
+  font-family: var(--font-display); font-weight: 800; text-transform: uppercase;
+  font-size: clamp(3.4rem, 11vw, 9rem); line-height: 0.9; letter-spacing: -0.02em;
+  position: relative; z-index:1;
+}
+.page-hero__sub {
+  margin-top: 26px; color: var(--text-dim); font-size: clamp(1.05rem, 2vw, 1.3rem);
+  max-width: 52ch; position: relative; z-index:1;
+}
+
+/* case study */
+.case {
+  border-top: 1px solid var(--border);
+  padding-block: clamp(56px, 8vw, 100px);
+}
+.case__top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 6vw, 90px);
+  align-items: end;
+  margin-bottom: clamp(36px, 5vw, 56px);
+}
+.case__idx {
+  font-family: var(--font-display); font-weight: 800;
+  font-size: 0.9rem; letter-spacing: 0.2em; color: var(--accent);
+  text-transform: uppercase; margin-bottom: 18px;
+}
+.case__title {
+  font-family: var(--font-display); font-weight: 800; text-transform: uppercase;
+  font-size: clamp(2rem, 4.4vw, 3.6rem); line-height: 0.98; letter-spacing: -0.015em;
+}
+.case__role {
+  display: flex; flex-direction: column; gap: 6px;
+  align-self: end;
+}
+.case__role .lbl { font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-faint); font-weight: 700; }
+.case__role .val { font-size: 1.15rem; font-weight: 600; }
+
+/* visual band */
+.case__visual {
+  position: relative;
+  height: clamp(220px, 34vw, 440px);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  margin-bottom: clamp(36px, 5vw, 56px);
+  isolation: isolate;
+}
+.case__visual .label {
+  position: absolute; left: clamp(24px,3vw,40px); bottom: clamp(20px,3vw,32px);
+  font-family: var(--font-display); font-weight: 800; text-transform: uppercase;
+  font-size: clamp(1.4rem, 3vw, 2.6rem); color: rgba(255,255,255,0.85); letter-spacing: -0.01em;
+  z-index:2;
+}
+.case--c1 .case__visual { background: radial-gradient(130% 130% at 75% 15%, #2c2117, #0c0b0d 60%); }
+.case--c2 .case__visual { background: radial-gradient(130% 130% at 25% 15%, #16252a, #0c0b0d 60%); }
+.case--c3 .case__visual { background: radial-gradient(130% 130% at 50% 5%, #212131, #0b0b0d 62%); }
+.case__visual .grid-deco {
+  position:absolute; inset:0; z-index:1; opacity:0.5;
+  background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 80% at 50% 40%, #000, transparent 75%);
+  mask-image: radial-gradient(ellipse 70% 80% at 50% 40%, #000, transparent 75%);
+}
+.case__visual .ring {
+  position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+  width: clamp(140px,22vw,260px); height: clamp(140px,22vw,260px);
+  border-radius:50%; border: 1px solid rgba(255,255,255,0.14); z-index:1;
+}
+.case__visual .ring::after {
+  content:""; position:absolute; inset:18px; border-radius:50%;
+  border:1px solid rgba(255,90,31,0.25);
+}
+
+/* detail blocks */
+.case__cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(28px, 4.5vw, 56px);
+}
+.cblock h4 {
+  font-size: 0.74rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--text-faint); font-weight: 700; margin-bottom: 16px;
+}
+.cblock p { color: var(--text-dim); font-size: 1.04rem; }
+.cblock ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.cblock li {
+  display: flex; align-items: flex-start; gap: 12px;
+  color: var(--text); font-size: 1.02rem;
+}
+.cblock li::before {
+  content: ""; width: 7px; height: 7px; border-radius: 2px;
+  background: var(--accent); margin-top: 8px; flex-shrink: 0;
+}
+.cblock--outcome li::before { background: #fff; }
+
+.case__title a { transition: color .25s; }
+.case__title a:hover { color: var(--accent); }
+a.case__visual { display: block; }
+a.case__visual:hover { border-color: var(--border-strong); }
+.case__link {
+  display: inline-flex; align-items: center; gap: 12px;
+  margin-top: clamp(28px, 3.5vw, 44px);
+  font-family: var(--font-body); font-weight: 700;
+  font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: #fff;
+  background: var(--surface-2); border: 1px solid var(--border);
+  padding: 14px 26px; border-radius: 100px;
+  transition: all .28s ease;
+}
+.case__link:hover { border-color: var(--accent); background: var(--accent-soft); transform: translateY(-2px); }
+.case__link svg { width: 15px; height: 15px; transition: transform .28s; }
+.case__link:hover svg { transform: translate(3px,-3px); }
+
+@media (max-width: 860px) {
+  .case__top { grid-template-columns: 1fr; gap: 20px; }
+  .case__role { flex-direction: row; gap: 30px; }
+  .case__cols { grid-template-columns: 1fr; gap: 32px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__inner container">
+    <a href="index.html" class="nav__logo">Vishnu MK</a>
+  <div class="nav__links">
+    <a href="index.html" class="nav__link">Home</a>
+    <a href="work.html" class="nav__link active">Work</a>
+    <a href="about.html" class="nav__link">About</a>
+    <a href="process.html" class="nav__link">Process</a>
+    <a href="skills.html" class="nav__link">Skills</a>
+    <a href="contact.html" class="btn-pill">Let's Talk</a>
+  </div>
+  <button class="nav__toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="page-hero" data-screen-label="Work hero">
+  <div class="page-hero__glow"></div>
+  <div class="container">
+    <span class="eyebrow reveal">Selected Work</span>
+    <h1 class="page-hero__title" data-split>Case<br><span class="chrome-text">Studies</span></h1>
+    <p class="page-hero__sub reveal d2">Selected projects showcasing my process, problem-solving approach, and design thinking — from research to final delivery.</p>
+  </div>
+</section>
+
+<div class="container">
+
+  <!-- CASE 01 -->
+  <article class="case case--c1" data-screen-label="Case 01 Healthcare">
+    <div class="case__ghost" aria-hidden="true">01</div>
+    <div class="case__top">
+      <div class="reveal">
+        <div class="case__idx">Project 01</div>
+        <h2 class="case__title"><a href="work-healthcare.html">Healthcare Platform Redesign</a></h2>
+      </div>
+      <div class="case__role reveal d1">
+        <span class="lbl">My Role</span>
+        <span class="val">UI/UX Designer</span>
+      </div>
+    </div>
+    <a href="work-healthcare.html" class="case__visual reveal">
+      <div class="grid-deco"></div><div class="ring"></div>
+      <div class="case__marquee mq" data-marquee="Healthcare · Web App · " aria-hidden="true"></div>
+      <div class="label">Healthcare · Web App</div>
+    </a>
+    <div class="case__cols">
+      <div class="cblock reveal">
+        <h4>Overview</h4>
+        <p>Redesigned a healthcare platform to improve usability, accessibility, and patient engagement across the care journey.</p>
+      </div>
+      <div class="cblock reveal d1">
+        <h4>Responsibilities</h4>
+        <ul><li>User Research</li><li>Wireframing</li><li>UI Design</li><li>Prototyping</li></ul>
+      </div>
+      <div class="cblock cblock--outcome reveal d2">
+        <h4>Outcome</h4>
+        <ul><li>Improved navigation</li><li>Better information hierarchy</li><li>WCAG-focused accessibility improvements</li></ul>
+      </div>
+    </div>
+    <a href="work-healthcare.html" class="case__link reveal">View Case Study
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </article>
+
+  <!-- CASE 02 -->
+  <article class="case case--c2" data-screen-label="Case 02 Finance">
+    <div class="case__ghost" aria-hidden="true">02</div>
+    <div class="case__top">
+      <div class="reveal">
+        <div class="case__idx">Project 02</div>
+        <h2 class="case__title"><a href="work-finance.html">AI Finance Dashboard</a></h2>
+      </div>
+      <div class="case__role reveal d1">
+        <span class="lbl">My Role</span>
+        <span class="val">Product Designer</span>
+      </div>
+    </div>
+    <a href="work-finance.html" class="case__visual reveal">
+      <div class="grid-deco"></div><div class="ring"></div>
+      <div class="case__marquee mq" data-marquee="SaaS · Dashboard · " aria-hidden="true"></div>
+      <div class="label">SaaS · Dashboard</div>
+    </a>
+    <div class="case__cols">
+      <div class="cblock reveal">
+        <h4>Challenge</h4>
+        <p>Users struggled to understand spending patterns and make sense of dense financial data.</p>
+      </div>
+      <div class="cblock reveal d1">
+        <h4>Solution</h4>
+        <p>Created a modern dashboard with clear visualizations and AI-generated insights that surface what matters.</p>
+      </div>
+      <div class="cblock cblock--outcome reveal d2">
+        <h4>Outcome</h4>
+        <ul><li>Easier decision making</li><li>Improved data readability</li><li>Better user engagement</li></ul>
+      </div>
+    </div>
+    <a href="work-finance.html" class="case__link reveal">View Case Study
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </article>
+
+  <!-- CASE 03 -->
+  <article class="case case--c3" data-screen-label="Case 03 EV Battery">
+    <div class="case__ghost" aria-hidden="true">03</div>
+    <div class="case__top">
+      <div class="reveal">
+        <div class="case__idx">Project 03</div>
+        <h2 class="case__title"><a href="work-ev.html">EV Battery Monitoring SaaS</a></h2>
+      </div>
+      <div class="case__role reveal d1">
+        <span class="lbl">My Role</span>
+        <span class="val">UI/UX Designer</span>
+      </div>
+    </div>
+    <a href="work-ev.html" class="case__visual reveal">
+      <div class="grid-deco"></div><div class="ring"></div>
+      <div class="case__marquee mq" data-marquee="Enterprise · SaaS · " aria-hidden="true"></div>
+      <div class="label">Enterprise · SaaS</div>
+    </a>
+    <div class="case__cols">
+      <div class="cblock reveal">
+        <h4>Challenge</h4>
+        <p>Complex battery health data was difficult to interpret and slow to act on.</p>
+      </div>
+      <div class="cblock reveal d1">
+        <h4>Solution</h4>
+        <p>Designed an enterprise dashboard with real-time monitoring and predictive insights for operators.</p>
+      </div>
+      <div class="cblock cblock--outcome reveal d2">
+        <h4>Outcome</h4>
+        <ul><li>Better visibility</li><li>Faster decision-making</li><li>Improved operational efficiency</li></ul>
+      </div>
+    </div>
+    <a href="work-ev.html" class="case__link reveal">View Case Study
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </article>
+
+</div>
+
+<!-- FOOTER -->
+<!-- FOOTER -->
+<footer class="footer" data-screen-label="Footer">
+  <div class="footer__glow"></div>
+  <div class="container">
+    <div class="footer__main">
+      <div class="footer__lead">
+        <span class="eyebrow">Let's create</span>
+        <div class="display chrome-text">Something<span class="line2">Meaningful.</span></div>
+        <a class="footer__email" href="mailto:vishnu46mk@gmail.com">vishnu46mk@gmail.com
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="footer__cta-row">
+          <a href="contact.html" class="btn-accent">Start a Conversation
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+      <nav class="footer__nav" aria-label="Footer">
+        <div class="footer__col">
+          <h4>Sitemap</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="process.html">Process</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.linkedin.com/in/vishnu-mk-a056a72b9/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21H18.6v-5.3c0-1.27-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.8V21H10z"/></svg>LinkedIn</a></li>
+            <li><a href="https://www.behance.net/vishnu_mk" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5.2 7.3c-.9 0-1.7.5-2.1 1.3-.4-.8-1.2-1.3-2.1-1.3-1.5 0-2.6 1.2-2.6 2.7s1.1 2.7 2.6 2.7c.9 0 1.7-.5 2.1-1.3.4.8 1.2 1.3 2.1 1.3 1.5 0 2.6-1.2 2.6-2.7s-1.1-2.7-2.6-2.7z"/></svg>Behance</a></li>
+            <li><a href="mailto:vishnu46mk@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Email</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Currently</h4>
+          <div class="footer__status"><span class="footer__dot"></span>Available for work</div>
+          <p class="footer__loc">UI/UX Designer based in Pollachi, Tamil Nadu.</p>
+        </div>
+      </nav>
+    </div>
+
+    <div class="footer__word">VISHNU MK</div>
+
+    <div class="footer__bottom">
+      <div class="footer__socials">
+        <a href="https://www.linkedin.com/in/vishnu-mk-a056a72b9/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21H18.6v-5.3c0-1.27-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.8V21H10z"/></svg>LinkedIn</a>
+        <a href="https://www.behance.net/vishnu_mk" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5.2 7.3c-.9 0-1.7.5-2.1 1.3-.4-.8-1.2-1.3-2.1-1.3-1.5 0-2.6 1.2-2.6 2.7s1.1 2.7 2.6 2.7c.9 0 1.7-.5 2.1-1.3.4.8 1.2 1.3 2.1 1.3 1.5 0 2.6-1.2 2.6-2.7s-1.1-2.7-2.6-2.7z"/></svg>Behance</a>
+        <a href="mailto:vishnu46mk@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Email</a>
+      </div>
+      <div class="footer__copy">© 2025 Vishnu MK · All Rights Reserved</div>
+      <a href="#" class="footer__top">Back to top
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="vendor/three.min.js"></script>
+<script src="site.js?v=6"></script>
+<script src="motion.js?v=1"></script>
+</body>
+</html>
