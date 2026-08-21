@@ -21,10 +21,10 @@
   --text-faint:  #5a5a62;
 
   /* Accent */
-  --accent:       #ff5a1f;
-  --accent-2:     #ff7a45;
-  --accent-soft:  rgba(255,90,31,0.14);
-  --accent-glow:  rgba(255,90,31,0.35);
+  --accent:       #ff3b30;
+  --accent-2:     #ff6b5b;
+  --accent-soft:  rgba(255,59,48,0.14);
+  --accent-glow:  rgba(255,59,48,0.35);
 
   /* Fonts */
   --font-display: "Archivo Expanded", "Archivo", system-ui, sans-serif;
@@ -38,6 +38,17 @@
 
   /* Chrome / metallic gradient for display type */
   --chrome: linear-gradient(176deg, #6c6c72 0%, #ffffff 42%, #c4c4c9 66%, #ffffff 100%);
+
+  /* Light-section tokens (used by .section-light — the off-white "breather" bands) */
+  --bg-light:           #f2f0ec;
+  --surface-light:      #ffffff;
+  --surface-light-2:    #f7f6f2;
+  --text-ink:           #16151a;
+  --text-ink-dim:       #5c5b57;
+  --text-ink-faint:     #8f8d84;
+  --border-ink:         rgba(20,18,16,0.10);
+  --border-ink-strong:  rgba(20,18,16,0.20);
+  --chrome-dark: linear-gradient(176deg, #2c2c30 0%, #050506 42%, #3c3c41 66%, #050506 100%);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -119,6 +130,93 @@ section { position: relative; }
 .sec-head p { color: var(--text-dim); margin-top: 16px; max-width: 46ch; }
 
 /* ============================================================
+   LIGHT SECTIONS — off-white "breather" bands mixed into the
+   dark flow. Apply .section-light on any <section>; everything
+   inside inherits ink-colored text automatically. Explicit-color
+   rules elsewhere (card copy, dividers, glows) get overridden here.
+   ============================================================ */
+.section-light {
+  background: var(--bg-light);
+  color: var(--text-ink);
+}
+.section-light .dim,
+.section-light .visible__copy,
+.section-light .feature p,
+.section-light .philo__card p,
+.section-light .tl-body p,
+.section-light .cblock p,
+.section-light .skillcol li,
+.section-light .ai-app__cat,
+.section-light .tool__cat { color: var(--text-ink-dim); }
+.section-light .eyebrow { color: var(--text-ink-faint); }
+.section-light .chrome-text {
+  background: var(--chrome-dark);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+}
+.section-light .card { background: linear-gradient(160deg, var(--surface-light), var(--surface-light-2)); border-color: var(--border-ink); }
+.section-light .card:hover,
+.section-light .feature:hover,
+.section-light .philo__card:hover { border-color: var(--border-ink-strong); }
+.section-light .feature__icon,
+.section-light .philo__icon { border-color: var(--border-ink-strong); background: var(--surface-light); }
+.section-light .feature__icon svg,
+.section-light .philo__icon svg { stroke: var(--text-ink); }
+.section-light .visible__rule { background: linear-gradient(180deg, transparent, rgba(20,18,16,0.35), transparent); }
+.section-light .visible__glow,
+.section-light .flow-sec__glow,
+.section-light .page-hero__glow { opacity: 0; }
+.section-light .step__n { -webkit-text-stroke-color: rgba(20,18,16,0.22); }
+.section-light .flow__marker { background: var(--surface-light); border-color: var(--border-ink-strong); color: var(--text-ink-dim); }
+.section-light .flow__rail { background: var(--border-ink-strong); }
+.section-light .flow__d,
+.section-light .ai__top p,
+.section-light .ai-subhead,
+.section-light .sec-head p,
+.section-light .final__body { color: var(--text-ink-dim); }
+.section-light.ai-sec,
+.section-light.flow-sec,
+.section-light.final { border-color: var(--border-ink); background: var(--bg-light); color: var(--text-ink); }
+.section-light .skillcol li::before { background: var(--text-ink-faint); }
+.section-light .chip { border-color: var(--border-ink); background: var(--surface-light); color: var(--text-ink); }
+.section-light .chip:hover { background: var(--accent-soft); color: var(--text-ink); }
+.section-light .ai-app,
+.section-light .tool { background: var(--surface-light); border-color: var(--border-ink); }
+
+/* ============================================================
+   MOCK UI FRAGMENT — hand-built "screenshot" stand-in used
+   wherever real product imagery doesn't exist. Purely CSS/SVG,
+   themeable via --brand, crisp at any size.
+   ============================================================ */
+.mock-frag {
+  --brand: var(--accent);
+  position: relative;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: linear-gradient(165deg, var(--surface-2), var(--surface));
+  padding: 20px;
+  overflow: hidden;
+}
+.section-light .mock-frag { background: linear-gradient(165deg, var(--surface-light), var(--surface-light-2)); border-color: var(--border-ink); }
+.mock-frag__dots { display: flex; gap: 6px; margin-bottom: 18px; }
+.mock-frag__dots span { width: 8px; height: 8px; border-radius: 50%; background: var(--border-strong); transition: background .4s ease; }
+.section-light .mock-frag__dots span { background: var(--border-ink-strong); }
+.mock-frag__row { height: 8px; border-radius: 5px; background: var(--border-strong); margin-bottom: 10px; transition: background .4s ease; }
+.section-light .mock-frag__row { background: var(--border-ink-strong); }
+.mock-frag__chart { display: flex; align-items: flex-end; gap: 6px; height: 64px; margin-top: 16px; }
+.mock-frag__chart span { flex: 1; border-radius: 4px 4px 0 0; background: linear-gradient(180deg, var(--brand), color-mix(in oklab, var(--brand) 55%, transparent)); opacity: 0.9; }
+.mock-frag__tag {
+  position: absolute; right: 14px; bottom: 14px;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.64rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--text-faint);
+  border: 1px dashed var(--border-strong); border-radius: 6px;
+  padding: 5px 9px;
+  background: rgba(5,5,6,0.5);
+}
+.section-light .mock-frag__tag { color: var(--text-ink-faint); border-color: var(--border-ink-strong); background: rgba(255,255,255,0.6); }
+
+/* ============================================================
    NAVBAR
    ============================================================ */
 .nav {
@@ -140,9 +238,9 @@ section { position: relative; }
 .nav::before {
   content: "";
   position: absolute; inset: 0;
-  background: rgba(5,5,6,0.72);
-  backdrop-filter: blur(18px) saturate(140%);
-  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  background: rgba(3,3,4,0.94);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   opacity: 0;
   transition: opacity .35s ease;
   pointer-events: none;
@@ -230,6 +328,8 @@ section { position: relative; }
   background: none; border: none; cursor: pointer; padding: 6px;
 }
 .nav__toggle span { width: 26px; height: 2px; background: #fff; transition: .3s; }
+
+.nav__scrim { display: none; }
 
 /* ---------- Buttons ---------- */
 .btn-accent {
@@ -336,6 +436,28 @@ section { position: relative; }
   backdrop-filter: blur(4px);
 }
 
+/* .ph carrying a real mockup image instead of the striped placeholder */
+.ph--media { background: none; align-items: flex-end; justify-content: flex-start; }
+.ph__media {
+  position: absolute; inset: 0; z-index: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .7s cubic-bezier(.2,.7,.2,1);
+}
+.ph--media:hover .ph__media { transform: scale(1.045); }
+.ph--media::after {
+  content: "";
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(180deg, transparent 45%, rgba(5,5,6,0.72) 100%);
+  pointer-events: none;
+}
+.ph--media .ph__tag {
+  position: relative; z-index: 2;
+  margin: 18px;
+  border-style: solid;
+  background: rgba(5,5,6,0.55);
+}
+
 /* ============================================================
    FOOTER  (redesigned — structured, with ghost wordmark)
    ============================================================ */
@@ -346,11 +468,25 @@ section { position: relative; }
   position: relative;
   overflow: hidden;
 }
+.footer__video {
+  position: absolute; inset: 0; z-index: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 1;
+}
+.footer__scrim {
+  position: absolute; inset: 0; z-index: 0;
+  background: linear-gradient(180deg, rgba(5,5,6,0.25), rgba(5,5,6,0.5) 45%, var(--bg) 94%);
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .footer__video { display: none; }
+}
 .footer__glow {
   position: absolute; z-index: 0;
   top: -10%; left: 50%; transform: translateX(-50%);
   width: min(900px, 90vw); height: 360px;
-  background: radial-gradient(ellipse, rgba(255,90,31,0.10), transparent 68%);
+  background: radial-gradient(ellipse, rgba(255,59,48,0.10), transparent 68%);
   pointer-events: none;
 }
 .footer .container { position: relative; z-index: 1; }
@@ -416,6 +552,18 @@ section { position: relative; }
 }
 .footer__loc { font-size: 0.9rem; color: var(--text-dim); margin-top: 12px; max-width: 22ch; }
 
+/* Brighter + shadowed footer text — the muted grays above were tuned for a
+   plain near-black footer and lose contrast now that a bright/saturated
+   video sits behind it (worst in the upper footer, where the scrim is
+   lightest). Text-shadow keeps it legible across varying video brightness. */
+.footer .eyebrow { color: rgba(255,255,255,0.72); text-shadow: 0 2px 14px rgba(0,0,0,0.65); }
+.footer__col h4 { color: rgba(255,255,255,0.62); text-shadow: 0 1px 10px rgba(0,0,0,0.55); }
+.footer__col a,
+.footer__col li { color: rgba(255,255,255,0.85); text-shadow: 0 1px 10px rgba(0,0,0,0.55); }
+.footer__col a:hover { color: #fff; }
+.footer__status { text-shadow: 0 1px 10px rgba(0,0,0,0.55); }
+.footer__loc { color: rgba(255,255,255,0.75); text-shadow: 0 1px 10px rgba(0,0,0,0.55); }
+
 /* giant ghost wordmark */
 .footer__word {
   font-family: var(--font-display);
@@ -426,7 +574,11 @@ section { position: relative; }
   letter-spacing: -0.03em;
   text-align: center;
   white-space: nowrap;
-  color: rgba(255, 255, 255, 0.18);
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
   user-select: none;
   pointer-events: none;
   margin-top: clamp(10px, 2vw, 24px);
@@ -489,23 +641,67 @@ section { position: relative; }
    RESPONSIVE NAV
    ============================================================ */
 @media (max-width: 860px) {
+  .nav__scrim {
+    display: block;
+    position: fixed; inset: 0;
+    background: rgba(4,4,5,0.6);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .4s ease;
+    z-index: 101;
+  }
+  .nav.menu-open .nav__scrim { opacity: 1; pointer-events: auto; }
   .nav__links {
     position: fixed;
     inset: 0 0 0 auto;
-    width: min(78vw, 340px);
+    width: min(78vw, 360px);
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    gap: 26px;
-    padding: 0 40px;
-    background: rgba(8,8,10,0.96);
+    gap: 6px;
+    padding: 0 clamp(32px,8vw,48px);
+    background: rgba(8,8,10,0.97);
     backdrop-filter: blur(24px);
     transform: translateX(100%);
-    transition: transform .4s cubic-bezier(.2,.7,.2,1);
+    transition: transform .45s cubic-bezier(.2,.7,.2,1);
     border-left: 1px solid var(--border);
+    z-index: 105;
+    counter-reset: navlink;
+  }
+  .nav__links::before {
+    content: "";
+    position: absolute; top: 0; left: 0; bottom: 0; width: 2px;
+    background: linear-gradient(180deg, var(--accent), transparent 70%);
   }
   .nav__links.open { transform: none; }
-  .nav__link { font-size: 1.1rem; }
+  .nav__links .nav__link {
+    counter-increment: navlink;
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(1.6rem, 6vw, 2.1rem);
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    padding: 10px 0;
+  }
+  .nav__links .nav__link::before {
+    content: counter(navlink, decimal-leading-zero);
+    font-family: var(--font-body);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+  }
+  .nav__links .btn-pill {
+    margin-top: 20px;
+    padding: 15px 30px;
+    border-color: var(--accent);
+  }
+  .nav__links .btn-pill:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
   .nav__toggle { display: flex; z-index: 110; }
   .nav.menu-open .nav__toggle span:nth-child(1){ transform: translateY(7px) rotate(45deg); }
   .nav.menu-open .nav__toggle span:nth-child(2){ opacity: 0; }
@@ -523,7 +719,7 @@ section { position: relative; }
 .cd-hero__glow {
   position: absolute; z-index: 0; top: 26%; left: 64%;
   transform: translate(-50%,-50%); width: 620px; height: 440px;
-  background: radial-gradient(ellipse, rgba(255,90,31,0.10), transparent 64%);
+  background: radial-gradient(ellipse, rgba(255,59,48,0.10), transparent 64%);
   pointer-events: none;
 }
 .cd-hero .container { position: relative; z-index: 1; }
@@ -604,22 +800,16 @@ section { position: relative; }
   inherits: false;
 }
 
-/* --- Ambient aurora that drifts behind every page --- */
+/* --- Flat background + static grain (replaces the old drifting aurora) --- */
 body::before {
   content: "";
-  position: fixed; inset: -10% -10% -10% -10%;
+  position: fixed; inset: 0;
   z-index: -1;
   pointer-events: none;
-  background:
-    radial-gradient(38% 46% at 16% 20%, rgba(255,90,31,0.10), transparent 70%),
-    radial-gradient(36% 42% at 84% 28%, rgba(120,140,255,0.06), transparent 70%),
-    radial-gradient(46% 50% at 62% 88%, rgba(255,150,80,0.06), transparent 72%);
-  animation: auroraDrift 26s ease-in-out infinite alternate;
-  will-change: transform;
-}
-@keyframes auroraDrift {
-  0%   { transform: translate3d(-2%, -1%, 0) scale(1.05); }
-  100% { transform: translate3d(2.5%, 2%, 0) scale(1.18); }
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
 }
 
 /* --- Glowing animated stroke on hover (cards, tools, ai apps) --- */
@@ -671,7 +861,6 @@ body::before {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  body::before { animation: none; }
   .nav__logo { animation: none; }
   .card:hover::after, .tool:hover::after, .ai-app:hover::after { animation: none; }
   .btn-accent:hover::before { animation: none; }
@@ -777,20 +966,21 @@ a.case__visual:hover .ring { transform: translate(-50%,-50%) scale(1.15); }
    (hero untouched; everything below it re-choreographed)
    ============================================================ */
 
-/* ---- Three.js ember canvas ---- */
-.fx-embers {
-  position: fixed; inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  opacity: 0.9;
-}
-
 /* ---- Split text scaffolding ---- */
 .w { display: inline-block; }
 .w--m { overflow: hidden; vertical-align: bottom; padding-bottom: 0.08em; margin-bottom: -0.08em; }
 .wi { display: inline-block; will-change: transform; }
 .chrome-text .wi, .wi.chrome-text {
   background: var(--chrome);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+}
+/* Word-splitting wraps text in .wi spans with their own gradient above,
+   which otherwise beats .section-light's chrome-text override and leaves
+   split headings rendering the light (dark-bg) gradient on light sections. */
+.section-light .chrome-text .wi,
+.section-light .wi.chrome-text {
+  background: var(--chrome-dark);
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent; color: transparent;
 }
@@ -1013,7 +1203,7 @@ a.case__visual:hover .ring { transform: translate(-50%,-50%) scale(1.15); }
   box-shadow: 0 0 0 5px var(--accent-soft), 0 0 18px var(--accent-glow);
 }
 .tl-item { transition: background .35s; padding-inline: 14px; }
-.tl-item:hover { background: linear-gradient(90deg, rgba(255,90,31,0.05), transparent 65%); }
+.tl-item:hover { background: linear-gradient(90deg, rgba(255,59,48,0.05), transparent 65%); }
 
 /* ---- PROCESS · numbers ignite as you scroll ---- */
 .step__n {
@@ -1082,14 +1272,44 @@ body.nav-locked { overflow: hidden; }
 .plist__item { grid-template-columns: clamp(48px, 6vw, 110px) 1fr; align-items: center; }
 .plist__right {
   display: grid;
-  grid-template-columns: clamp(190px, 23vw, 300px) 1fr auto;
+  grid-template-columns: 1fr auto;
   gap: clamp(16px, 3vw, 44px);
   align-items: center;
   min-width: 0;
 }
+.plist__thumb { display: none; }
 @media (max-width: 720px) {
   .plist__item { grid-template-columns: clamp(34px, 9vw, 44px) 1fr; align-items: start; }
   .plist__idx { margin-top: 4px; }
   .plist__right { grid-template-columns: 1fr; gap: 14px; }
   .plist__side { width: 100%; }
+}
+
+/* ============================================================
+   INTERACTIVE LAYER v12 — index list, big hover-reveal preview
+   (thumb removed; large image appears on hover in a fixed slot)
+   ============================================================ */
+.plist__preview {
+  position: absolute;
+  top: 50%; right: clamp(0px, 2vw, 24px);
+  transform: translateY(-50%) scale(0.94);
+  width: min(440px, 36vw);
+  aspect-ratio: 16 / 11;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .45s ease, transform .55s cubic-bezier(.2,.7,.2,1);
+  z-index: 6;
+  box-shadow: 0 40px 90px -24px rgba(0,0,0,0.6);
+  border: 1px solid var(--border-strong);
+  background: #0c0b0d;
+}
+.plist__preview img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.plist__item:hover + .plist__preview { opacity: 1; transform: translateY(-50%) scale(1); }
+@media (max-width: 900px) {
+  .plist__preview { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .plist__preview { transition: opacity .3s ease; }
 }

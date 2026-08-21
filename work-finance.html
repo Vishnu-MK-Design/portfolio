@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>AI Finance Dashboard — Vishnu MK</title>
 <meta name="description" content="Making complex financial data easy to understand and act on, with AI-generated insights that surface what matters." />
-<link rel="stylesheet" href="styles.css?v=9" />
+<link rel="stylesheet" href="styles.css?v=25" />
 </head>
 <body>
 
@@ -20,6 +20,7 @@
     <a href="skills.html" class="nav__link">Skills</a>
     <a href="contact.html" class="btn-pill">Let's Talk</a>
   </div>
+  <div class="nav__scrim"></div>
   <button class="nav__toggle" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
@@ -45,8 +46,9 @@
 </section>
 
 <div class="container">
-  <div class="ph cd-visual" data-plx="6" data-screen-label="Finance hero visual">
-    <span class="ph__tag">Hero mockup — insights dashboard</span>
+  <div class="ph ph--media cd-visual" data-plx="6" data-screen-label="Finance hero visual">
+    <img class="ph__media" src="assets/proj-finance.svg" alt="AI finance insights dashboard mockup" loading="lazy">
+    <span class="ph__tag">Insights dashboard</span>
   </div>
 </div>
 
@@ -90,9 +92,9 @@
     <span class="eyebrow">Selected screens</span>
     <h2 class="cd-h2" style="margin-top:16px;">Inside the <span class="chrome-text">Product</span></h2>
     <div class="cd-gallery">
-      <div class="ph ph--wide"><span class="ph__tag">Main analytics dashboard</span></div>
-      <div class="ph"><span class="ph__tag">AI insight detail panel</span></div>
-      <div class="ph"><span class="ph__tag">Budget & forecast view</span></div>
+      <div class="ph ph--media ph--wide"><img class="ph__media" src="assets/proj-finance-list.svg" alt="Main analytics dashboard mockup" loading="lazy"><span class="ph__tag">Main analytics dashboard</span></div>
+      <div class="ph ph--media"><img class="ph__media" src="assets/proj-finance-cards.svg" alt="AI insight detail panel mockup" loading="lazy"><span class="ph__tag">AI insight detail panel</span></div>
+      <div class="ph ph--media"><img class="ph__media" src="assets/proj-finance-tracker.svg" alt="Budget and forecast view mockup" loading="lazy"><span class="ph__tag">Budget &amp; forecast view</span></div>
     </div>
   </div>
 </section>
@@ -128,6 +130,10 @@
 
 <!-- FOOTER -->
 <footer class="footer" data-screen-label="Footer">
+  <video class="footer__video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+    <source src="assets/footer-bg.mp4" type="video/mp4">
+  </video>
+  <div class="footer__scrim"></div>
   <div class="footer__glow"></div>
   <div class="container">
     <div class="footer__main">
@@ -179,7 +185,7 @@
         <a href="https://www.behance.net/vishnu_mk" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5.2 7.3c-.9 0-1.7.5-2.1 1.3-.4-.8-1.2-1.3-2.1-1.3-1.5 0-2.6 1.2-2.6 2.7s1.1 2.7 2.6 2.7c.9 0 1.7-.5 2.1-1.3.4.8 1.2 1.3 2.1 1.3 1.5 0 2.6-1.2 2.6-2.7s-1.1-2.7-2.6-2.7z"/></svg>Behance</a>
         <a href="mailto:vishnu46mk@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Email</a>
       </div>
-      <div class="footer__copy">© 2025 Vishnu MK · All Rights Reserved</div>
+      <div class="footer__copy">© 2026 Vishnu MK · All Rights Reserved</div>
       <a href="#" class="footer__top">Back to top
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
@@ -189,8 +195,7 @@
 
 <script src="vendor/gsap.min.js"></script>
 <script src="vendor/ScrollTrigger.min.js"></script>
-<script src="vendor/three.min.js"></script>
-<script src="site.js?v=6"></script>
-<script src="motion.js?v=1"></script>
+<script src="site.js?v=8"></script>
+<script src="motion.js?v=7"></script>
 </body>
 </html>

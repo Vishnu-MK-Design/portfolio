@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Process — Vishnu MK</title>
-<link rel="stylesheet" href="styles.css?v=9" />
+<link rel="stylesheet" href="styles.css?v=25" />
 <style>
 /* ============================ PROCESS ============================ */
 .page-hero {
@@ -41,7 +41,7 @@
   transition: background .3s;
 }
 .step:last-child { border-bottom: 1px solid var(--border); }
-.step:hover { background: linear-gradient(90deg, rgba(255,90,31,0.05), transparent 70%); }
+.step:hover { background: linear-gradient(90deg, rgba(255,59,48,0.05), transparent 70%); }
 .step__n {
   font-family: var(--font-display); font-weight: 800;
   font-size: clamp(2.4rem, 5vw, 4rem); line-height: 1;
@@ -65,7 +65,7 @@
 .flow-sec__glow {
   position: absolute; z-index: 0; bottom: -30%; left: 50%; transform: translateX(-50%);
   width: min(1000px, 92vw); height: 380px;
-  background: radial-gradient(ellipse, rgba(255,90,31,0.10), transparent 66%);
+  background: radial-gradient(ellipse, rgba(255,59,48,0.10), transparent 66%);
   pointer-events: none;
 }
 .flow-sec .container { position: relative; z-index: 1; }
@@ -150,6 +150,7 @@
     <a href="skills.html" class="nav__link">Skills</a>
     <a href="contact.html" class="btn-pill">Let's Talk</a>
   </div>
+  <div class="nav__scrim"></div>
   <button class="nav__toggle" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
@@ -164,7 +165,7 @@
 </section>
 
 <!-- STEPS -->
-<section class="section-pad" data-screen-label="Steps" style="padding-top:clamp(20px,3vw,40px);">
+<section class="section-pad" data-screen-label="Steps" style="padding-top:clamp(20px,3vw,40px);padding-bottom:clamp(100px,14vw,200px);">
   <div class="container">
     <div class="steps">
       <div class="step reveal">
@@ -175,7 +176,7 @@
       <div class="step reveal">
         <div class="step__n">02</div>
         <div class="step__body"><h3>Define</h3><p>Identifying the real problems worth solving and the opportunities they unlock.</p></div>
-        <div class="step__icon"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 8h18M5 8l3-5h8l3 5"/></svg></div>
+        <div class="step__icon"><svg viewBox="0 0 24 24"><path d="M4 5h16l-6 8v6l-4 2v-8L4 5z"/></svg></div>
       </div>
       <div class="step reveal">
         <div class="step__n">03</div>
@@ -197,7 +198,7 @@
 </section>
 
 <!-- FLOW -->
-<section class="flow-sec section-pad" data-screen-label="Process flow">
+<section class="flow-sec section-pad section-light" data-screen-label="Process flow" style="padding-top:clamp(100px,14vw,200px);">
   <div class="flow-sec__glow"></div>
   <div class="container">
     <div class="sec-head reveal" style="margin-bottom:0;">
@@ -249,6 +250,10 @@
 <!-- FOOTER -->
 <!-- FOOTER -->
 <footer class="footer" data-screen-label="Footer">
+  <video class="footer__video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+    <source src="assets/footer-bg.mp4" type="video/mp4">
+  </video>
+  <div class="footer__scrim"></div>
   <div class="footer__glow"></div>
   <div class="container">
     <div class="footer__main">
@@ -300,7 +305,7 @@
         <a href="https://www.behance.net/vishnu_mk" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5.2 7.3c-.9 0-1.7.5-2.1 1.3-.4-.8-1.2-1.3-2.1-1.3-1.5 0-2.6 1.2-2.6 2.7s1.1 2.7 2.6 2.7c.9 0 1.7-.5 2.1-1.3.4.8 1.2 1.3 2.1 1.3 1.5 0 2.6-1.2 2.6-2.7s-1.1-2.7-2.6-2.7z"/></svg>Behance</a>
         <a href="mailto:vishnu46mk@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Email</a>
       </div>
-      <div class="footer__copy">© 2025 Vishnu MK · All Rights Reserved</div>
+      <div class="footer__copy">© 2026 Vishnu MK · All Rights Reserved</div>
       <a href="#" class="footer__top">Back to top
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
@@ -310,8 +315,7 @@
 
 <script src="vendor/gsap.min.js"></script>
 <script src="vendor/ScrollTrigger.min.js"></script>
-<script src="vendor/three.min.js"></script>
-<script src="site.js?v=6"></script>
-<script src="motion.js?v=1"></script>
+<script src="site.js?v=8"></script>
+<script src="motion.js?v=7"></script>
 </body>
 </html>

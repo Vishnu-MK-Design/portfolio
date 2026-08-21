@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Contact — Vishnu MK</title>
-<link rel="stylesheet" href="styles.css?v=9" />
+<link rel="stylesheet" href="styles.css?v=25" />
 <style>
 /* ============================ CONTACT ============================ */
 .contact-hero {
@@ -15,7 +15,7 @@
 .contact-hero__glow {
   position: absolute; z-index:0; top: 30%; left: 50%;
   transform: translate(-50%,-50%); width: 760px; height: 520px;
-  background: radial-gradient(ellipse, rgba(255,90,31,0.12), transparent 62%);
+  background: radial-gradient(ellipse, rgba(255,59,48,0.12), transparent 62%);
   pointer-events:none;
 }
 .contact-hero .eyebrow { margin-bottom: 24px; }
@@ -40,7 +40,7 @@
   padding: clamp(24px, 2.6vw, 34px);
   text-align: left;
 }
-.contact-card:hover { transform: translateY(-5px); border-color: var(--border-strong); }
+.contact-card:hover { border-color: var(--border-strong); }
 .contact-card__ico {
   width: 56px; height: 56px; flex-shrink: 0;
   display:flex; align-items:center; justify-content:center;
@@ -101,6 +101,7 @@
     <a href="skills.html" class="nav__link">Skills</a>
     <a href="contact.html" class="btn-pill" style="background:#fff;color:#000;border-color:#fff;">Let's Talk</a>
   </div>
+  <div class="nav__scrim"></div>
   <button class="nav__toggle" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
@@ -116,7 +117,7 @@
 </section>
 
 <!-- CONTACTS -->
-<section data-screen-label="Contact info" style="padding-bottom: clamp(64px,9vw,120px);">
+<section data-screen-label="Contact info" style="padding-bottom: clamp(100px,14vw,200px);">
   <div class="container">
     <div class="contacts">
       <a href="mailto:vishnu46mk@gmail.com" class="card contact-card reveal" data-tilt>
@@ -143,12 +144,12 @@
 </section>
 
 <!-- FINAL STATEMENT -->
-<section class="final section-pad" data-screen-label="Final statement">
+<section class="final section-pad section-light" data-screen-label="Final statement" style="padding-top:clamp(100px,14vw,200px);">
   <div class="container">
     <div class="final__inner reveal">
       <span class="eyebrow">In closing</span>
-      <p class="final__quote" data-scrub-words>Design is more than creating beautiful interfaces. It's about understanding people, solving problems, and building experiences that make technology feel <span class="accent">natural.</span></p>
-      <p class="final__body">I'm excited to continue growing as a designer and contribute to products that create meaningful impact.</p>
+      <p class="final__quote" data-scrub-words>Good design isn't decoration — it's how technology starts to feel <span class="accent">natural.</span></p>
+      <p class="final__body">I'm excited to keep growing as a designer and building products with real impact.</p>
     </div>
   </div>
 </section>
@@ -156,6 +157,10 @@
 <!-- FOOTER -->
 <!-- FOOTER -->
 <footer class="footer" data-screen-label="Footer">
+  <video class="footer__video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+    <source src="assets/footer-bg.mp4" type="video/mp4">
+  </video>
+  <div class="footer__scrim"></div>
   <div class="footer__glow"></div>
   <div class="container">
     <div class="footer__main">
@@ -207,7 +212,7 @@
         <a href="https://www.behance.net/vishnu_mk" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5.2 7.3c-.9 0-1.7.5-2.1 1.3-.4-.8-1.2-1.3-2.1-1.3-1.5 0-2.6 1.2-2.6 2.7s1.1 2.7 2.6 2.7c.9 0 1.7-.5 2.1-1.3.4.8 1.2 1.3 2.1 1.3 1.5 0 2.6-1.2 2.6-2.7s-1.1-2.7-2.6-2.7z"/></svg>Behance</a>
         <a href="mailto:vishnu46mk@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Email</a>
       </div>
-      <div class="footer__copy">© 2025 Vishnu MK · All Rights Reserved</div>
+      <div class="footer__copy">© 2026 Vishnu MK · All Rights Reserved</div>
       <a href="#" class="footer__top">Back to top
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
@@ -217,8 +222,7 @@
 
 <script src="vendor/gsap.min.js"></script>
 <script src="vendor/ScrollTrigger.min.js"></script>
-<script src="vendor/three.min.js"></script>
-<script src="site.js?v=6"></script>
-<script src="motion.js?v=1"></script>
+<script src="site.js?v=8"></script>
+<script src="motion.js?v=7"></script>
 </body>
 </html>

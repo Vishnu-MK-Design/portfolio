@@ -12,7 +12,7 @@
   <rect x="36" y="32" width="220" height="20" rx="10" fill="#ffffff" opacity="0.92"/>
   <rect x="36" y="62" width="140" height="10" rx="5" fill="#ffffff" opacity="0.3"/>
   <rect x="560" y="34" width="92" height="32" rx="16" fill="#ffffff" opacity="0.08"/>
-  <rect x="666" y="34" width="98" height="32" rx="16" fill="#ff5a1f" opacity="0.9"/>
+  <rect x="666" y="34" width="98" height="32" rx="16" fill="#ff3b30" opacity="0.9"/>
   <!-- gauge card -->
   <rect x="36" y="96" width="240" height="220" rx="16" fill="#ffffff" opacity="0.04"/>
   <rect x="36" y="96" width="240" height="220" rx="16" fill="none" stroke="#ffffff" stroke-opacity="0.08"/>
@@ -32,14 +32,14 @@
     <rect x="324" y="192" width="416" height="22" rx="11" fill="#ffffff" opacity="0.08"/>
     <rect x="324" y="192" width="290" height="22" rx="11" fill="url(#cell)" opacity="0.85"/>
     <rect x="324" y="228" width="416" height="22" rx="11" fill="#ffffff" opacity="0.08"/>
-    <rect x="324" y="228" width="180" height="22" rx="11" fill="#ff5a1f" opacity="0.9"/>
+    <rect x="324" y="228" width="180" height="22" rx="11" fill="#ff3b30" opacity="0.9"/>
     <rect x="324" y="264" width="416" height="22" rx="11" fill="#ffffff" opacity="0.08"/>
     <rect x="324" y="264" width="320" height="22" rx="11" fill="url(#cell)" opacity="0.7"/>
   </g>
   <!-- alert chip -->
   <rect x="520" y="222" width="150" height="34" rx="10" fill="#241015"/>
-  <rect x="520" y="222" width="150" height="34" rx="10" fill="none" stroke="#ff5a1f" stroke-opacity="0.6"/>
-  <circle cx="540" cy="239" r="6" fill="#ff5a1f"/>
+  <rect x="520" y="222" width="150" height="34" rx="10" fill="none" stroke="#ff3b30" stroke-opacity="0.6"/>
+  <circle cx="540" cy="239" r="6" fill="#ff3b30"/>
   <rect x="554" y="234" width="100" height="10" rx="5" fill="#ffffff" opacity="0.7"/>
   <!-- fleet table -->
   <rect x="36" y="340" width="728" height="178" rx="16" fill="#ffffff" opacity="0.04"/>
@@ -60,10 +60,10 @@
     <rect x="660" y="438" width="60" height="10" rx="5" fill="#ffffff" opacity="0.4"/>
   </g>
   <g opacity="0.9">
-    <circle cx="72" cy="480" r="6" fill="#ff5a1f"/>
+    <circle cx="72" cy="480" r="6" fill="#ff3b30"/>
     <rect x="92" y="474" width="120" height="10" rx="5" fill="#ffffff" opacity="0.6"/>
     <rect x="300" y="474" width="180" height="10" rx="5" fill="#ffffff" opacity="0.25"/>
-    <rect x="560" y="470" width="70" height="18" rx="9" fill="#ff5a1f" opacity="0.3"/>
+    <rect x="560" y="470" width="70" height="18" rx="9" fill="#ff3b30" opacity="0.3"/>
     <rect x="660" y="474" width="60" height="10" rx="5" fill="#ffffff" opacity="0.4"/>
   </g>
 </svg>

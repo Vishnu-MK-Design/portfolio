@@ -24,118 +24,6 @@
   var isHome = !!document.querySelector('.hero');
 
   /* ------------------------------------------------------------
-     1 · THREE.JS EMBER FIELD — drifting sparks behind every page
-     ------------------------------------------------------------ */
-  (function emberField() {
-    if (typeof THREE === 'undefined') return;
-    var renderer;
-    try {
-      renderer = new THREE.WebGLRenderer({ alpha: true, antialias: false, powerPreference: 'low-power' });
-    } catch (e) { return; }
-
-    var canvas = renderer.domElement;
-    canvas.className = 'fx-embers';
-    document.body.prepend(canvas);
-
-    var scene = new THREE.Scene();
-    var camera = new THREE.PerspectiveCamera(60, 1, 1, 1000);
-    camera.position.z = 220;
-
-    var COUNT = finePointer ? 520 : 180;
-    var SPREAD_X = 480, SPREAD_Y = 320, SPREAD_Z = 240;
-
-    // soft round sprite
-    var tex = (function () {
-      var c = document.createElement('canvas');
-      c.width = c.height = 64;
-      var g = c.getContext('2d');
-      var grad = g.createRadialGradient(32, 32, 0, 32, 32, 32);
-      grad.addColorStop(0, 'rgba(255,255,255,1)');
-      grad.addColorStop(0.35, 'rgba(255,255,255,0.55)');
-      grad.addColorStop(1, 'rgba(255,255,255,0)');
-      g.fillStyle = grad;
-      g.fillRect(0, 0, 64, 64);
-      var t = new THREE.CanvasTexture(c);
-      return t;
-    })();
-
-    var geo = new THREE.BufferGeometry();
-    var pos = new Float32Array(COUNT * 3);
-    var col = new Float32Array(COUNT * 3);
-    var speed = new Float32Array(COUNT);
-    var sway = new Float32Array(COUNT);
-    var ember = new THREE.Color('#ff5a1f');
-    var warm = new THREE.Color('#ffb37a');
-    var ash = new THREE.Color('#8a8a92');
-
-    for (var i = 0; i < COUNT; i++) {
-      pos[i * 3] = (Math.random() - 0.5) * SPREAD_X;
-      pos[i * 3 + 1] = (Math.random() - 0.5) * SPREAD_Y;
-      pos[i * 3 + 2] = (Math.random() - 0.5) * SPREAD_Z;
-      var r = Math.random();
-      var c0 = r < 0.45 ? ember : (r < 0.75 ? warm : ash);
-      col[i * 3] = c0.r; col[i * 3 + 1] = c0.g; col[i * 3 + 2] = c0.b;
-      speed[i] = 0.08 + Math.random() * 0.22;
-      sway[i] = Math.random() * Math.PI * 2;
-    }
-    geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
-    geo.setAttribute('color', new THREE.BufferAttribute(col, 3));
-
-    var mat = new THREE.PointsMaterial({
-      size: 2.6, map: tex, vertexColors: true, transparent: true,
-      opacity: 0.5, depthWrite: false, blending: THREE.AdditiveBlending,
-      sizeAttenuation: true
-    });
-    var points = new THREE.Points(geo, mat);
-    scene.add(points);
-
-    var mouseX = 0, mouseY = 0, targX = 0, targY = 0;
-    if (finePointer) {
-      window.addEventListener('pointermove', function (e) {
-        targX = (e.clientX / window.innerWidth - 0.5) * 2;
-        targY = (e.clientY / window.innerHeight - 0.5) * 2;
-      }, { passive: true });
-    }
-
-    function resize() {
-      var w = window.innerWidth, h = window.innerHeight;
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.6));
-      renderer.setSize(w, h);
-      camera.aspect = w / h;
-      camera.updateProjectionMatrix();
-    }
-    resize();
-    window.addEventListener('resize', resize);
-
-    var clock = new THREE.Clock();
-    var running = true;
-    document.addEventListener('visibilitychange', function () {
-      running = document.visibilityState === 'visible';
-      if (running) tick();
-    });
-
-    function tick() {
-      if (!running) return;
-      requestAnimationFrame(tick);
-      var t = clock.getElapsedTime();
-      var p = geo.attributes.position.array;
-      for (var i = 0; i < COUNT; i++) {
-        p[i * 3 + 1] += speed[i];                                 // drift up like embers
-        p[i * 3] += Math.sin(t * 0.6 + sway[i]) * 0.04;           // gentle sway
-        if (p[i * 3 + 1] > SPREAD_Y / 2) p[i * 3 + 1] = -SPREAD_Y / 2;
-      }
-      geo.attributes.position.needsUpdate = true;
-      mouseX += (targX - mouseX) * 0.04;
-      mouseY += (targY - mouseY) * 0.04;
-      points.rotation.y = mouseX * 0.18;
-      points.rotation.x = mouseY * 0.12;
-      points.position.y = -(window.scrollY || 0) * 0.02 % 40;
-      renderer.render(scene, camera);
-    }
-    tick();
-  })();
-
-  /* ------------------------------------------------------------
      2 · TEXT SPLITTING (keeps nested spans like .chrome-text)
      ------------------------------------------------------------ */
   function splitWords(root, masked) {
@@ -244,14 +132,24 @@
     });
     document.querySelectorAll('.step, .tl-item').forEach(function (el) { el.classList.add('lit'); });
   }
-  setTimeout(function () { if (gsap.ticker.time === 0) settleStatic(); }, 1200);
+  // A backgrounded/hidden tab throttles rAF to a trickle — GSAP's ticker still
+  // advances a little (so the old `ticker.time === 0` check never fires) but
+  // ScrollTrigger callbacks never get a real chance to complete, stranding
+  // reveals at a partial opacity/offset indefinitely. Bail out to the fully
+  // visible static layout whenever the tab isn't actually visible.
+  setTimeout(function () { if (gsap.ticker.time === 0 || document.hidden) settleStatic(); }, 1200);
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) settleStatic();
+  });
 
-  // Secondary net: a live renderer should still never leave on-screen content hidden.
+  // Secondary net: a live renderer should still never leave on-screen content
+  // hidden OR stranded at a partial in-between state.
   setTimeout(function () {
     if (settleStatic.done) return;
+    if (document.hidden) { settleStatic(); return; }
     document.querySelectorAll('.reveal').forEach(function (el) {
       var r = el.getBoundingClientRect();
-      if (r.top < window.innerHeight && r.bottom > 0 && +gsap.getProperty(el, 'opacity') < 0.05) {
+      if (r.top < window.innerHeight && r.bottom > 0 && +gsap.getProperty(el, 'opacity') < 0.98) {
         gsap.set(el, { autoAlpha: 1, y: 0, clearProps: 'y' });
       }
     });
@@ -319,17 +217,45 @@
      ------------------------------------------------------------ */
   if (finePointer) {
     gsap.utils.toArray('[data-tilt]').forEach(function (card) {
+      try {
       gsap.set(card, { transformPerspective: 800 });
-      var rx = gsap.quickTo(card, 'rotationX', { duration: 0.55, ease: 'power3' });
-      var ry = gsap.quickTo(card, 'rotationY', { duration: 0.55, ease: 'power3' });
-      var ty = gsap.quickTo(card, 'y', { duration: 0.55, ease: 'power3' });
+      // Rotation only — deliberately NOT animating 'y' here. The .reveal
+      // scroll-in animation (section 5 below) also tweens 'y' on these same
+      // elements for ~1s+ after they enter the viewport. Keeping tilt on
+      // rotationX/rotationY (properties .reveal never touches) avoids
+      // fighting over the 'y' property directly.
+      //
+      // But .reveal's tween ends with clearProps:'y', and GSAP's clearProps
+      // rebuilds the WHOLE inline transform from scratch when it runs —
+      // wiping perspective/rotation too, and corrupting any quickTo tween
+      // created before that rebuild (it silently stops responding to future
+      // calls). So instead of trusting one quickTo made at setup time, we
+      // recreate it fresh on every pointerenter — a fresh quickTo always
+      // works regardless of what reveal's cleanup already did to the cache.
+      var rx, ry;
+      card.addEventListener('pointerenter', function () {
+        gsap.set(card, { transformPerspective: 800 });
+        rx = gsap.quickTo(card, 'rotationX', { duration: 0.55, ease: 'power3' });
+        ry = gsap.quickTo(card, 'rotationY', { duration: 0.55, ease: 'power3' });
+      });
       card.addEventListener('pointermove', function (e) {
+        if (!rx || !ry) return;
         var r = card.getBoundingClientRect();
         var px = (e.clientX - r.left) / r.width - 0.5;
         var py = (e.clientY - r.top) / r.height - 0.5;
-        rx(-py * 7); ry(px * 9); ty(-6);
+        rx(-py * 7); ry(px * 9);
       });
-      card.addEventListener('pointerleave', function () { rx(0); ry(0); ty(0); });
+      card.addEventListener('pointerleave', function () {
+        gsap.to(card, {
+          rotationX: 0, rotationY: 0,
+          duration: 0.45, ease: 'power3',
+          overwrite: true,
+          onComplete: function () { gsap.set(card, { clearProps: 'transform' }); }
+        });
+      });
+      } catch (err) {
+        console.warn('[tilt setup]', card, err);
+      }
     });
   }
 
