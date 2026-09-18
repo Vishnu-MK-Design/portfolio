@@ -4,420 +4,274 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>About — Vishnu MK</title>
-<link rel="stylesheet" href="styles.css?v=25" />
-<style>
-/* ============================ ABOUT ============================ */
-.page-hero {
-  padding-top: clamp(150px, 20vh, 230px);
-  padding-bottom: clamp(40px, 6vw, 72px);
-  position: relative;
-  overflow: hidden;
-}
-.page-hero__glow {
-  position: absolute; z-index:0; top: 30%; left: 70%;
-  transform: translate(-50%,-50%);
-  width: 600px; height: 420px;
-  background: radial-gradient(ellipse, rgba(255,59,48,0.10), transparent 65%);
-  pointer-events:none;
-}
-.page-hero .eyebrow { margin-bottom: 22px; }
-.page-hero__title {
-  font-family: var(--font-display);
-  font-weight: 800;
-  text-transform: uppercase;
-  font-size: clamp(3.4rem, 11vw, 9rem);
-  line-height: 0.9;
-  letter-spacing: -0.02em;
-  position: relative; z-index:1;
-}
-.page-hero__sub {
-  margin-top: 26px;
-  color: var(--text-dim);
-  font-size: clamp(1.05rem, 2vw, 1.3rem);
-  max-width: 50ch;
-  position: relative; z-index:1;
-}
-
-/* story */
-.story__grid {
-  display: grid;
-  grid-template-columns: 0.65fr 1.35fr;
-  gap: clamp(40px, 7vw, 110px);
-  align-items: start;
-}
-.story h2 {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
-  text-transform: uppercase;
-  letter-spacing: -0.01em;
-}
-.story__body p { color: var(--text-dim); font-size: 1.08rem; max-width: 60ch; }
-.story__body p + p { margin-top: 22px; }
-.approach {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  margin-top: 36px;
-}
-.approach__item {
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 18px 22px;
-  background: var(--surface);
-  display: flex; align-items: center; gap: 14px;
-  font-weight: 600;
-}
-.approach__item span {
-  width: 30px; height: 30px; border-radius: 50%;
-  display:flex; align-items:center; justify-content:center;
-  background: var(--accent-soft); color: var(--accent);
-  font-family: var(--font-display); font-size: 0.85rem; flex-shrink:0;
-}
-
-/* profile portrait */
-.story__left h2 { margin-bottom: 0; }
-.about-portrait {
-  position: relative;
-  margin: 28px auto 0;
-  max-width: 420px;
-  width: 100%;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  background: radial-gradient(120% 95% at 50% 0%, #1b1813, #0c0b0d 60%);
-  overflow: hidden;
-  aspect-ratio: 4 / 5;
-  display: flex; align-items: flex-end; justify-content: center;
-}
-.about-portrait img {
-  position: relative; z-index: 1;
-  width: 100%; height: 100%;
-  object-fit: cover;
-}
-.about-portrait__fade {
-  content: ""; position: absolute; inset: auto 0 0 0; height: 38%; z-index: 1;
-  background: linear-gradient(transparent, rgba(5,5,6,0.72));
-  pointer-events: none;
-}
-.about-portrait__cap {
-  position: absolute; z-index: 2; left: 20px; bottom: 16px;
-  display: inline-flex; align-items: center; gap: 9px;
-  font-family: var(--font-display); font-weight: 700; text-transform: uppercase;
-  font-size: 0.82rem; letter-spacing: 0.04em; color: var(--text);
-}
-.about-portrait__cap::before {
-  content: ""; width: 7px; height: 7px; border-radius: 50%;
-  background: var(--accent); box-shadow: 0 0 10px var(--accent-glow);
-}
-
-/* timeline */
-.timeline { position: relative; margin-top: clamp(40px,5vw,56px); }
-.tl-item {
-  display: grid;
-  grid-template-columns: 52px 200px 1fr;
-  gap: clamp(20px, 4vw, 56px);
-  align-items: center;
-  padding: 30px 0;
-  border-top: 1px solid var(--border);
-  position: relative;
-}
-.tl-item:last-child { border-bottom: 1px solid var(--border); }
-.tl-icon {
-  width: 48px; height: 48px; flex-shrink: 0;
-  border-radius: 14px;
-  display: flex; align-items: center; justify-content: center;
-  border: 1px solid var(--border-strong);
-  background: var(--surface);
-  transition: border-color .3s, background .3s;
-}
-.tl-icon svg { width: 22px; height: 22px; stroke: #fff; fill: none; stroke-width: 1.6; }
-.tl-icon--now { border-color: var(--accent); background: var(--accent-soft); box-shadow: 0 0 0 5px var(--accent-soft); }
-.tl-icon--now svg { stroke: var(--accent); }
-.tl-year {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: clamp(1.3rem, 2.4vw, 2rem);
-  letter-spacing: -0.01em;
-}
-.tl-now { color: var(--accent); }
-.tl-body p { color: var(--text-dim); font-size: 1.05rem; max-width: 56ch; }
-.tl-body .role { color: var(--text); font-weight: 600; }
-
-/* philosophy — hover-expand accordion strip (always-light section) */
-.philo {
-  display: flex;
-  margin-top: clamp(40px,6vw,64px);
-  border: 1px solid var(--border-ink);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-}
-.philo__card {
-  flex: 1 1 0;
-  min-width: 190px; /* floor how narrow a squished sibling can get, so its
-    text never re-wraps past the 3 lines the p's min-height reserves below */
-  padding: clamp(26px,2.6vw,34px) clamp(20px,2.2vw,26px);
-  border-right: 1px solid var(--border-ink);
-  display: flex;
-  flex-direction: column;
-  cursor: default;
-  transition: flex-grow .5s cubic-bezier(.2,.7,.2,1), background .35s;
-}
-.philo__card:last-child { border-right: none; }
-.philo__card:hover,
-.philo__card:focus-within { flex-grow: 2.4; background: var(--surface-light); }
-.philo__top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 26px; }
-.philo__n {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1rem;
-  color: var(--accent);
-}
-.philo__icon {
-  width: 40px; height: 40px; border-radius: 12px;
-  display: flex; align-items: center; justify-content: center;
-  border: 1px solid var(--border-ink-strong);
-  flex-shrink: 0;
-}
-.philo__icon svg { width: 19px; height: 19px; stroke: var(--text-ink); fill: none; stroke-width: 1.6; }
-.philo__card h3 {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.3rem;
-  text-transform: uppercase;
-  margin-bottom: 0;
-}
-.philo__card p {
-  color: var(--text-ink-dim);
-  font-size: 0.98rem;
-  opacity: 0;
-  visibility: hidden;
-  margin-top: 14px;
-  min-height: 5em; /* reserve room for the widest text-wrap (3 lines) this
-    card can ever need, even when squished narrowest by a sibling's hover —
-    so no card's natural height ever varies with width, and the row (which
-    stretches all cards to match the tallest) never changes height either */
-  transition: opacity .35s ease, visibility 0s linear .35s;
-}
-.philo__card:hover p,
-.philo__card:focus-within p { opacity: 1; visibility: visible; transition: opacity .35s ease; }
-@media (max-width: 900px) {
-  .philo { flex-direction: column; }
-  .philo__card {
-    border-right: none;
-    border-bottom: 1px solid var(--border-ink);
-    flex-grow: 1 !important;
-  }
-  .philo__card:last-child { border-bottom: none; }
-  .philo__card p { opacity: 1; }
-}
-
-@media (max-width: 900px) {
-  .story__grid { grid-template-columns: 1fr; }
-  .tl-item {
-    grid-template-columns: 44px 1fr;
-    grid-template-areas: "icon year" "icon body";
-    row-gap: 6px;
-    align-items: start;
-  }
-  .tl-icon { grid-area: icon; width: 40px; height: 40px; }
-  .tl-icon svg { width: 18px; height: 18px; }
-  .tl-year { grid-area: year; }
-  .tl-body { grid-area: body; }
-}
-@media (max-width: 560px) { .approach { grid-template-columns: 1fr; } }
-</style>
+<meta name="description" content="Vishnu MK moved from IT into graphic design and UI/UX. His story, timeline, design principles and process." />
+<meta name="theme-color" content="#0a0a0b" />
+<link rel="canonical" href="https://vishnumk.design/about.html" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://vishnumk.design/about.html" />
+<meta property="og:site_name" content="Vishnu MK" />
+<meta property="og:title" content="About — Vishnu MK" />
+<meta property="og:description" content="Vishnu MK moved from IT into graphic design and UI/UX. His story, timeline, design principles and process." />
+<meta property="og:image" content="https://vishnumk.design/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="About — Vishnu MK" />
+<meta name="twitter:description" content="Vishnu MK moved from IT into graphic design and UI/UX. His story, timeline, design principles and process." />
+<meta name="twitter:image" content="https://vishnumk.design/assets/og-image.png" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a0a0b'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23ff3b30'/%3E%3C/svg%3E" />
+<script>
+(function(){var d=document.documentElement,t;try{t=localStorage.getItem('theme')}catch(e){}
+if(t!=='light'&&t!=='dark'){t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'}
+d.dataset.theme=t;
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches){d.classList.add('motion');
+try{if(!sessionStorage.getItem('vmk-intro')||new URLSearchParams(location.search).get('intro')==='1')d.classList.add('is-loading')}catch(e){}
+setTimeout(function(){if(!window.__motionReady)d.classList.remove('motion')},2500)}})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&amp;family=Geist+Mono:wght@500&amp;display=swap" />
+<link rel="stylesheet" href="styles.css?v=93" />
 </head>
-<body>
-
-<nav class="nav">
-  <div class="nav__inner container">
-    <a href="index.html" class="nav__logo">Vishnu MK</a>
-  <div class="nav__links">
-    <a href="index.html" class="nav__link">Home</a>
-    <a href="work.html" class="nav__link">Work</a>
-    <a href="about.html" class="nav__link active">About</a>
-    <a href="process.html" class="nav__link">Process</a>
-    <a href="skills.html" class="nav__link">Skills</a>
-    <a href="contact.html" class="btn-pill">Let's Talk</a>
+<body id="top">
+<div class="loader" aria-hidden="true">
+  <div class="loader__stage">
+    <div class="loader__name"><span class="loader__base">Vishnu MK</span><span class="loader__fill">Vishnu MK</span></div>
+    <div class="loader__meta"><span class="loader__role"><span class="loader__dot"></span>UI/UX Designer</span><span class="loader__count">0</span></div>
+    <div class="loader__bar"><i></i></div>
   </div>
-  <div class="nav__scrim"></div>
-  <button class="nav__toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+<script>
+(function(){var d=document.documentElement,L=document.querySelector('.loader');if(!d.classList.contains('is-loading')){L.remove();return}
+var c=L.querySelector('.loader__count'),t0=Date.now(),MIN=3300,done=false;
+var tick=setInterval(function(){var p=Math.min(1,(Date.now()-t0)/MIN);c.textContent=Math.round(p*100);if(p>=1)clearInterval(tick)},40);
+function finish(){if(done)return;done=true;clearInterval(tick);c.textContent='100';try{sessionStorage.setItem('vmk-intro','1')}catch(e){}
+L.classList.add('is-leaving');setTimeout(function(){d.classList.remove('is-loading');window.dispatchEvent(new Event('loader:done'))},650);setTimeout(function(){L.remove()},1400)}
+function whenLoaded(){if(document.readyState==='complete')finish();else addEventListener('load',finish)}
+setTimeout(whenLoaded,MIN+200);setTimeout(finish,6500)})();
+</script>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="nav">
+  <div class="nav__pill glass">
+    <a class="nav__logo" href="index.html" aria-label="Vishnu MK, home"><span class="nav__logo-mark" aria-hidden="true"></span>Vishnu MK</a>
+    <nav class="nav__right" aria-label="Primary">
+      <div class="nav__links" id="site-menu">
+        <span class="nav__menu-label label" aria-hidden="true">Menu</span>
+      <a class="nav__link" href="index.html" style="--i:0"><span class="nav__link-n" aria-hidden="true">01</span><span class="nav__link-t">Home</span><span class="nav__link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span></a>
+      <a class="nav__link" href="work.html" style="--i:1"><span class="nav__link-n" aria-hidden="true">02</span><span class="nav__link-t">Work</span><span class="nav__link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span></a>
+      <a class="nav__link" href="about.html" aria-current="page" style="--i:2"><span class="nav__link-n" aria-hidden="true">03</span><span class="nav__link-t">About</span><span class="nav__link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span></a>
+      <a class="nav__link" href="skills.html" style="--i:3"><span class="nav__link-n" aria-hidden="true">04</span><span class="nav__link-t">Skills</span><span class="nav__link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span></a>
+        <a class="btn btn--primary btn--sm nav__cta" href="contact.html" style="--i:4">Let’s talk</a>
+        <div class="nav__meta" style="--i:5">
+          <span class="nav__avail label"><span class="dot-live" aria-hidden="true"></span>Available for work</span>
+          <a class="nav__mail" href="mailto:vishnu46mk@gmail.com">vishnu46mk@gmail.com</a>
+          <div class="nav__social"><a href="https://www.linkedin.com/in/vishnu-mk-a056a72b9/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.behance.net/vishnu_mk" target="_blank" rel="noopener">Behance</a></div>
+        </div>
+      </div>
+      <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="Switch theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><g class="t-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6L6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4L6 18M18 6l1.4-1.4"/></g><path class="t-moon" d="M20 14.6A8 8 0 1 1 9.4 4a6.4 6.4 0 0 0 10.6 10.6z"/></svg></button>
+      <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu"><span class="menu-btn__bars" aria-hidden="true"><span></span><span></span><span></span></span></button>
+    </nav>
   </div>
-</nav>
-
-<section class="page-hero" data-screen-label="About hero">
-  <div class="page-hero__glow"></div>
+  <div class="nav__scrim" aria-hidden="true"></div>
+</header>
+<main id="main">
+<section class="page-hero">
   <div class="container">
-    <span class="eyebrow reveal">About Me</span>
-    <h1 class="page-hero__title" data-split><span class="chrome-text">Design</span><br>with intent.</h1>
-    <p class="page-hero__sub reveal d2">A UI/UX Designer with a background in graphic design and visual communication — building digital products backed by empathy, research, and clear problem-solving.</p>
+    <span class="label" data-reveal>About</span>
+    <h1 class="h1" data-split>Design with <span class="accent">intent.</span></h1>
+    <p class="lead" data-reveal data-d="250">A UI/UX designer with a background in IT and graphic design — building digital products backed by empathy, research and clear problem-solving.</p>
   </div>
 </section>
 
-<!-- STORY -->
-<section class="section-pad story" data-screen-label="My Story" style="padding-top:clamp(40px,5vw,64px);padding-bottom:clamp(100px,14vw,200px);">
-  <div class="container story__grid">
-    <div class="story__left reveal">
-      <figure class="about-portrait">
-        <img src="assets/about-portrait-real-2.png" alt="Vishnu MK, UI/UX Designer" />
-        <div class="about-portrait__fade"></div>
-        <figcaption class="about-portrait__cap">Vishnu MK · Pollachi</figcaption>
-      </figure>
-    </div>
-    <div class="story__body reveal d1">
-      <h2>My Story</h2>
-      <p>I'm a UI/UX Designer with a background in graphic design and visual communication. Over the years, I've worked on digital products, websites, dashboards, branding projects, and user interfaces across multiple industries.</p>
-      <p>I believe successful products are built when design decisions are backed by empathy, research, and clear problem-solving. My approach balances four things:</p>
-      <div class="approach">
-        <div class="approach__item"><span>01</span>User Needs</div>
-        <div class="approach__item"><span>02</span>Business Objectives</div>
-        <div class="approach__item"><span>03</span>Accessibility</div>
-        <div class="approach__item"><span>04</span>Modern Design Principles</div>
+<section class="section section--tight-top" aria-labelledby="story">
+  <div class="container story">
+    <figure class="portrait" data-reveal="scale">
+      <img src="assets/about-portrait-real-2.png" width="1023" height="1537" alt="Portrait of Vishnu MK" />
+      <figcaption class="portrait__cap"><span class="label">Vishnu MK · Pollachi</span></figcaption>
+    </figure>
+    <div>
+      <span class="label" data-reveal>My story</span>
+      <h2 class="h2 mt-sm" id="story" data-split>Curious about how things work — and why they confuse people.</h2>
+      <div class="prose mt-lg" data-reveal>
+        <p>I’m a UI/UX designer with a background in graphic design and visual communication. I’ve worked on digital products, websites, dashboards, branding and user interfaces across several industries.</p>
+        <p>I believe successful products are built when design decisions are backed by empathy, research and clear problem-solving. On every project I try to balance four things:</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- JOURNEY -->
-<section class="section-pad" data-screen-label="My Journey" style="padding-top:clamp(100px,14vw,200px);padding-bottom:clamp(100px,14vw,200px);">
-  <div class="container">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Timeline</span>
-      <div class="display" style="font-size:clamp(2.4rem,6vw,4.6rem); margin-top:12px;">My <span class="chrome-text">Journey</span></div>
-    </div>
-    <div class="timeline">
-      <div class="tl-rail" aria-hidden="true"><div class="tl-rail__bar"></div></div>
-      <div class="tl-item reveal">
-        <div class="tl-icon"><svg viewBox="0 0 24 24"><path d="M12 3L2 8l10 5 10-5-10-5z"/><path d="M6 10.5V16c0 1.5 3 3 6 3s6-1.5 6-3v-5.5"/><path d="M22 8v6"/></svg></div>
-        <div class="tl-year">2021</div>
-        <div class="tl-body"><p>Completed <span class="role">Bachelor of Science in Information Technology.</span></p></div>
-      </div>
-      <div class="tl-item reveal">
-        <div class="tl-icon"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/><path d="M3 12h18"/></svg></div>
-        <div class="tl-year">2021–2022</div>
-        <div class="tl-body"><p>Worked as <span class="role">IT Analyst at NTT Data.</span></p></div>
-      </div>
-      <div class="tl-item reveal">
-        <div class="tl-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M8.5 12.5L7 21l5-3 5 3-1.5-8.5"/></svg></div>
-        <div class="tl-year">2023–2024</div>
-        <div class="tl-body"><p>Completed <span class="role">Higher Certification in GUI Design, UI/UX, and Web Design.</span></p></div>
-      </div>
-      <div class="tl-item reveal">
-        <div class="tl-icon"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 100 18c1.5 0 2-1 2-2s-.5-1.5-1-2 .3-2 1.5-2H17a4 4 0 004-4c0-4.5-4-8-9-8z"/><circle cx="7.5" cy="10.5" r="1"/><circle cx="10.5" cy="7" r="1"/><circle cx="14.5" cy="7.5" r="1"/></svg></div>
-        <div class="tl-year">2024</div>
-        <div class="tl-body"><p>Started professional design career as <span class="role">Graphic Designer.</span></p></div>
-      </div>
-      <div class="tl-item reveal">
-        <div class="tl-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
-        <div class="tl-year">2024–2025</div>
-        <div class="tl-body"><p>Worked as <span class="role">UI/UX Designer &amp; Graphic Designer.</span></p></div>
-      </div>
-      <div class="tl-item reveal">
-        <div class="tl-icon tl-icon--now"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3z"/></svg></div>
-        <div class="tl-year tl-now">2025 — Present</div>
-        <div class="tl-body"><p>Working as <span class="role">UI/UX Designer at Arijentek Solution.</span></p></div>
-      </div>
+      <ul class="balance" data-stagger="80">
+        <li data-reveal><span class="label">01</span>User needs</li>
+        <li data-reveal><span class="label">02</span>Business objectives</li>
+        <li data-reveal><span class="label">03</span>Accessibility</li>
+        <li data-reveal><span class="label">04</span>Modern design principles</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- PHILOSOPHY -->
-<section class="section-pad section-light" data-screen-label="Design Philosophy" style="padding-top:clamp(100px,14vw,200px);">
+<section class="section" aria-labelledby="journey-title">
   <div class="container">
-    <div class="sec-head reveal">
-      <span class="eyebrow">What I believe</span>
-      <div class="display" style="font-size:clamp(2.4rem,6vw,4.6rem); margin-top:12px;">Design <span class="chrome-text">Philosophy</span></div>
+    <div class="sec-head"><div class="sec-head__text">
+      <span class="label" data-reveal>Timeline</span>
+      <h2 class="h2" id="journey-title" data-split>How I got here</h2>
+    </div></div>
+    <div class="timeline" data-track>
+      <div class="timeline__rail" aria-hidden="true"><div class="timeline__fill" data-track-fill></div></div>
+      <ol>
+      <li data-step data-reveal><span class="timeline__year">2021</span><p>Completed a <strong>Bachelor of Science in Information Technology</strong>.</p></li>
+      <li data-step data-reveal><span class="timeline__year">2021–2022</span><p>Worked as an <strong>IT Analyst at NTT Data</strong>.</p></li>
+      <li data-step data-reveal><span class="timeline__year">2023–2024</span><p>Completed a <strong>higher certification in GUI design, UI/UX and web design</strong>.</p></li>
+      <li data-step data-reveal><span class="timeline__year">2024</span><p>Started my design career as a <strong>Graphic Designer</strong>.</p></li>
+      <li data-step data-reveal><span class="timeline__year">2024–2025</span><p>Worked as a <strong>UI/UX Designer &amp; Graphic Designer</strong>.</p></li>
+      <li data-step data-reveal class="is-now"><span class="timeline__year">2025 — now</span><p>Working as a <strong>UI/UX Designer at Arijentek Solution</strong>.</p></li>
+      </ol>
     </div>
-    <div class="philo">
-      <article class="philo__card reveal" tabindex="0">
-        <div class="philo__top"><div class="philo__n">01</div><div class="philo__icon"><svg viewBox="0 0 24 24"><path d="M8 3v4a1 1 0 01-1 1H3"/><path d="M21 8h-4a1 1 0 01-1-1V3"/><path d="M3 16h4a1 1 0 011 1v4"/><path d="M16 21v-4a1 1 0 011-1h4"/></svg></div></div>
-        <h3>Simplicity</h3><p>Design should remove complexity, not add to it.</p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="philo-title">
+  <div class="container">
+    <div class="sec-head"><div class="sec-head__text">
+      <span class="label" data-reveal>What I believe</span>
+      <h2 class="h2" id="philo-title" data-split>Design philosophy</h2>
+      <p class="lead" data-reveal>Four principles I come back to on every project.</p>
+    </div></div>
+    <div class="principles" data-stagger="100">
+      <article class="principle" data-reveal data-spot>
+        <div class="principle__art art--simplicity" aria-hidden="true"><span class="s-dot" style="--x:-58px;--y:-34px;--i:0"></span><span class="s-dot" style="--x:44px;--y:-40px;--i:1"></span><span class="s-dot" style="--x:-24px;--y:32px;--i:2"></span><span class="s-dot" style="--x:64px;--y:22px;--i:3"></span><span class="s-dot" style="--x:-70px;--y:12px;--i:4"></span><span class="s-dot" style="--x:10px;--y:-58px;--i:5"></span><span class="s-dot" style="--x:30px;--y:50px;--i:6"></span><span class="s-dot" style="--x:-40px;--y:-6px;--i:7"></span><span class="s-dot" style="--x:58px;--y:-6px;--i:8"></span><span class="s-core"></span></div>
+        <div class="principle__body"><span class="label accent">01</span><h3 class="h3">Simplicity</h3><p>Design should remove complexity, not add to it.</p></div>
       </article>
-      <article class="philo__card reveal d1" tabindex="0">
-        <div class="philo__top"><div class="philo__n">02</div><div class="philo__icon"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div></div>
-        <h3>Clarity</h3><p>Users should never wonder what to do next.</p>
+      <article class="principle" data-reveal data-spot>
+        <div class="principle__art art--clarity" aria-hidden="true"><div class="c-card"><span class="c-bar c-bar--1"></span><span class="c-bar c-bar--2"></span><span class="c-bar c-bar--3"></span><span class="c-btn">Next step</span></div></div>
+        <div class="principle__body"><span class="label accent">02</span><h3 class="h3">Clarity</h3><p>People should never have to wonder what to do next.</p></div>
       </article>
-      <article class="philo__card reveal d2" tabindex="0">
-        <div class="philo__top"><div class="philo__n">03</div><div class="philo__icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div></div>
-        <h3>Consistency</h3><p>A product should feel familiar and predictable.</p>
+      <article class="principle" data-reveal data-spot>
+        <div class="principle__art art--consistency" aria-hidden="true"><span class="k-blk" style="--r:-16deg;--x:10px;--y:-9px;--i:0"></span><span class="k-blk" style="--r:22deg;--x:-8px;--y:14px;--i:1"></span><span class="k-blk" style="--r:-6deg;--x:-14px;--y:22px;--i:2"></span><span class="k-blk" style="--r:14deg;--x:16px;--y:-18px;--i:3"></span><span class="k-blk" style="--r:-20deg;--x:-6px;--y:11px;--i:4"></span><span class="k-blk" style="--r:8deg;--x:12px;--y:-26px;--i:5"></span></div>
+        <div class="principle__body"><span class="label accent">03</span><h3 class="h3">Consistency</h3><p>A product should feel familiar and predictable.</p></div>
       </article>
-      <article class="philo__card reveal d3" tabindex="0">
-        <div class="philo__top"><div class="philo__n">04</div><div class="philo__icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="8" r="1.6"/><path d="M8 12h8M12 12v4M9.5 20l1.5-4M14.5 20L13 16"/></svg></div></div>
-        <h3>Accessibility</h3><p>Good design should work for everyone.</p>
+      <article class="principle" data-reveal data-spot>
+        <div class="principle__art art--accessibility" aria-hidden="true"><div class="a-demo"><span class="a-text">Aa</span><span class="a-ring"></span><span class="a-badge">AA</span></div></div>
+        <div class="principle__body"><span class="label accent">04</span><h3 class="h3">Accessibility</h3><p>Good design should work for everyone.</p></div>
       </article>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
-<!-- FOOTER -->
-<footer class="footer" data-screen-label="Footer">
-  <video class="footer__video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
-    <source src="assets/footer-bg.mp4" type="video/mp4">
-  </video>
-  <div class="footer__scrim"></div>
-  <div class="footer__glow"></div>
+<section class="section" id="process" aria-labelledby="process-title">
   <div class="container">
-    <div class="footer__main">
-      <div class="footer__lead">
-        <span class="eyebrow">Let's create</span>
-        <div class="display chrome-text">Something<span class="line2">Meaningful.</span></div>
-        <a class="footer__email" href="mailto:vishnu46mk@gmail.com">vishnu46mk@gmail.com
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <div class="footer__cta-row">
-          <a href="contact.html" class="btn-accent">Start a Conversation
-            <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
+    <div class="steps" data-steps style="--n:5">
+      <div class="steps__pin">
+        <div class="steps__side">
+          <div class="steps__head">
+            <span class="label" data-reveal>Process</span>
+            <h2 class="h2" id="process-title" data-split>How I <span class="accent">work</span></h2>
+            <p class="lead" data-reveal>A repeatable, evidence-led process that turns an unclear problem into a product people can use without having to think about it.</p>
+          </div>
+          <div class="steps__nav" data-reveal>
+            <div class="steps__bar" aria-hidden="true"><span></span></div>
+            <ol>
+            <li><button class="steps__tab" type="button" data-step-go="0"><span class="steps__tab-n">01</span><span class="steps__tab-t">Discover</span></button></li>
+            <li><button class="steps__tab" type="button" data-step-go="1"><span class="steps__tab-n">02</span><span class="steps__tab-t">Define</span></button></li>
+            <li><button class="steps__tab" type="button" data-step-go="2"><span class="steps__tab-n">03</span><span class="steps__tab-t">Design</span></button></li>
+            <li><button class="steps__tab" type="button" data-step-go="3"><span class="steps__tab-n">04</span><span class="steps__tab-t">Test</span></button></li>
+            <li><button class="steps__tab" type="button" data-step-go="4"><span class="steps__tab-n">05</span><span class="steps__tab-t">Deliver &amp; improve</span></button></li>
+            </ol>
+          </div>
+        </div>
+        <div class="steps__stage" data-reveal="scale">
+          <article class="steps__panel" data-step-panel aria-labelledby="step-t-0">
+            <div class="steps__art" aria-hidden="true"><div class="sa sa--discover"><span class="sa-lens"></span><i class="sa-dot" style="--x:-70px;--y:-30px;--i:0"></i><i class="sa-dot" style="--x:60px;--y:-46px;--i:1"></i><i class="sa-dot" style="--x:-40px;--y:44px;--i:2"></i><i class="sa-dot" style="--x:78px;--y:30px;--i:3"></i><i class="sa-dot" style="--x:4px;--y:-64px;--i:4"></i><i class="sa-dot" style="--x:-86px;--y:16px;--i:5"></i><i class="sa-dot sa-dot--hit" style="--x:14px;--y:8px;--i:6"></i></div></div>
+            <div class="steps__body">
+              <span class="label accent">Step 01 / 05</span>
+              <h3 class="steps__title" id="step-t-0">Discover</h3>
+              <p class="steps__desc">Understanding users, stakeholders and business goals before any screens are drawn.</p>
+              <div class="steps__meta">
+                <div><span class="label">What I do</span><ul><li class="tag">User interviews</li><li class="tag">Stakeholder goals</li><li class="tag">Competitor review</li></ul></div>
+                <div><span class="label">You get</span><p>A shared picture of who the product is for and what success looks like.</p></div>
+              </div>
+            </div>
+          </article>
+          <article class="steps__panel" data-step-panel aria-labelledby="step-t-1">
+            <div class="steps__art" aria-hidden="true"><div class="sa sa--define"><i class="sa-bar" style="--w:100%;--i:0"></i><i class="sa-bar sa-bar--pick" style="--w:82%;--i:1"></i><i class="sa-bar" style="--w:64%;--i:2"></i><i class="sa-bar" style="--w:46%;--i:3"></i></div></div>
+            <div class="steps__body">
+              <span class="label accent">Step 02 / 05</span>
+              <h3 class="steps__title" id="step-t-1">Define</h3>
+              <p class="steps__desc">Finding the real problems worth solving — and deciding what to leave out.</p>
+              <div class="steps__meta">
+                <div><span class="label">What I do</span><ul><li class="tag">User flows</li><li class="tag">Journey mapping</li><li class="tag">Problem framing</li></ul></div>
+                <div><span class="label">You get</span><p>Prioritised problems and flows the whole team agrees on.</p></div>
+              </div>
+            </div>
+          </article>
+          <article class="steps__panel" data-step-panel aria-labelledby="step-t-2">
+            <div class="steps__art" aria-hidden="true"><div class="sa sa--design"><div class="sa-win"><i class="sa-top"></i><i class="sa-hero"></i><i class="sa-col"></i><i class="sa-col"></i><i class="sa-col"></i><i class="sa-btn"></i></div></div></div>
+            <div class="steps__body">
+              <span class="label accent">Step 03 / 05</span>
+              <h3 class="steps__title" id="step-t-2">Design</h3>
+              <p class="steps__desc">Structure first, then visuals — from wireframes to a polished, systemised UI.</p>
+              <div class="steps__meta">
+                <div><span class="label">What I do</span><ul><li class="tag">Wireframes</li><li class="tag">UI design</li><li class="tag">Design system</li><li class="tag">Prototypes</li></ul></div>
+                <div><span class="label">You get</span><p>Interactive prototypes and components that are ready to test.</p></div>
+              </div>
+            </div>
+          </article>
+          <article class="steps__panel" data-step-panel aria-labelledby="step-t-3">
+            <div class="steps__art" aria-hidden="true"><div class="sa sa--test"><div class="sa-row" style="--i:0"><i class="sa-check"></i><i class="sa-line"></i></div><div class="sa-row" style="--i:1"><i class="sa-check"></i><i class="sa-line"></i></div><div class="sa-row" style="--i:2"><i class="sa-check sa-check--fix"></i><i class="sa-line"></i></div></div></div>
+            <div class="steps__body">
+              <span class="label accent">Step 04 / 05</span>
+              <h3 class="steps__title" id="step-t-3">Test</h3>
+              <p class="steps__desc">Putting the design in front of real people and checking assumptions early.</p>
+              <div class="steps__meta">
+                <div><span class="label">What I do</span><ul><li class="tag">Usability testing</li><li class="tag">Feedback sessions</li><li class="tag">Accessibility checks</li></ul></div>
+                <div><span class="label">You get</span><p>Evidence of what works, what confuses people, and why.</p></div>
+              </div>
+            </div>
+          </article>
+          <article class="steps__panel" data-step-panel aria-labelledby="step-t-4">
+            <div class="steps__art" aria-hidden="true"><div class="sa sa--deliver"><i class="sa-col2" style="--h:34%;--i:0"></i><i class="sa-col2" style="--h:52%;--i:1"></i><i class="sa-col2" style="--h:44%;--i:2"></i><i class="sa-col2" style="--h:70%;--i:3"></i><i class="sa-col2 sa-col2--up" style="--h:92%;--i:4"></i></div></div>
+            <div class="steps__body">
+              <span class="label accent">Step 05 / 05</span>
+              <h3 class="steps__title" id="step-t-4">Deliver &amp; improve</h3>
+              <p class="steps__desc">Handing off cleanly, then iterating on what we learn after launch.</p>
+              <div class="steps__meta">
+                <div><span class="label">What I do</span><ul><li class="tag">Developer handoff</li><li class="tag">Design QA</li><li class="tag">Iteration</li></ul></div>
+                <div><span class="label">You get</span><p>Build-ready specs and a clear list of improvements for the next cycle.</p></div>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
-      <nav class="footer__nav" aria-label="Footer">
-        <div class="footer__col">
-          <h4>Sitemap</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="work.html">Work</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="process.html">Process</a></li>
-            <li><a href="skills.html">Skills</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="footer__media" aria-hidden="true">
+    <video data-lazy muted loop playsinline preload="none"><source data-src="assets/footer-bg.mp4" type="video/mp4" /></video>
+  </div>
+  <canvas class="footer__liquid" data-liquid="footer" aria-hidden="true"></canvas>
+  <div class="container">
+    <div class="footer__top">
+        <div>
+          <span class="label" data-reveal>Let’s work together</span>
+          <h2 class="footer__title" data-split>Have a project in mind?</h2>
+          <div class="footer__actions" data-reveal>
+            <a class="btn btn--primary" href="contact.html" data-magnetic>Start a conversation <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="text-link" href="mailto:vishnu46mk@gmail.com">vishnu46mk@gmail.com <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          </div>
         </div>
-        <div class="footer__col">
-          <h4>Connect</h4>
-          <ul>
-            <li><a href="https://www.linkedin.com/in/vishnu-mk-a056a72b9/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21H18.6v-5.3c0-1.27-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.8V21H10z"/></svg>LinkedIn</a></li>
-            <li><a href="https://www.behance.net/vishnu_mk" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5.2 7.3c-.9 0-1.7.5-2.1 1.3-.4-.8-1.2-1.3-2.1-1.3-1.5 0-2.6 1.2-2.6 2.7s1.1 2.7 2.6 2.7c.9 0 1.7-.5 2.1-1.3.4.8 1.2 1.3 2.1 1.3 1.5 0 2.6-1.2 2.6-2.7s-1.1-2.7-2.6-2.7z"/></svg>Behance</a></li>
-            <li><a href="mailto:vishnu46mk@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Email</a></li>
-          </ul>
-        </div>
-        <div class="footer__col">
-          <h4>Currently</h4>
-          <div class="footer__status"><span class="footer__dot"></span>Available for work</div>
-          <p class="footer__loc">UI/UX Designer based in Pollachi, Tamil Nadu.</p>
-        </div>
+      <nav class="footer__links" aria-label="Footer">
+        <div><span class="label">Pages</span><ul><li><a href="index.html">Home</a></li><li><a href="work.html">Work</a></li><li><a href="about.html">About</a></li><li><a href="skills.html">Skills</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div><span class="label">Elsewhere</span><ul><li><a href="https://www.linkedin.com/in/vishnu-mk-a056a72b9/" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://www.behance.net/vishnu_mk" target="_blank" rel="noopener">Behance</a></li><li><a href="mailto:vishnu46mk@gmail.com">Email</a></li></ul></div>
       </nav>
     </div>
-
-    <div class="footer__word">VISHNU MK</div>
-
+    <p class="footer__word" aria-hidden="true" data-reveal>Vishnu MK</p>
     <div class="footer__bottom">
-      <div class="footer__socials">
-        <a href="https://www.linkedin.com/in/vishnu-mk-a056a72b9/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21H18.6v-5.3c0-1.27-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.8V21H10z"/></svg>LinkedIn</a>
-        <a href="https://www.behance.net/vishnu_mk" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5.2 7.3c-.9 0-1.7.5-2.1 1.3-.4-.8-1.2-1.3-2.1-1.3-1.5 0-2.6 1.2-2.6 2.7s1.1 2.7 2.6 2.7c.9 0 1.7-.5 2.1-1.3.4.8 1.2 1.3 2.1 1.3 1.5 0 2.6-1.2 2.6-2.7s-1.1-2.7-2.6-2.7z"/></svg>Behance</a>
-        <a href="mailto:vishnu46mk@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Email</a>
-      </div>
-      <div class="footer__copy">© 2026 Vishnu MK · All Rights Reserved</div>
-      <a href="#" class="footer__top">Back to top
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
+      <span>© <span data-year>2026</span> Vishnu MK · Pollachi, Tamil Nadu</span>
+      <span class="footer__status"><span class="dot-live" aria-hidden="true"></span>Available for work</span>
+      <a class="text-link" href="#top">Back to top <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></a>
     </div>
   </div>
 </footer>
-
-<script src="vendor/gsap.min.js"></script>
-<script src="vendor/ScrollTrigger.min.js"></script>
-<script src="site.js?v=8"></script>
-<script src="motion.js?v=7"></script>
+<script src="site.js?v=16" defer></script>
+<script src="liquid.js?v=17" defer></script>
+<script src="motion.js?v=21" defer></script>
 </body>
 </html>
