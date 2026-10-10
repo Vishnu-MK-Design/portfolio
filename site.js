@@ -207,29 +207,50 @@
     });
   });
 
-  /* ---------- Case-study filters ---------- */
+  /* ---------- Case-study filters + load more ---------- */
   var workFilters = document.querySelectorAll('[data-work-filter]');
   var workProjects = document.querySelectorAll('.project[data-category]');
   var workCount = document.getElementById('work-count');
+  var workMore = document.querySelector('[data-work-load-more]');
+  var workMoreWrap = document.querySelector('[data-work-more-controls]');
+  var workExpanded = false;
+  var activeWorkCategory = 'all';
   if (workFilters.length && workProjects.length) {
     var categoryNames = { product: 'Product & UX', web: 'Web experiences', visual: 'Visual design' };
     document.querySelector('.work-browser').hidden = false;
     function updateWorkFilter(category) {
       var visible = 0;
+      var total = 0;
+      activeWorkCategory = category;
       workProjects.forEach(function (project) {
         var matches = category === 'all' || project.dataset.category === category;
-        project.hidden = !matches;
-        if (matches) visible += 1;
+        var deferred = project.hasAttribute('data-work-more') && !workExpanded;
+        project.hidden = !matches || deferred;
+        if (matches) total += 1;
+        if (!project.hidden) visible += 1;
       });
       workFilters.forEach(function (filter) {
         filter.setAttribute('aria-pressed', String(filter.dataset.workFilter === category));
       });
       if (workCount) {
-        workCount.textContent = category === 'all'
-          ? 'Showing all ' + visible + ' projects'
-          : categoryNames[category] + ' · ' + visible + ' projects';
+        var summary = visible === total
+          ? 'Showing all ' + visible + (visible === 1 ? ' project' : ' projects')
+          : 'Showing ' + visible + ' of ' + total + ' projects';
+        workCount.textContent = category === 'all' ? summary : categoryNames[category] + ' · ' + summary;
       }
+      if (workMoreWrap) workMoreWrap.hidden = visible === total;
+      if (workMore) workMore.setAttribute('aria-label', 'Load more: show ' + (total - visible) + ' additional projects');
     }
+    if (workMore) workMore.addEventListener('click', function () {
+      var firstNewProject = Array.prototype.find.call(workProjects, function (project) {
+        return project.hidden && project.hasAttribute('data-work-more') &&
+          (activeWorkCategory === 'all' || project.dataset.category === activeWorkCategory);
+      });
+      workExpanded = true;
+      updateWorkFilter(activeWorkCategory);
+      // The button disappears after expansion; continue keyboard navigation at the new work.
+      if (firstNewProject) firstNewProject.focus({ preventScroll: true });
+    });
     workFilters.forEach(function (filter) {
       filter.addEventListener('click', function () {
         var category = filter.dataset.workFilter;
