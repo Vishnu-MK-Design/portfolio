@@ -32,6 +32,11 @@ setTimeout(function(){if(!window.__motionReady)d.classList.remove('motion')},250
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&amp;family=Geist+Mono:wght@500&amp;display=swap" />
 <link rel="stylesheet" href="styles.css?v=93" />
+<style>
+.channel__label { display: inline-flex; align-items: center; gap: 12px; }
+.channel .channel__icon { width: 20px; height: 20px; flex-shrink: 0; }
+.channel:hover .channel__icon { transform: none; }
+</style>
 </head>
 <body id="top">
 <div class="loader" aria-hidden="true">
@@ -97,9 +102,9 @@ setTimeout(whenLoaded,MIN+200);setTimeout(finish,6500)})();
     <div class="contact-grid" data-stagger="90">
       <div data-reveal>
         <span class="label">Elsewhere</span>
-        <a class="channel" href="https://www.linkedin.com/in/vishnu-mk-a056a72b9/" target="_blank" rel="noopener">LinkedIn <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
-        <a class="channel" href="https://www.behance.net/vishnu_mk" target="_blank" rel="noopener">Behance <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
-        <a class="channel" href="https://www.instagram.com/vishmk_design/" target="_blank" rel="noopener">Instagram <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        <a class="channel" href="https://www.linkedin.com/in/vishnu-mk-a056a72b9/" target="_blank" rel="noopener"><span class="channel__label"><svg class="channel__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 2H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2ZM8 19H5V9h3ZM6.5 7.7a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4ZM19 19h-3v-5.3c0-1.3-.5-2-1.5-2s-1.5.7-1.5 2V19h-3V9h3v1.3c.5-.9 1.5-1.5 2.8-1.5 2.2 0 3.2 1.4 3.2 4.1Z"/></svg><span>LinkedIn</span></span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        <a class="channel" href="https://www.behance.net/vishnu_mk" target="_blank" rel="noopener"><span class="channel__label"><svg class="channel__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h5a3.5 3.5 0 0 1 0 7H3Zm0 7h5a3.5 3.5 0 0 1 0 7H3ZM16 6h5M15 14h7a4 4 0 0 0-8 0v1a4 4 0 0 0 7 2"/></svg><span>Behance</span></span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        <a class="channel" href="https://www.instagram.com/vishmk_design/" target="_blank" rel="noopener"><span class="channel__label"><svg class="channel__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span>Instagram</span></span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
       </div>
       <div data-reveal>
         <span class="label">Based in</span>
