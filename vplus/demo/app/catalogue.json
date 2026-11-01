@@ -1,0 +1,101 @@
+{
+  "items": [
+    {
+      "id": "1",
+      "slug": "tears-of-steel",
+      "title": "Tears of Steel",
+      "year": "2012",
+      "releaseDate": "2012-09-26",
+      "runtime": 12,
+      "originalLanguage": "en",
+      "countries": [
+        "NL"
+      ],
+      "genres": [
+        "Sci-Fi",
+        "Action"
+      ],
+      "overview": "A group of scientists and soldiers reunite in Amsterdam to confront a robotic threat. An open film combining live action and visual effects.",
+      "credit": "\u00a9 Blender Foundation | mango.blender.org",
+      "source": "https://mango.blender.org/sharing/",
+      "offset": 100,
+      "kind": "movie",
+      "key": "movie-1",
+      "languages": [
+        "en"
+      ],
+      "poster": "../media/tears-of-steel-poster.jpg",
+      "backdrop": "../media/tears-of-steel-backdrop.jpg",
+      "media": "../media/tears-of-steel.mp4",
+      "demoExcerpt": true,
+      "license": "CC BY 3.0",
+      "metadataSource": "Curated open-film demo",
+      "sourceId": "portfolio-local"
+    },
+    {
+      "id": "2",
+      "slug": "big-buck-bunny",
+      "title": "Big Buck Bunny",
+      "year": "2008",
+      "releaseDate": "2008-04-10",
+      "runtime": 10,
+      "originalLanguage": "en",
+      "countries": [
+        "NL"
+      ],
+      "genres": [
+        "Animation",
+        "Comedy",
+        "Family"
+      ],
+      "overview": "A gentle forest rabbit finds his peaceful day interrupted by three mischievous neighbours. A dialogue-free animated short from the Blender Foundation.",
+      "credit": "\u00a9 2008 Blender Foundation | www.bigbuckbunny.org",
+      "source": "https://peach.blender.org/about/",
+      "offset": 55,
+      "kind": "movie",
+      "key": "movie-2",
+      "languages": [
+        "en"
+      ],
+      "poster": "../media/big-buck-bunny-poster.jpg",
+      "backdrop": "../media/big-buck-bunny-backdrop.jpg",
+      "media": "../media/big-buck-bunny.mp4",
+      "demoExcerpt": true,
+      "license": "CC BY 3.0",
+      "metadataSource": "Curated open-film demo",
+      "sourceId": "portfolio-local"
+    },
+    {
+      "id": "3",
+      "slug": "elephants-dream",
+      "title": "Elephants Dream",
+      "year": "2006",
+      "releaseDate": "2006-03-24",
+      "runtime": 11,
+      "originalLanguage": "en",
+      "countries": [
+        "NL"
+      ],
+      "genres": [
+        "Animation",
+        "Fantasy"
+      ],
+      "overview": "Two travellers explore an impossible mechanical world, each seeing something different. The first Blender open movie experiments with atmosphere and storytelling.",
+      "credit": "\u00a9 2006 Blender Foundation / Netherlands Media Art Institute | elephantsdream.org",
+      "source": "https://orange.blender.org/background/",
+      "offset": 30,
+      "kind": "movie",
+      "key": "movie-3",
+      "languages": [
+        "en"
+      ],
+      "poster": "../media/elephants-dream-poster.jpg",
+      "backdrop": "../media/elephants-dream-backdrop.jpg",
+      "media": "../media/elephants-dream.mp4",
+      "demoExcerpt": true,
+      "license": "CC BY 2.5",
+      "metadataSource": "Curated open-film demo",
+      "sourceId": "portfolio-local"
+    }
+  ]
+}
