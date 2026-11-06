@@ -2,3 +2,17 @@
 
 /* Native application evidence, separate from the working demo. */
 .gallery-intro{max-width:720px;color:var(--muted);font-size:14px;line-height:1.8;margin-top:24px}.catalogue-gallery{display:grid;grid-template-columns:1fr 1fr;gap:26px}.gallery-wide{grid-column:1/-1}.screen>a{display:block;cursor:zoom-in}.screen>a:focus-visible{outline:2px solid #f6f6f7;outline-offset:6px;border-radius:14px}figcaption strong{color:#d8dde5}@media(max-width:850px){.catalogue-gallery{grid-template-columns:1fr;gap:0}.gallery-wide{grid-column:auto}}
+
+.reel-header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.reel-switch{display:flex;gap:4px;padding:4px;border:1px solid var(--line);border-radius:999px}
+.reel-switch[hidden]{display:none}
+.reel-switch button{color:var(--text);font:inherit;font-size:12px;padding:7px 13px;border:0;border-radius:999px;background:transparent;cursor:pointer}
+.reel-switch button[aria-pressed="true"]{background:#f4f4f5;color:#101217}
+.reel-switch button:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.cover video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#161619;border:1px solid var(--line);border-radius:14px}
+.platform-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:34px}
+.platform-grid article{border-top:1px solid var(--line);padding-top:20px}
+.platform-grid p{font-size:14px;line-height:1.75;color:var(--muted);margin-top:12px}
+.platform-screens{display:grid;grid-template-columns:minmax(0,1fr) minmax(180px,24%);gap:26px;align-items:start}
+.phone-screen{width:min(100%,270px);justify-self:center}
+@media(max-width:650px){.platform-grid,.platform-screens{grid-template-columns:1fr;gap:18px}.platform-screens .screen{margin-top:22px}}
