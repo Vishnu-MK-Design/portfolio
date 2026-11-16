@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" color="#ffffff" role="img" aria-labelledby="logo-title">
+<title id="logo-title">Bellora</title>
+<rect width="64" height="64" rx="14" fill="#111111"/>
+<g transform="translate(10 8) scale(.75)"><defs>
+  <mask id="doorway-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="64" height="64" style="mask-type:luminance">
+    <rect width="64" height="64" fill="white"/>
+    <path id="doorway" d="M16 64V40a12 12 0 0 1 24 0v24Z" fill="black"/>
+  </mask>
+</defs>
+<g id="symbol" fill="currentColor">
+  <g id="letter" mask="url(#doorway-mask)">
+    <path d="M8 4h20c13 0 20 6 20 16 0 3-1 6-2 8 10 1 16 7 16 16 0 10-8 16-22 16H8Z"/>
+  </g>
+  <g id="bell-clapper" style="transform-origin:28px 28px">
+    <path id="clapper-stem" d="M27 28h2v14h-2Z"/>
+    <circle id="clapper-ball" cx="28" cy="44" r="4"/>
+  </g>
+</g></g>
+</svg>

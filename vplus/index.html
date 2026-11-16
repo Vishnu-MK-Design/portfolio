@@ -2,33 +2,56 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="V+ by Vishnu MK. A product design case study in cinematic discovery and platform-specific interactions for Windows, Android TV and Android Mobile.">
-  <meta name="theme-color" content="#0b0e13">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111112">
   <title>V+ — A calmer way to watch · Vishnu MK</title>
-  <link rel="stylesheet" href="case-study.css">
-  <script src="showreel.js" defer></script>
+  <meta name="description" content="V+ — a desktop media experience by Vishnu MK. A case study in cinematic discovery, usable player controls and reliable playback state, with a working open-film demo.">
+  <link rel="preload" href="../assets/geist.woff2" as="font" type="font/woff2" crossorigin>
+  <script src="../theme.js?v=5"></script>
+  <link rel="stylesheet" href="../portfolio.css?v=19">
+  <link rel="stylesheet" href="../home.css?v=23">
+  <link rel="stylesheet" href="../pages.css?v=7">
+  <script src="../site.js?v=31" defer></script>
+  <link rel="stylesheet" href="showreel.css?v=1">
+  <script src="showreel.js?v=2" defer></script>
 </head>
-<body>
-  <a class="skip" href="#main">Skip to content</a>
+<body id="top" class="case-page vplus-case inner-page">
+  <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
-    <a class="author" href="../work.html">Vishnu MK <span>/ Selected work</span></a>
-    <a class="small-link" href="https://github.com/Vishnu-MK-Design/vplus">View source <span aria-hidden="true">↗</span></a>
+    <div class="header-inner frame">
+      <a class="signature" href="../index.html" aria-label="Vishnu MK, home">VishnuMK</a>
+      <div class="header-controls">
+        <button class="theme" type="button" aria-pressed="false" aria-label="Dark mode" hidden>
+          <span class="theme-icon" aria-hidden="true"><svg class="theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg><svg class="theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.9 15.5A9 9 0 0 1 8.5 3.1 9 9 0 1 0 20.9 15.5Z"/></svg></span>
+        </button>
+        <a class="header-cta" href="../contact.html">Let’s talk<span class="arrow" aria-hidden="true">↗</span></a>
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-navigation" hidden><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
+      </div>
+      <nav class="main-nav" id="main-navigation" aria-label="Main navigation">
+        <a href="../work.html" aria-current="true">Work</a>
+        <a href="../about.html">About</a>
+        <a href="../skills.html">Skills</a>
+      </nav>
+    </div>
   </header>
   <main id="main">
-    <section class="intro wrap">
-      <div class="kicker"><span class="brand">V+</span><span>Independent product · 2026</span></div>
-      <h1>Less searching.<br><span>More watching.</span></h1>
-      <p class="lead">A cinematic home for movies, series and anime, designed for a laptop, a TV remote and a phone.</p>
-      <div class="intro-bottom">
-        <p>Product design, interaction design and AI-assisted implementation.</p>
-        <a class="small-link" href="#platforms">Explore the interfaces <span aria-hidden="true">↓</span></a>
+
+    <section class="frame case-intro">
+      <a class="line-link back" href="../work.html">All case studies<span class="arrow" aria-hidden="true">←</span></a>
+      <div class="case-intro-grid">
+        <div><div class="kicker"><span class="brand">V+</span><span>Independent product · Desktop media experience · 2026</span></div><h1 data-reveal>Less searching.<br><span>More watching.</span></h1></div>
+        <div><p class="lead">A cinematic home for discovery, with a player that feels at home on a laptop.</p><a class="pill fill" href="demo/app/index.html">Try V+<span class="arrow" aria-hidden="true">↗</span></a></div>
       </div>
     </section>
-
-    <figure class="cover wrap" id="showreel">
+    <figure class="frame case-cover"><img class="mockup-cover" src="../assets/projects/covers/vplus.webp" width="1280" height="720" alt="Window mockup of the V+ Windows home screen with Carrie and the movie catalogue" fetchpriority="high"><figcaption>The real Windows application, captured with its movie and series catalogue. The playable browser demo below remains a separate, three-film experience.</figcaption></figure>
+    <div class="frame case-facts v-facts"><p>Product design, interaction design and AI-assisted implementation.<br>Windows review build 0.6.6 · Curated browser demonstration</p><section class="wrap context"><div><span class="eyebrow">Role</span><p>Product &amp; interaction design<br>AI-assisted build and verification</p></div><div><span class="eyebrow">Focus</span><p>Discovery → details → playback<br>Continuity across the journey</p></div><div><span class="eyebrow">Implementation</span><p>Electron · JavaScript · CSS<br>Local state · Shared playback logic</p></div><div><span class="eyebrow">Scope</span><p>PC first<br>Mobile and TV development paused</p></div></section></div>
+    <div class="frame case-layout">
+      <nav class="case-nav" aria-label="Case study sections">
+        <span class="label">In this case study</span><div><a href="#showreel">Showreels</a><a href="#the-challenge">The challenge</a><a href="#the-journey">The journey</a><a href="#discovery">Discovery</a><a href="#catalogue">The full Windows catalogue</a><a href="#title-details">Title details</a><a href="#beyond-the-hero">Beyond the hero</a><a href="#desktop-playback">Desktop playback</a><a href="#platforms">Platform adaptation</a><a href="#build-amp-verification">Build &amp; verification</a><a href="#reflection">Reflection</a><a href="#explore-the-result">Explore the result</a></div>
+      </nav>
+      <div class="case-body"><section class="cs-section" aria-labelledby="showreel"><h2 id="showreel">V+ across <span class="heading-muted">screens.</span></h2><figure class="vplus-showreel">
       <div class="reel-header">
-        <span class="eyebrow">V+ across screens</span>
+        <span class="eyebrow">Showreel appearance</span>
         <div class="reel-switch" role="group" aria-label="Showreel appearance" hidden>
           <button type="button" data-reel-theme="light" aria-pressed="false">Light</button>
           <button type="button" data-reel-theme="dark" aria-pressed="true">Dark</button>
@@ -40,42 +63,10 @@
         <a href="showreel/vplus-dark.mp4">Watch the dark showreel</a>
       </video>
       <figcaption id="reel-caption">Windows shows Crystal Lake, the phone shows MobLand, and the TV shot shows the compact home screen. Actual V+ captures presented in device mockups made with <a href="https://reactbits.dev/tools/center-stage">React Bits Center Stage</a>.</figcaption>
-    </figure>
-
-    <section class="wrap context" aria-label="Project overview">
-      <div><span class="eyebrow">Role</span><p>Product &amp; interaction design<br>Visual direction</p></div>
-      <div><span class="eyebrow">Windows</span><p>0.6.8<br>Mouse and keyboard</p></div>
-      <div><span class="eyebrow">Android TV</span><p>0.7.2<br>Remote and focus navigation</p></div>
-      <div><span class="eyebrow">Android Mobile</span><p>0.7.1<br>Touch and Android Back</p></div>
-    </section>
-
-    <section class="wrap split section">
-      <div><span class="eyebrow">01 / The challenge</span><h2>Keep the path to a title familiar across screens.</h2></div>
-      <div class="prose">
-        <p>V+ brings movies, series and anime into one catalogue. The design challenge was to keep discovery, title details and playback connected while making each interface work with its own input.</p>
-        <p>Development feedback pointed to concrete problems. Menus could close before the mouse reached them, long episode lists were hard to browse, and the TV interface used more space than it needed.</p>
-        <p class="note">An independent project shaped by iterative feedback and direct application checks.</p>
-      </div>
-    </section>
-
-    <section class="wrap section">
-      <div class="split">
-        <div><span class="eyebrow">02 / Discovery</span><h2>Browse by interest. Search from where you are.</h2></div>
-        <div class="prose">
-          <p>Featured artwork introduces titles, while separate movie, series and anime shelves support browsing. Quick search opens suggestions over the current page. Dedicated search keeps filters and results together for more deliberate browsing.</p>
-          <p>Series use season navigation where metadata supports it. Long anime entries have episode ranges and direct jumps, with related entries shown as their own cards. My List and watch progress are stored on the device.</p>
-        </div>
-      </div>
-      <figure class="screen">
-        <a href="screenshots/windows-search.webp"><img src="screenshots/windows-search.webp" width="1360" height="850" loading="lazy" alt="V+ Windows search with the Anime filter selected and five poster results."></a>
-        <figcaption>Windows 0.6.8 puts the search field and filters above the results grid.</figcaption>
-      </figure>
-    </section>
-
-    <section id="platforms" class="wrap section">
+    </figure></section><section class="wrap split section cs-section"><div><span class="eyebrow">01 / The challenge</span><h2 id="the-challenge">The artwork drew people in.<br><span class="heading-muted">The interactions needed work.</span></h2></div><div class="prose"><p>V+ began as a movie, series and anime application. As the interface evolved, the difficult part became the handoff between finding a title and actually watching it.</p><p>Feedback during development exposed specific friction: a desktop player inheriting remote-control behaviour, menus closing before the pointer reached them, captions moving when controls opened, and long anime episode lists that were hard to navigate.</p><p class="note">Evidence basis: iterative feedback from the project owner and direct application tests. This was an independent project, without a recruited usability study or measured business impact.</p></div></section><section class="wrap section cs-section"><div class="section-head"><span class="eyebrow">02 / The journey</span><h2 id="the-journey">One continuous path <span class="heading-muted">to watching.</span></h2></div><ol class="journey"><li><span>01</span><h3>Discover</h3><p>Scan cinematic shelves or search from the page you are already on.</p></li><li><span>02</span><h3>Decide</h3><p>Read the title information, save it to My List, or start playback.</p></li><li><span>03</span><h3>Watch</h3><p>Use familiar shortcuts, reachable menus and stable captions.</p></li><li><span>04</span><h3>Return</h3><p>Keep saved titles and continue from the previous position.</p></li></ol></section><section class="wrap section cs-section"><div class="split"><div><span class="eyebrow">03 / Discovery</span><h2 id="discovery">Search without losing <span class="heading-muted">your place.</span></h2></div><div class="prose"><p>The small header search opens suggestions over the current page. Search begins as you type; selecting a result opens its details. The dedicated Search page keeps the larger input and advanced filters.</p><p>Collection headings open their own listings. Small arrow controls replace visible horizontal scrollbars, keeping the artwork prominent while preserving scrolling.</p></div></div><figure class="screen"><img src="screenshots/native-quick-search.png" width="1600" height="1220" loading="lazy" alt="Native V+ quick search showing matching Dune titles above the current page."><figcaption>Quick search in the native Windows app: real title results without leaving the current page.</figcaption></figure></section><section class="wrap section native-gallery cs-section"><div class="section-head"><span class="eyebrow">The full Windows catalogue</span><h2 id="catalogue">Movies, series and anime.<br><span class="heading-muted">Each with its own place.</span></h2><p class="gallery-intro">These are uncomposited captures of V+ 0.6.6, using a fresh profile and the application’s real catalogue. Open any image to inspect it at full size.</p></div><div class="catalogue-gallery"><figure class="screen"><a href="screenshots/native-movies.png" target="_blank" rel="noopener"><img src="screenshots/native-movies.png" width="1600" height="1220" loading="lazy" alt="Native Movies page featuring The Invite and a row of popular movie posters."></a><figcaption><strong>Movies.</strong> A cinematic feature and movie-only discovery collections.</figcaption></figure><figure class="screen"><a href="screenshots/native-series.png" target="_blank" rel="noopener"><img src="screenshots/native-series.png" width="1600" height="1220" loading="lazy" alt="Native Series page featuring Crystal Lake above television series posters."></a><figcaption><strong>Series.</strong> Television discovery with its own featured titles and shelves.</figcaption></figure><figure class="screen gallery-wide"><a href="screenshots/native-anime.png" target="_blank" rel="noopener"><img src="screenshots/native-anime.png" width="1600" height="1220" loading="lazy" alt="Native Anime page with real trending and popular anime poster collections."></a><figcaption><strong>Anime.</strong> Dedicated collections, backed by anime metadata rather than a small static demo list.</figcaption></figure></div></section><section class="wrap section cs-section"><div class="split"><div><span class="eyebrow">04 / Title details</span><h2 id="title-details">Give the story room.<br><span class="heading-muted">Keep the next action clear.</span></h2></div><div class="prose"><p>Large artwork, readable metadata and a short description establish context. Play and My List remain together in the foreground. The layout keeps artwork separate from the controls so media does not rearrange the page.</p><p>The desktop app also includes series and anime details, season or entry navigation, episode browsing and an airing schedule where metadata is available. The public demo deliberately uses three open films rather than imitating a live commercial catalogue.</p></div></div><figure class="screen"><img src="screenshots/native-movie-details.png" width="1600" height="1220" loading="lazy" alt="Beverly Hills Cop: Axel F in the real Windows application, with cinematic artwork, metadata and primary actions."><figcaption>Beverly Hills Cop: Axel F in the native app. Real catalogue metadata and artwork are shown; a screenshot does not establish playback availability.</figcaption></figure></section><section class="wrap section cs-section"><div class="split"><div><span class="eyebrow">Beyond the hero</span><h2 id="beyond-the-hero">The details carry<br><span class="heading-muted">the journey forward.</span></h2></div><div class="prose"><p>Cast, genre links and related titles give the decision more context. Anime keeps episode information and entry navigation alongside the title, with a full browser for longer lists.</p><p>These native screens document the broader product. The public demo stays focused on a dependable discovery-to-playback journey with licensed film excerpts.</p></div></div><figure class="screen"><a href="screenshots/native-cast.png" target="_blank" rel="noopener"><img src="screenshots/native-cast.png" width="1600" height="1220" loading="lazy" alt="Beverly Hills Cop cast, genre links and related movie posters in the native Windows app."></a><figcaption>Actual cast information and related movie artwork, captured in the Windows app.</figcaption></figure><figure class="screen"><a href="screenshots/native-anime-episodes.png" target="_blank" rel="noopener"><img src="screenshots/native-anime-episodes.png" width="1600" height="1220" loading="lazy" alt="Naruto episode cards and entry navigation in the real V+ Windows application."></a><figcaption>Anime episode discovery in the native app. Episode metadata and playable-source availability remain separate concerns.</figcaption></figure></section><section class="player-section section cs-section"><div class="wrap"><div class="split"><div><span class="eyebrow">05 / Desktop playback</span><h2 id="desktop-playback">Controls that follow<br><span class="heading-muted">the way a mouse moves.</span></h2></div><div class="prose"><p>PC interaction is separated from the TV remote adapter. Clicking the video toggles playback. Arrow keys seek or adjust volume, and menus open on hover with a short travel allowance so the pointer can reach them.</p><p>Audio and subtitles use compact pill tabs inside a neutral floating panel. Captions are anchored to the video frame, independent of menu and control-bar visibility. Controls fade after 1.5 seconds of inactivity during playback, with exceptions for paused video and active interaction.</p></div></div><figure class="screen"><img src="screenshots/05-player-subtitles.png" width="1440" height="900" loading="lazy" alt="The V+ desktop player displaying a real English caption and the Audio and Subtitles option panel."><figcaption>Real publisher-provided captions render in the reused desktop player. This verifies the demo’s local subtitle path, not every external provider.</figcaption></figure><div class="decision-grid"><article><h3>Instant context while seeking</h3><p>The demo preloads actual frames from each excerpt. Moving along the timeline selects a cached frame instead of starting a decoder for every pointer movement.</p></article><article><h3>Keep the user’s place</h3><p>Play position and saved titles live in browser storage for the demo. The native application maintains its own local records. Cross-device sync is not implemented.</p></article></div><figure class="screen"><img src="screenshots/06-player-preview.png" width="1440" height="900" loading="lazy" alt="V+ timeline showing a cached thumbnail preview at 25 seconds."><figcaption>A prepared video frame appears above the timeline with its timestamp.</figcaption></figure></div></section><section class="wrap section cs-section" aria-labelledby="platforms">
       <div class="section-head">
         <span class="eyebrow">03 / Platform adaptation</span>
-        <h2>One catalogue, three ways to navigate.</h2>
+        <h2 id="platforms">One catalogue, three ways to navigate.</h2>
       </div>
       <div class="platform-grid">
         <article>
@@ -101,27 +92,25 @@
           <figcaption>V+ on Android Mobile, captured on a phone.</figcaption>
         </figure>
       </div>
-    </section>
+    </section><section class="wrap section cs-section"><div class="split"><div><span class="eyebrow">06 / Build &amp; verification</span><h2 id="build-amp-verification">A working journey,<br><span class="heading-muted">with visible boundaries.</span></h2></div><div class="prose"><p>The Windows shell, discovery model and desktop player are implemented in JavaScript and CSS, with Electron handling native windows, storage and integrations. Playback controls are separated from source delivery.</p><p>The portfolio edition copies the production renderer and compiled desktop player, then replaces the native transport with a small local catalogue adapter. Media, subtitles and preview frames are bundled. It needs no account, API token or external playback service.</p><p>Codex assisted implementation and automated checks. I directed the product, visual choices, interaction requirements and review iterations.</p></div></div><div class="proof"><div><strong>3</strong><span>open films, with source credits</span></div><div><strong>45s</strong><span>per bundled demo excerpt</span></div><div><strong>Local</strong><span>saved titles and watch position</span></div></div><div class="validation"><h3>What was checked</h3><ul><li>Live search → correct title details → My List, including reload persistence.</li><li>Genre collection routes and direct refresh.</li><li>Actual video decoding, timed subtitle rendering, subtitle Off and saved-position resume.</li><li>Prepared timeline frames and compact desktop layout.</li><li>Public-demo loading with external network requests blocked.</li></ul><p>These are functional checks, not conversion, engagement or retention metrics. The full Windows 0.6.6 release separately records 141 automated passes and 18 packaged content-preference checks; those release checks have a different scope from this browser demo.</p></div></section><section class="wrap section split cs-section"><div><span class="eyebrow">07 / Reflection</span><h2 id="reflection">Reliability is part<br><span class="heading-muted">of the interface.</span></h2></div><div class="prose"><p>Improving the player meant more than changing its appearance. A menu is only useful if it stays reachable. A selected subtitle is only meaningful if cues actually render. A provider name is only reassuring when the application explains what is available.</p><p>External playback remains a separate reliability problem: some sources fail upstream, and one tested provider’s subtitle download returned an error. AnimeEmbed is still a research candidate, with subtitle validation incomplete. The portfolio demo avoids those dependencies and makes its reduced scope explicit.</p><p>The next product work is provider reliability and broader real-world testing. Mobile and TV remain paused until the PC experience is ready for those adaptations.</p></div></section><section class="wrap final section cs-section"><span class="eyebrow">Explore the result</span><h2 id="explore-the-result">Take V+ for a <span class="heading-muted">short watch.</span></h2><p>Search for “Tears of Steel”, save a film, play an excerpt,<br>turn on English subtitles, then return to resume.</p><a class="button" href="demo/app/index.html">Open the interactive demo <span aria-hidden="true">↗</span></a><p class="note">Desktop-focused browser demonstration. Three openly licensed films. No live commercial streaming catalogue.</p><a class="small-link" href="credits.html">Media credits &amp; demo limitations →</a></section></div>
+    </div>
 
-    <section class="wrap split section">
-      <div><span class="eyebrow">04 / Build and verification</span><h2>Test the steps that matter.</h2></div>
-      <div class="prose">
-        <p>The Windows app uses Electron. Android uses a native host and shares catalogue and interface code where it fits. Each platform handles input and back navigation separately.</p>
-        <p>Packaged Windows checks exercised search, settings and episode navigation. Android emulator checks covered remote and touch navigation, local watch state, and video and subtitle playback with licensed test media. The TV layout was checked at 720p, 1080p and 960 × 540.</p>
-        <p>Playback and captions depend on the selected provider. Progress is device-local. Physical TV acceptance remains pending.</p>
-        <p>I directed the product, visual choices and review iterations. Codex assisted implementation and verification.</p>
-      </div>
-    </section>
-
-    <section class="wrap final section">
-      <span class="eyebrow">Project repository</span>
-      <h2>Explore how V+ was built.</h2>
-      <a class="button" href="https://github.com/Vishnu-MK-Design/vplus">View Windows source <span aria-hidden="true">↗</span></a>
-    </section>
   </main>
-  <footer class="wrap footer">
-    <span>V+ · Independent project by Vishnu MK · 2026</span>
-    <a href="../work.html">Back to selected work ↗</a>
+  <footer class="site-footer home-footer">
+    <div class="frame">
+
+      <div class="footer-cta">
+        <div><span class="label">Let's work together</span><h2 data-reveal>Let's make<br><span class="heading-muted">something clear.</span></h2><p class="lead">Open to UI/UX roles and design collaborations.</p></div>
+        <a class="pill fill" href="../contact.html">Let’s talk<span class="arrow" aria-hidden="true">↗</span></a>
+      </div>
+      <div class="footer-links">
+        <div><a href="mailto:vishnu46mk@gmail.com">vishnu46mk@gmail.com</a></div>
+        <nav aria-label="Footer pages"><a href="../index.html">Home</a><a href="../work.html">Work</a><a href="../about.html">About</a><a href="../skills.html">Skills</a><a href="../contact.html">Contact</a></nav>
+        <nav aria-label="Social profiles"><a href="https://www.linkedin.com/in/vishnu-mk-a056a72b9/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.behance.net/vishnu_mk" target="_blank" rel="noopener">Behance</a><a href="https://www.instagram.com/vishmk_design/" target="_blank" rel="noopener">Instagram</a></nav>
+      </div>
+      <div class="footer-wordmark" aria-hidden="true"><span>VISHNU MK<b>.</b></span></div>
+      <div class="footer-end"><span>© <span data-year>2026</span> Vishnu MK · Pollachi, Tamil Nadu</span><a class="line-link" href="#top">Back to top<span class="arrow" aria-hidden="true">↑</span></a></div>
+    </div>
   </footer>
 </body>
 </html>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 195 64" fill="none" color="#111111" role="img" aria-labelledby="logo-title">
+<title id="logo-title">Bellora</title>
+<g id="wordmark" fill="currentColor" fill-rule="evenodd">
+  <path id="wordmark-b" d="M0 12h15c10 0 15 4 15 11 0 4-2 7-5 9 5 1 7 5 7 9 0 7-5 11-15 11H0Zm8 7v10h7c5 0 7-2 7-5s-2-5-7-5Zm0 17v9h8c5 0 8-1 8-4s-3-5-8-5Z"/>
+  <path id="wordmark-e" d="M66 38H44c1 6 8 10 16 5l5 6c-12 10-29 3-29-12 0-10 6-16 15-16 11 0 17 7 15 17Zm-22-6h14c-1-7-12-7-14 0Z"/>
+  <path id="wordmark-l-first" d="M72 10h8v42h-8Z"/>
+  <path id="wordmark-l-second" d="M87 10h8v42h-8Z"/>
+  <path id="wordmark-o" d="M133 37a16 16 0 1 1-32 0 16 16 0 0 1 32 0Zm-8 0a8 8 0 1 0-16 0 8 8 0 0 0 16 0Z"/>
+  <path id="wordmark-r" d="M139 22h8v5c3-4 7-6 12-6v9c-8-1-12 3-12 10v12h-8Z"/>
+  <path id="wordmark-a" d="M195 22v30h-8v-4c-3 4-6 5-10 5-9 0-15-7-15-16s6-16 15-16c4 0 7 1 10 5v-4Zm-8 15a8.5 8.5 0 1 0-17 0 8.5 8.5 0 0 0 17 0Z"/>
+</g>
+</svg>

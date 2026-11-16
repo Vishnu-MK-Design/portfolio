@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080a10">
+  <meta name="description" content="Explore ORBIT's connected infrastructure atlas and trace a simulated payment incident.">
+  <link rel="icon" type="image/svg+xml" href="./orbit-mark.svg">
+  <title>ORBIT — Everything connected.</title>
+  <script type="module" crossorigin src="./assets/index-DYv5sZ33.js"></script>
+  <script type="module" crossorigin src="./assets/atlas-model-6WKwsUsN.js"></script>
+  <script type="module" crossorigin src="./assets/atlas-portfolio.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/atlas-BXxTxI0t.css">
+</head>
+<body><noscript><style>.story-controls,.workspace-tabs,.service-browser,.chain,.trace-actions,.trace-status{display:none!important}</style></noscript>
+  <a class="skip-link" href="#take-control">Skip the visual story</a>
+  <header class="atlas-header">
+    <a class="brand" href="#system" aria-label="ORBIT home"><img src="./orbit-mark.svg" alt="" width="32" height="32"><span>ORBIT</span></a>
+    <nav aria-label="Main navigation"><a href="#system">Signal Atlas</a><a href="#workspace">Workspace</a><a href="#services">Services</a><a href="#recovery">Recovery</a></nav>
+    <details class="mobile-nav"><summary>Menu</summary><nav aria-label="Mobile navigation"><a href="#system">Signal Atlas</a><a href="#workspace">Workspace</a><a href="#services">Services</a><a href="#recovery">Recovery</a><a href="#take-control">About</a></nav></details><a class="button small" href="#dependencies">Trace a request <span aria-hidden="true">↗</span></a>
+  </header>
+  <main id="main">
+    <div id="story" class="atlas-story">
+      <div class="story-stage">
+      <div class="world-shell" id="world-shell">
+        <div class="world-caption mono"><span><i></i> NORTHSTAR NETWORK</span><span>18 SERVICES <b aria-hidden="true">/</b> 23 CONNECTIONS</span></div>
+        <div id="atlas-canvas" class="atlas-canvas" role="group" aria-label="Interactive infrastructure visualization">
+          <div class="world-fallback" id="world-fallback"><img src="./orbit-mark.svg" alt="" width="120" height="120"><p>The checkout connection</p><strong>Customer Portal <span>→</span> Orders API <span>→</span> Payment API</strong><p>Explore the service details below.</p></div>
+          <div id="world-labels" class="world-labels"></div>
+        </div>
+        <div class="world-bottom mono"><span id="world-state">01 / WHOLE FIELD</span><span>ARROWS SHOW DEPENDENCY DIRECTION</span></div>
+      </div>
+      <section class="chapter" id="system" data-chapter="0" aria-labelledby="system-title">
+        <div class="chapter-copy">
+          <p class="eyebrow"><span class="blue-dot"></span> INTERACTIVE INFRASTRUCTURE ATLAS</p>
+          <h1 id="system-title">Everything connected.<span>Everything visible.</span></h1>
+          <div class="hero-support">
+            <p class="intro">Trace a checkout request across a connected system. See what changes when one service fails.</p>
+            <div class="actions"><a class="button primary" href="#dependencies">Trace the request <span aria-hidden="true">↗</span></a><a class="button hero-secondary" href="#workspace">View workspace</a></div>
+          </div>
+        </div>
+      </section>
+      <section class="chapter" id="dependencies" data-chapter="1" aria-labelledby="dependencies-title">
+        <div class="chapter-copy">
+          <p class="eyebrow">CHECKOUT REQUEST PATH</p>
+          <h2 id="dependencies-title">Follow the request.</h2>
+          <p class="intro">Play the checkout trace or select a service to see what it does.</p>
+          <ol class="chain" aria-label="Checkout request path">
+            <li><button data-inspect="portal"><span class="step-index">01</span><span>Customer Portal<small>Submits checkout</small></span><span aria-hidden="true">↗</span></button></li>
+            <li><button data-inspect="orders"><span class="step-index">02</span><span>Orders API<small>Requests payment</small></span><span aria-hidden="true">↗</span></button></li>
+            <li><button data-inspect="payment"><span class="step-index">03</span><span>Payment API<small>Processes payment</small></span><span aria-hidden="true">↗</span></button></li>
+          </ol>
+          <div class="trace-actions"><button id="replay-trace" type="button">Replay request <span aria-hidden="true">↻</span></button><a class="text-link" href="#incident">See the impact <span aria-hidden="true">↗</span></a></div>
+          <p class="trace-status" id="trace-status" role="status"></p>
+        </div>
+      </section>
+      <section class="chapter" id="incident" data-chapter="2" aria-labelledby="incident-title">
+        <div class="chapter-copy">
+          <p class="eyebrow incident-eyebrow"><span class="red-dot"></span> INC-001 / PAYMENT LATENCY</p>
+          <h2 id="incident-title">The failure spreads.</h2>
+          <p class="intro">A payment deployment slows checkout. Compare the same request at baseline and during the simulated incident.</p>
+          <div class="evidence incident-evidence">
+            <div class="incident-switch" role="group" aria-label="Compare payment incident states" hidden>
+              <button type="button" data-incident-view="baseline" aria-pressed="false">Baseline</button>
+              <button type="button" data-incident-view="incident" aria-pressed="true">Incident</button>
+            </div>
+            <div><span>Payment latency</span><strong id="incident-latency">792 ms</strong></div>
+            <div><span>Error rate</span><strong id="incident-error-rate">12.4%</strong></div>
+            <p id="incident-summary" class="sr-only" role="status"></p>
+          </div>
+          <a class="button primary" href="#recovery">See recovery <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+      <div class="story-controls" id="story-controls">
+        <nav aria-label="Story chapters"><a href="#system" data-step="0" aria-current="step">System</a><a href="#dependencies" data-step="1">Request</a><a href="#incident" data-step="2">Incident</a></nav>
+        <button id="motion-toggle" class="motion-toggle" aria-pressed="false">Pause motion <span aria-hidden="true">Ⅱ</span></button>
+      </div>
+      </div>
+    </div>
+    <section id="workspace" class="workspace-section" aria-labelledby="workspace-title">
+      <div class="section-heading centered-heading">
+        <div><p class="section-tag">Product walkthrough</p><h2 id="workspace-title">Inside the <span>workspace.</span></h2></div>
+        <p>Browse four views of the fictional Northstar workspace.</p>
+      </div>
+      <div class="workspace-tabs" role="tablist" aria-label="Explore the workspace">
+        <button role="tab" id="tab-overview" aria-controls="panel-overview" aria-selected="true" data-workspace="overview">Overview</button>
+        <button role="tab" id="tab-graph" aria-controls="panel-graph" aria-selected="false" tabindex="-1" data-workspace="graph">System Graph</button>
+        <button role="tab" id="tab-services" aria-controls="panel-services" aria-selected="false" tabindex="-1" data-workspace="services">Services</button>
+        <button role="tab" id="tab-incidents" aria-controls="panel-incidents" aria-selected="false" tabindex="-1" data-workspace="incidents">Incidents</button>
+      </div>
+      <div class="workspace-panel" id="panel-overview" role="tabpanel" aria-labelledby="tab-overview" tabindex="0" ><div class="product-frame"><div class="product-frame-bar"><span class="window-controls" aria-hidden="true"><i></i><i></i><i></i></span><span> NORTHSTAR / OVERVIEW</span><span>WORKSPACE PREVIEW</span></div><img src="./product/overview-desktop.jpg" alt="ORBIT Overview showing service health and the active payment incident" width="1265" height="712" loading="lazy"></div><div class="product-description"><div><h3>Orient before you act.</h3><p>System health, open incidents and the services that need attention.</p></div></div></div>
+      <div class="workspace-panel" id="panel-graph" role="tabpanel" aria-labelledby="tab-graph" tabindex="0" hidden><div class="product-frame"><div class="product-frame-bar"><span class="window-controls" aria-hidden="true"><i></i><i></i><i></i></span><span> NORTHSTAR / GRAPH</span><span>WORKSPACE PREVIEW</span></div><img src="./product/graph-desktop.jpg" alt="ORBIT System Graph with connected services and inspection controls" width="1265" height="712" loading="lazy"></div><div class="product-description"><div><h3>See the relationships.</h3><p>Trace dependency direction and inspect the services along a request.</p></div></div></div>
+      <div class="workspace-panel" id="panel-services" role="tabpanel" aria-labelledby="tab-services" tabindex="0" hidden><div class="product-frame"><div class="product-frame-bar"><span class="window-controls" aria-hidden="true"><i></i><i></i><i></i></span><span> NORTHSTAR / SERVICES</span><span>WORKSPACE PREVIEW</span></div><img src="./product/services-desktop.jpg" alt="ORBIT Services view with service metrics and filters" width="1265" height="712" loading="lazy"></div><div class="product-description"><div><h3>Know what changed.</h3><p>Inspect latency, errors, ownership and deployment context for each service.</p></div></div></div>
+      <div class="workspace-panel" id="panel-incidents" role="tabpanel" aria-labelledby="tab-incidents" tabindex="0" hidden><div class="product-frame"><div class="product-frame-bar"><span class="window-controls" aria-hidden="true"><i></i><i></i><i></i></span><span> NORTHSTAR / INCIDENTS</span><span>WORKSPACE PREVIEW</span></div><img src="./product/incident-desktop.jpg" alt="ORBIT incident workspace with evidence and recovery controls" width="1265" height="712" loading="lazy"></div><div class="product-description"><div><h3>Work the full incident.</h3><p>Inspect evidence, acknowledge, simulate rollback, then verify recovery.</p></div></div></div>
+      <noscript><p>JavaScript enables switching between workspace previews.</p></noscript>
+    </section>
+    <section id="services" class="service-section" aria-labelledby="services-title">
+      <div class="section-heading">
+        <div><p class="section-tag">Northstar network</p><h2 id="services-title">The service <span>directory.</span></h2></div>
+        <p>Filter 18 Northstar services by type and inspect their role in the network.</p>
+      </div>
+      <div class="service-categories" id="service-categories" role="group" aria-label="Filter services by type"></div>
+      <div class="service-explorer">
+        <div class="service-browser"><label for="service-select">Choose a service</label><div class="service-picker"><select id="service-select"><option value="payment">Payment API</option></select><button class="button" id="inspect-service">Inspect service ↗</button></div><p id="service-count" role="status">18 services in the sample environment</p></div>
+        <article class="service-summary" aria-labelledby="service-name"><p class="eyebrow" id="service-type">API / COMMERCE</p><h3 id="service-name">Payment API</h3><p id="service-description">Processes checkout payments through a fictional payment provider.</p><dl id="service-summary-facts"></dl></article>
+      </div>
+      <details class="relationships"><summary>How the checkout services connect <span aria-hidden="true">+</span></summary><p>Customer Portal submits checkout to Orders API. Orders API requests payment from Payment API. Payment API processes payments through the fictional Payment Provider.</p><p>The provider remains healthy in this scenario. The regression is in Payment API after deployment v4.8.2.</p><a href="#dependencies">Follow the checkout request ↗</a></details>
+    </section>
+    <section id="recovery" class="recovery-section" aria-labelledby="recovery-title">
+      <div class="recovery-heading centered-heading">
+        <div><p class="section-tag">Incident recovery</p><h2 id="recovery-title">Back to <span>baseline.</span></h2></div>
+        <p>Inspect the deployment, restore the previous configuration, and verify the service before resolving the incident.</p>
+      </div>
+      <div class="recovery-layout">
+        <div class="recovery-preview"><div class="preview-top mono"><span><i class="blue-dot"></i> PAYMENT API</span><span>SIMULATED RECOVERY</span></div><div class="recovery-value"><span>Response time</span><strong>792 <small>→</small> <em>180</em><small> ms</small></strong></div><svg viewBox="0 0 620 170" role="img" aria-label="Illustrative recovery: payment latency falls from 792 to its 180 millisecond baseline"><defs><linearGradient id="recovery-fill" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#5b8cff" stop-opacity=".2"/><stop offset="1" stop-color="#5b8cff" stop-opacity="0"/></linearGradient></defs><path d="M0 30H620M0 85H620M0 140H620" fill="none" stroke="#202b3b"/><path d="M0 35L42 38L78 30L118 39L155 29L195 42L228 38L267 45L300 80L332 119L365 129L402 126L445 132L482 127L530 130L573 126L620 128V170H0Z" fill="url(#recovery-fill)"/><path d="M0 35L42 38L78 30L118 39L155 29L195 42L228 38L267 45L300 80L332 119L365 129L402 126L445 132L482 127L530 130L573 126L620 128" fill="none" stroke="#79a0ff" stroke-width="2" pathLength="1" stroke-dasharray="1 1" data-recovery-line/><path d="M267 0V170" stroke="#51617b" stroke-dasharray="4 5"/></svg><div class="preview-axis mono"><span>INCIDENT DETECTED</span><span>ROLLBACK → MONITORING</span></div><p>Recovery is a state to verify. Resolving the incident is a separate, deliberate action.</p></div>
+        <ol class="recovery-steps">
+          <li><span class="step-index">01</span><div><h3>Inspect the evidence.</h3><p>Compare latency, errors and the recent deployment. Understand the probable cause and its uncertainty.</p></div></li>
+          <li><span class="step-index">02</span><div><h3>Act with context.</h3><p>Acknowledge the incident, then simulate restoring the previous payment configuration.</p></div></li>
+          <li><span class="step-index">03</span><div><h3>Verify the way back.</h3><p>Review recovered service metrics before resolving. The timeline preserves the complete investigation.</p></div></li></ol>
+      </div>
+    </section>
+    <section id="take-control" class="take-control" aria-labelledby="control-title">
+      <div class="closing-grid">
+        <div class="closing-heading">
+          <p class="section-tag">Signal Atlas</p>
+          <h2 id="control-title">Explore the <span>network.</span></h2>
+        </div>
+        <div>
+          <p>Choose a service to inspect its role in the Northstar network.</p>
+          <a class="button primary" href="#services">Browse services <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="demo-boundary">
+        <strong>Real interactions.<br>Fictional infrastructure.</strong>
+        <p>An interactive website built around a fictional network. The service metrics, incident and recovery are illustrative.</p>
+      </div>
+      <noscript><p>The story and chapter links remain available. JavaScript enables the interactive atlas.</p></noscript>
+    </section>
+  </main>
+  <aside class="inspector" id="inspector" aria-labelledby="inspector-title" hidden><div class="inspector-top"><span class="eyebrow">SERVICE INSPECTOR</span><button id="close-inspector" aria-label="Close service details">×</button></div><h2 id="inspector-title" tabindex="-1">Payment API</h2><p id="inspector-description"></p><dl id="inspector-facts"></dl></aside>
+  <footer class="atlas-footer">
+    <div class="footer-main">
+      <a class="footer-wordmark" href="#system" aria-label="ORBIT home"><img src="./orbit-mark.svg" alt="" width="32" height="32"><span>ORBIT</span></a>
+      <nav aria-label="Footer navigation"><a href="#system">Signal Atlas</a><a href="#workspace">Workspace</a><a href="#services">Services</a><a href="#recovery">Recovery</a></nav>
+      <a class="button footer-return" href="#system">Back to the system ↑</a>
+    </div>
+    <div class="footer-bottom"><span>Fictional infrastructure concept</span><a href="../../work-orbit.html">Portfolio case study ↗</a></div>
+  </footer>
+  <div class="sr-only" role="status" id="atlas-announcer" aria-live="polite"></div>
+</body>
+</html>
+

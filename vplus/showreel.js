@@ -22,7 +22,7 @@ function showTheme(theme) {
 
 let portfolioTheme;
 try {
-  portfolioTheme = localStorage.getItem('theme');
+  portfolioTheme = document.documentElement.dataset.theme || localStorage.getItem('theme');
 } catch {
   // The controls also work when browser storage is unavailable.
 }

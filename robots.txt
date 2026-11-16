@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vishnumk.design/sitemap.xml
+Sitemap: https://vishnu-mk-design.github.io/portfolio/sitemap.xml

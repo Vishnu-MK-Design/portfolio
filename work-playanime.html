@@ -1,133 +1,84 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Play Anime — Vishnu MK</title>
-<meta name="description" content="Designing an anime streaming site that puts discovery first — what’s ranked, what’s popular and what’s coming soon." />
-<meta name="theme-color" content="#0a0a0b" />
-<link rel="canonical" href="https://vishnumk.design/work-playanime.html" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://vishnumk.design/work-playanime.html" />
-<meta property="og:site_name" content="Vishnu MK" />
-<meta property="og:title" content="Play Anime — Vishnu MK" />
-<meta property="og:description" content="Designing an anime streaming site that puts discovery first — what’s ranked, what’s popular and what’s coming soon." />
-<meta property="og:image" content="https://vishnumk.design/assets/og-image.png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Play Anime — Vishnu MK" />
-<meta name="twitter:description" content="Designing an anime streaming site that puts discovery first — what’s ranked, what’s popular and what’s coming soon." />
-<meta name="twitter:image" content="https://vishnumk.design/assets/og-image.png" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a0a0b'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23ff3b30'/%3E%3C/svg%3E" />
-<script>
-(function(){var d=document.documentElement,t;try{t=localStorage.getItem('theme')}catch(e){}
-if(t!=='light'&&t!=='dark'){t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'}
-d.dataset.theme=t;
-if(!matchMedia('(prefers-reduced-motion: reduce)').matches){d.classList.add('motion');
-try{if(!sessionStorage.getItem('vmk-intro')||new URLSearchParams(location.search).get('intro')==='1')d.classList.add('is-loading')}catch(e){}
-setTimeout(function(){if(!window.__motionReady)d.classList.remove('motion')},2500)}})();
-</script>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&amp;family=Geist+Mono:wght@500&amp;display=swap" />
-<link rel="stylesheet" href="styles.css?v=93" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111112">
+  <title>Play Anime — Vishnu MK</title>
+  <meta name="description" content="Designing an anime streaming site that puts discovery first — what’s ranked, what’s popular and what’s coming soon."><link rel="canonical" href="https://vishnu-mk-design.github.io/portfolio/work-playanime.html"><meta property="og:type" content="website"><meta property="og:url" content="https://vishnu-mk-design.github.io/portfolio/work-playanime.html"><meta property="og:site_name" content="Vishnu MK"><meta property="og:title" content="Play Anime — Vishnu MK"><meta property="og:description" content="Designing an anime streaming site that puts discovery first — what’s ranked, what’s popular and what’s coming soon."><meta property="og:image" content="https://vishnu-mk-design.github.io/portfolio/assets/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Play Anime — Vishnu MK"><meta name="twitter:description" content="Designing an anime streaming site that puts discovery first — what’s ranked, what’s popular and what’s coming soon."><meta name="twitter:image" content="https://vishnu-mk-design.github.io/portfolio/assets/og-image.png"><link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='8'%20fill='%230a0a0b'/%3E%3Ccircle%20cx='16'%20cy='16'%20r='6'%20fill='%23ff3b30'/%3E%3C/svg%3E">
+  <link rel="preload" href="assets/geist.woff2" as="font" type="font/woff2" crossorigin>
+  <script src="theme.js?v=5"></script>
+  <link rel="stylesheet" href="portfolio.css?v=19">
+  <link rel="stylesheet" href="home.css?v=23">
+  <link rel="stylesheet" href="pages.css?v=7">
+  <script src="site.js?v=31" defer></script>
 </head>
-<body id="top">
-<div class="loader" aria-hidden="true">
-  <div class="loader__stage">
-    <div class="loader__name"><span class="loader__base">Vishnu MK</span><span class="loader__fill">Vishnu MK</span></div>
-    <div class="loader__meta"><span class="loader__role"><span class="loader__dot"></span>UI/UX Designer</span><span class="loader__count">0</span></div>
-    <div class="loader__bar"><i></i></div>
-  </div>
-</div>
-<script>
-(function(){var d=document.documentElement,L=document.querySelector('.loader');if(!d.classList.contains('is-loading')){L.remove();return}
-var c=L.querySelector('.loader__count'),t0=Date.now(),MIN=3300,done=false;
-var tick=setInterval(function(){var p=Math.min(1,(Date.now()-t0)/MIN);c.textContent=Math.round(p*100);if(p>=1)clearInterval(tick)},40);
-function finish(){if(done)return;done=true;clearInterval(tick);c.textContent='100';try{sessionStorage.setItem('vmk-intro','1')}catch(e){}
-L.classList.add('is-leaving');setTimeout(function(){d.classList.remove('is-loading');window.dispatchEvent(new Event('loader:done'))},650);setTimeout(function(){L.remove()},1400)}
-function whenLoaded(){if(document.readyState==='complete')finish();else addEventListener('load',finish)}
-setTimeout(whenLoaded,MIN+200);setTimeout(finish,6500)})();
-</script>
-<a class="skip-link" href="#main">Skip to content</a>
-<header class="nav">
-  <div class="nav__pill glass">
-    <a class="nav__logo" href="index.html" aria-label="Vishnu MK, home"><span class="nav__logo-mark" aria-hidden="true"></span>Vishnu MK</a>
-    <nav class="nav__right" aria-label="Primary">
-      <div class="nav__links" id="site-menu">
-        <span class="nav__menu-label label" aria-hidden="true">Menu</span>
-      <a class="nav__link" href="index.html" style="--i:0"><span class="nav__link-n" aria-hidden="true">01</span><span class="nav__link-t">Home</span><span class="nav__link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span></a>
-      <a class="nav__link" href="work.html" aria-current="page" style="--i:1"><span class="nav__link-n" aria-hidden="true">02</span><span class="nav__link-t">Work</span><span class="nav__link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span></a>
-      <a class="nav__link" href="about.html" style="--i:2"><span class="nav__link-n" aria-hidden="true">03</span><span class="nav__link-t">About</span><span class="nav__link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span></a>
-      <a class="nav__link" href="skills.html" style="--i:3"><span class="nav__link-n" aria-hidden="true">04</span><span class="nav__link-t">Skills</span><span class="nav__link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span></a>
-        <a class="btn btn--primary btn--sm nav__cta" href="contact.html" style="--i:4">Let’s talk</a>
-        <div class="nav__meta" style="--i:5">
-          <span class="nav__avail label"><span class="dot-live" aria-hidden="true"></span>Available for work</span>
-          <a class="nav__mail" href="mailto:vishnu46mk@gmail.com">vishnu46mk@gmail.com</a>
-          <div class="nav__social"><a href="https://www.linkedin.com/in/vishnu-mk-a056a72b9/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.behance.net/vishnu_mk" target="_blank" rel="noopener">Behance</a></div>
-        </div>
+<body id="top" class="case-page inner-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner frame">
+      <a class="signature" href="index.html" aria-label="Vishnu MK, home">VishnuMK</a>
+      <div class="header-controls">
+        <button class="theme" type="button" aria-pressed="false" aria-label="Dark mode" hidden>
+          <span class="theme-icon" aria-hidden="true"><svg class="theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg><svg class="theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.9 15.5A9 9 0 0 1 8.5 3.1 9 9 0 1 0 20.9 15.5Z"/></svg></span>
+        </button>
+        <a class="header-cta" href="contact.html">Let’s talk<span class="arrow" aria-hidden="true">↗</span></a>
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-navigation" hidden><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
       </div>
-      <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="Switch theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><g class="t-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6L6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4L6 18M18 6l1.4-1.4"/></g><path class="t-moon" d="M20 14.6A8 8 0 1 1 9.4 4a6.4 6.4 0 0 0 10.6 10.6z"/></svg></button>
-      <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu"><span class="menu-btn__bars" aria-hidden="true"><span></span><span></span><span></span></span></button>
-    </nav>
-  </div>
-  <div class="nav__scrim" aria-hidden="true"></div>
-</header>
-<div class="progress" aria-hidden="true"></div>
-<main id="main">
-<section class="cs-hero">
-  <div class="container">
-    <a class="back-link" href="work.html" data-reveal><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> All case studies</a>
-    <span class="label" data-reveal>Case study 06 · 2024</span>
-    <h1 class="h1" data-split>Play Anime</h1>
-    <p class="lead mt" data-reveal data-d="260">Designing an anime streaming site that puts discovery first — what’s ranked, what’s popular and what’s coming soon.</p>
-    <dl class="cs-meta" data-stagger="80" style="--cols:3">
-      <div data-reveal><dt class="label">Role</dt><dd>UI/UX Designer</dd></div>
-      <div data-reveal><dt class="label">Year</dt><dd>2024</dd></div>
-      <div data-reveal><dt class="label">Type</dt><dd>Streaming · Anime website</dd></div>
-      <div data-reveal><dt class="label">Platform</dt><dd>Desktop web</dd></div>
-      <div data-reveal><dt class="label">Company</dt><dd>Personal project</dd></div>
-      <div data-reveal><dt class="label">Tools</dt><dd>Figma · Illustrator · Photoshop</dd></div>
-    </dl>
-  </div>
-</section>
+      <nav class="main-nav" id="main-navigation" aria-label="Main navigation">
+        <a href="work.html" aria-current="true">Work</a>
+        <a href="about.html">About</a>
+        <a href="skills.html">Skills</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
 
-<div class="container cs-cover">
-  <div class="cover" data-reveal="scale">
-    <img class="cover__img" src="assets/photos/playanime.jpg" width="1800" height="1200" alt="The Play Anime homepage hero featuring Blue Lock" fetchpriority="high" />
-    <span class="label">The question it answers</span>
-    <div class="cover__foot"><p class="cover__q">What should I watch next — and when does it come out?</p><span class="cover__idx" aria-hidden="true">06</span></div>
-  </div>
-</div>
-
-<section class="cs-section section-first" aria-labelledby="overview">
+      <section class="frame case-intro">
+        <a class="line-link back" href="work.html">All case studies<span class="arrow" aria-hidden="true">←</span></a>
+        <div class="case-intro-grid">
+          <div><span class="label">Case study 06 · 2024</span><h1 data-reveal>Play Anime</h1></div>
+          <p class="lead">Designing an anime streaming site that puts discovery first — what’s ranked, what’s popular and what’s coming soon.</p>
+        </div>
+      </section>
+      <figure class="frame case-cover">
+        <img class="mockup-cover" src="assets/projects/covers/playanime.webp" width="1280" height="720" alt="Browser mockup of the Play Anime homepage featuring Blue Lock" fetchpriority="high"><figcaption><span class="label">The question it answers</span><p>What should I watch next — and when does it come out?</p></figcaption>
+      </figure>
+      <div class="frame case-facts"><dl class="cs-meta" style="--cols:3">
+      <div><dt class="label">Role</dt><dd>UI/UX Designer</dd></div>
+      <div><dt class="label">Year</dt><dd>2024</dd></div>
+      <div><dt class="label">Type</dt><dd>Streaming · Anime website</dd></div>
+      <div><dt class="label">Platform</dt><dd>Desktop web</dd></div>
+      <div><dt class="label">Company</dt><dd>Personal project</dd></div>
+      <div><dt class="label">Tools</dt><dd>Figma · Illustrator · Photoshop</dd></div>
+    </dl></div>
+      <div class="frame case-layout">
+      <nav class="case-nav" aria-label="Case study sections">
+        <span class="label">In this case study</span><div><a href="#overview">Overview</a><a href="#problem">The problem</a><a href="#journey">Approach</a><a href="#decisions">Key decisions</a><a href="#screens">Screens</a><a href="#palette">Visual system</a><a href="#changed">Outcome</a></div>
+      </nav>
+      <div class="case-body"><section class="cs-section section-first" aria-labelledby="overview">
   <div class="container cs-grid">
-    <div><span class="label" data-reveal>Overview</span><h2 class="h2" id="overview" data-split>A home for anime fans that starts with discovery.</h2></div>
-    <div class="prose" data-reveal><p>Play Anime is a site for watching anime in the highest possible quality. It carries exclusive titles, and it lets fans find out which new anime are coming and when they will be released.</p><p>I designed the brand mark, the visual system and the homepage — choosing type and colour that let the artwork carry the page, and structuring the homepage into rows that each answer a question a fan brings with them.</p></div>
+    <div><span class="label">Overview</span><h2 class="h2" id="overview">A home for anime fans that starts <span class="heading-muted">with discovery.</span></h2></div>
+    <div class="prose"><p>Play Anime is a site for watching anime in the highest possible quality. It carries exclusive titles, and it lets fans find out which new anime are coming and when they will be released.</p><p>I designed the brand mark, the visual system and the homepage — choosing type and colour that let the artwork carry the page, and structuring the homepage into rows that each answer a question a fan brings with them.</p></div>
   </div>
-</section>
-
-<section class="cs-section" aria-labelledby="problem">
+</section><section class="cs-section" aria-labelledby="problem">
   <div class="container cs-grid">
-    <div><span class="label" data-reveal>The problem</span><h2 class="h2" id="problem" data-split>What was getting in the way</h2></div>
-    <ol class="numbered" data-stagger="80">
-      <li data-reveal><div><strong>A huge catalogue is hard to browse</strong><span>Fans need a way in that doesn’t start with scrolling an endless grid.</span></div></li>
-      <li data-reveal><div><strong>New releases get lost</strong><span>Upcoming anime and premiere dates are exactly what fans look for, and are easy to bury.</span></div></li>
-      <li data-reveal><div><strong>Artwork competes with the interface</strong><span>Anime key art is loud and colourful, so the UI has to step back without disappearing.</span></div></li>
-      <li data-reveal><div><strong>Watching should be one step away</strong><span>From any title, starting to watch needed to be obvious.</span></div></li>
+    <div><span class="label">The problem</span><h2 class="h2" id="problem">What was getting in <span class="heading-muted">the way</span></h2></div>
+    <ol class="numbered">
+      <li><div><strong>A huge catalogue is hard to browse</strong><span>Fans need a way in that doesn’t start with scrolling an endless grid.</span></div></li>
+      <li><div><strong>New releases get lost</strong><span>Upcoming anime and premiere dates are exactly what fans look for, and are easy to bury.</span></div></li>
+      <li><div><strong>Artwork competes with the interface</strong><span>Anime key art is loud and colourful, so the UI has to step back without disappearing.</span></div></li>
+      <li><div><strong>Watching should be one step away</strong><span>From any title, starting to watch needed to be obvious.</span></div></li>
     </ol>
   </div>
-</section>
-
-<section class="cs-section" aria-labelledby="journey">
+</section><section class="cs-section" aria-labelledby="journey">
   <div class="container">
     <div class="sec-head"><div class="sec-head__text">
-      <span class="label" data-reveal>Approach</span>
-      <h2 class="h2" id="journey" data-split>Designed around how fans browse</h2>
-      <p class="lead" data-reveal>The homepage reads top to bottom as a sequence of questions, each answered by its own row.</p>
+      <span class="label">Approach</span>
+      <h2 class="h2" id="journey">Designed around how <span class="heading-muted">fans browse</span></h2>
+      <p class="lead">The homepage reads top to bottom as a sequence of questions, each answered by its own row.</p>
     </div></div>
-    <ol class="journey" data-reveal="fade">
+    <ol class="journey">
       <li><span class="journey__dot">01</span><span class="journey__text"><span class="journey__t">Feature</span><span class="journey__q">What is big right now?</span></span></li>
       <li><span class="journey__dot">02</span><span class="journey__text"><span class="journey__t">Search</span><span class="journey__q">Can I find a title fast?</span></span></li>
       <li><span class="journey__dot">03</span><span class="journey__text"><span class="journey__t">Ranked</span><span class="journey__q">What are people watching?</span></span></li>
@@ -135,126 +86,99 @@ setTimeout(whenLoaded,MIN+200);setTimeout(finish,6500)})();
       <li><span class="journey__dot">05</span><span class="journey__text"><span class="journey__t">Watch</span><span class="journey__q">How do I start?</span></span></li>
     </ol>
   </div>
-</section>
-
-<section class="cs-section" aria-labelledby="decisions">
+</section><section class="cs-section" aria-labelledby="decisions">
   <div class="container">
-    <span class="label" data-reveal>Key decisions</span>
-    <h2 class="h2 mt-sm" id="decisions" data-split>Why it works the way it does</h2>
-    <div class="decisions" data-stagger="100">
-      <article class="decision" data-reveal><span class="label accent">Decision 01</span><h3 class="h3">Let the artwork lead</h3><p>A full-width hero and a near-black #121212 ground let the key art bring the colour, so every title looks its best.</p></article>
-      <article class="decision" data-reveal><span class="label accent">Decision 02</span><h3 class="h3">One colour for action</h3><p>The amber-to-orange accent is kept for actions — start watching, add to list, log in — so the next step always stands out from the artwork.</p></article>
-      <article class="decision" data-reveal><span class="label accent">Decision 03</span><h3 class="h3">Rows by intent</h3><p>Top ranked, most popular, upcoming, recommended and genres each get their own row, with featured titles breaking up the rhythm.</p></article>
+    <span class="label">Key decisions</span>
+    <h2 class="h2 mt-sm" id="decisions">Why it works the way <span class="heading-muted">it does</span></h2>
+    <div class="decisions">
+      <article class="decision"><span class="label accent">Decision 01</span><h3 class="h3">Let the artwork lead</h3><p>A full-width hero and a near-black #121212 ground let the key art bring the colour, so every title looks its best.</p></article>
+      <article class="decision"><span class="label accent">Decision 02</span><h3 class="h3">One colour for action</h3><p>The amber-to-orange accent is kept for actions — start watching, add to list, log in — so the next step always stands out from the artwork.</p></article>
+      <article class="decision"><span class="label accent">Decision 03</span><h3 class="h3">Rows by intent</h3><p>Top ranked, most popular, upcoming, recommended and genres each get their own row, with featured titles breaking up the rhythm.</p></article>
     </div>
   </div>
-</section>
-
-<section class="cs-section" aria-labelledby="screens">
+</section><section class="cs-section" aria-labelledby="screens">
   <div class="container">
     <div class="sec-head"><div class="sec-head__text">
-      <span class="label" data-reveal>Screens</span>
-      <h2 class="h2" id="screens" data-split>The homepage</h2>
-      <p class="lead" data-reveal>The full homepage design, and each of its sections up close.</p>
+      <span class="label">Screens</span>
+      <h2 class="h2" id="screens">The homepage</h2>
+      <p class="lead">The full homepage design, and each of its sections up close.</p>
     </div></div>
-    
-    <figure class="scroller" style="--end:-83.1%;--dur:30s" data-reveal="scale">
+
+    <figure class="scroller" style="--end:-83.1%;--dur:30s">
       <div class="scroller__frame"><div class="scroller__bar" aria-hidden="true"><span></span><span></span><span></span></div>
-        <div class="scroller__view"><img src="assets/screens/pa-scroll.jpg" alt="Homepage — Hero, search, top ranked, featured titles, most popular, upcoming anime, recommendations and genres." loading="lazy" /></div>
+        <div class="scroller__view" tabindex="0" role="region" aria-label="Scrollable project screenshot"><img src="assets/screens/pa-scroll.jpg" alt="Homepage — Hero, search, top ranked, featured titles, most popular, upcoming anime, recommendations and genres." loading="lazy"></div>
       </div>
       <figcaption><span class="label">Homepage</span><span class="shot__note">Hero, search, top ranked, featured titles, most popular, upcoming anime, recommendations and genres.</span></figcaption>
     </figure>
     <div class="shots">
-      <figure class="shot shot--wide" data-reveal="scale">
-        <img src="assets/screens/pa-s-hero.jpg" alt="Hero — A full-width featured title with the start-watching action." loading="lazy" />
+      <figure class="shot shot--wide">
+        <img src="assets/screens/pa-s-hero.jpg" alt="Hero — A full-width featured title with the start-watching action." loading="lazy">
         <figcaption><span class="label">Hero</span><span class="shot__note">A full-width featured title with the start-watching action.</span></figcaption>
       </figure>
-      <figure class="shot shot--std" data-reveal="scale">
-        <img src="assets/screens/pa-s-ranked.jpg" alt="Top ranked & most popular — Search, the top-ranked row, a featured title and the most popular row." loading="lazy" />
-        <figcaption><span class="label">Top ranked & most popular</span><span class="shot__note">Search, the top-ranked row, a featured title and the most popular row.</span></figcaption>
+      <figure class="shot shot--std">
+        <img src="assets/screens/pa-s-ranked.jpg" alt="Top ranked &amp; most popular — Search, the top-ranked row, a featured title and the most popular row." loading="lazy">
+        <figcaption><span class="label">Top ranked &amp; most popular</span><span class="shot__note">Search, the top-ranked row, a featured title and the most popular row.</span></figcaption>
       </figure>
-      <figure class="shot shot--std" data-reveal="scale">
-        <img src="assets/screens/pa-s-recommended.jpg" alt="Recommended — Recommendations, followed by another featured title." loading="lazy" />
+      <figure class="shot shot--std">
+        <img src="assets/screens/pa-s-recommended.jpg" alt="Recommended — Recommendations, followed by another featured title." loading="lazy">
         <figcaption><span class="label">Recommended</span><span class="shot__note">Recommendations, followed by another featured title.</span></figcaption>
       </figure>
-      <figure class="shot shot--std" data-reveal="scale">
-        <img src="assets/screens/pa-s-upcoming.jpg" alt="Upcoming anime — Upcoming releases with their trailer, premiere date and add-to-watchlist action." loading="lazy" />
+      <figure class="shot shot--std">
+        <img src="assets/screens/pa-s-upcoming.jpg" alt="Upcoming anime — Upcoming releases with their trailer, premiere date and add-to-watchlist action." loading="lazy">
         <figcaption><span class="label">Upcoming anime</span><span class="shot__note">Upcoming releases with their trailer, premiere date and add-to-watchlist action.</span></figcaption>
       </figure>
-      <figure class="shot shot--std" data-reveal="scale">
-        <img src="assets/screens/pa-s-genres.jpg" alt="Genres & footer — Browsing by genre, then the site footer." loading="lazy" />
-        <figcaption><span class="label">Genres & footer</span><span class="shot__note">Browsing by genre, then the site footer.</span></figcaption>
+      <figure class="shot shot--std">
+        <img src="assets/screens/pa-s-genres.jpg" alt="Genres &amp; footer — Browsing by genre, then the site footer." loading="lazy">
+        <figcaption><span class="label">Genres &amp; footer</span><span class="shot__note">Browsing by genre, then the site footer.</span></figcaption>
       </figure>
     </div>
-    
-  </div>
-</section>
 
-<section class="cs-section" aria-labelledby="palette">
+  </div>
+</section><section class="cs-section" aria-labelledby="palette">
   <div class="container">
-    <span class="label" data-reveal>Visual system</span>
-    <h2 class="h2 mt-sm" id="palette" data-split>Colour</h2>
-    <ul class="palette" data-stagger="80">
-      <li data-reveal><span class="palette__chip" style="--c:#121212"></span><span class="palette__name">Ink</span><span class="label">#121212</span></li>
-      <li data-reveal><span class="palette__chip" style="--c:#FFFFFF"></span><span class="palette__name">White</span><span class="label">#FFFFFF</span></li>
-      <li data-reveal><span class="palette__chip" style="--c:#FFB800"></span><span class="palette__name">Amber</span><span class="label">#FFB800</span></li>
-      <li data-reveal><span class="palette__chip" style="--c:#FF7500"></span><span class="palette__name">Orange</span><span class="label">#FF7500</span></li>
+    <span class="label">Visual system</span>
+    <h2 class="h2 mt-sm" id="palette">Colour</h2>
+    <ul class="palette">
+      <li><span class="palette__chip" style="--c:#121212"></span><span class="palette__name">Ink</span><span class="label">#121212</span></li>
+      <li><span class="palette__chip" style="--c:#FFFFFF"></span><span class="palette__name">White</span><span class="label">#FFFFFF</span></li>
+      <li><span class="palette__chip" style="--c:#FFB800"></span><span class="palette__name">Amber</span><span class="label">#FFB800</span></li>
+      <li><span class="palette__chip" style="--c:#FF7500"></span><span class="palette__name">Orange</span><span class="label">#FF7500</span></li>
     </ul>
   </div>
-</section>
-
-<section class="cs-section" aria-labelledby="changed">
+</section><section class="cs-section" aria-labelledby="changed">
   <div class="container">
-    <span class="label" data-reveal>Outcome</span>
-    <h2 class="h2 mt-sm" id="changed" data-split>What changed</h2>
-    <ul class="changes" data-stagger="90">
-      <li data-reveal><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.2l2.8 2.8L16 9.5"/></svg><span>A recognisable brand mark and visual identity for the site</span></li>
-      <li data-reveal><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.2l2.8 2.8L16 9.5"/></svg><span>A homepage structured as discovery rows rather than a single grid</span></li>
-      <li data-reveal><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.2l2.8 2.8L16 9.5"/></svg><span>A dedicated section for upcoming anime and release dates</span></li>
-      <li data-reveal><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.2l2.8 2.8L16 9.5"/></svg><span>A dark, artwork-first visual system with a single colour for action</span></li>
+    <span class="label">Outcome</span>
+    <h2 class="h2 mt-sm" id="changed">What changed</h2>
+    <ul class="changes" role="list">
+      <li><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.2l2.8 2.8L16 9.5"></path></svg><span>A recognisable brand mark and visual identity for the site</span></li>
+      <li><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.2l2.8 2.8L16 9.5"></path></svg><span>A homepage structured as discovery rows rather than a single grid</span></li>
+      <li><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.2l2.8 2.8L16 9.5"></path></svg><span>A dedicated section for upcoming anime and release dates</span></li>
+      <li><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.2l2.8 2.8L16 9.5"></path></svg><span>A dark, artwork-first visual system with a single colour for action</span></li>
     </ul>
-    <div class="reflection" data-reveal><span class="label">What I learned</span><p>Designing around loud, colourful artwork taught me how much restraint an interface needs. The quieter the UI, the more the content — and the one colour reserved for action — could do.</p></div>
-    <div class="cs-links" data-reveal><a class="btn btn--ghost btn--sm" href="https://www.behance.net/gallery/190423945/PlayAnime-Anime-Website-Design" target="_blank" rel="noopener">View on Behance <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a></div>
-    <p class="muted mt-lg" data-reveal>Want the full walkthrough of this project? <a class="text-link" href="contact.html">Let’s talk <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a></p>
+    <div class="reflection"><span class="label">What I learned</span><p>Designing around loud, colourful artwork taught me how much restraint an interface needs. The quieter the UI, the more the content — and the one colour reserved for action — could do.</p></div>
+    <div class="cs-links"><a class="btn btn--ghost btn--sm" href="https://www.behance.net/gallery/190423945/PlayAnime-Anime-Website-Design" target="_blank" rel="noopener">View on Behance <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></a></div>
+    <p class="muted mt-lg">Want the full walkthrough of this project? <a class="text-link" href="contact.html">Let’s talk <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></a></p>
   </div>
-</section>
+</section></div>
+    </div>
+      <div class="frame case-next"><a class="next-case" href="work-redmagic.html"><span class="label">Next case study · 07</span><strong>REDMAGIC 9 Pro</strong><span class="arrow" aria-hidden="true">↗</span></a></div>
 
-<div class="container">
-  <a class="next" href="work-redmagic.html">
-    <div><span class="label">Next case study · 07</span><p class="next__title">REDMAGIC 9 Pro</p></div>
-    <span class="project__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
-  </a>
-</div>
-</main>
-<footer class="footer">
-  <div class="footer__media" aria-hidden="true">
-    <video data-lazy muted loop playsinline preload="none"><source data-src="assets/footer-bg.mp4" type="video/mp4" /></video>
-  </div>
-  <canvas class="footer__liquid" data-liquid="footer" aria-hidden="true"></canvas>
-  <div class="container">
-    <div class="footer__top">
-        <div>
-          <span class="label" data-reveal>Let’s work together</span>
-          <h2 class="footer__title" data-split>Have a project in mind?</h2>
-          <div class="footer__actions" data-reveal>
-            <a class="btn btn--primary" href="contact.html" data-magnetic>Start a conversation <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-            <a class="text-link" href="mailto:vishnu46mk@gmail.com">vishnu46mk@gmail.com <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
-          </div>
-        </div>
-      <nav class="footer__links" aria-label="Footer">
-        <div><span class="label">Pages</span><ul><li><a href="index.html">Home</a></li><li><a href="work.html">Work</a></li><li><a href="about.html">About</a></li><li><a href="skills.html">Skills</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-        <div><span class="label">Elsewhere</span><ul><li><a href="https://www.linkedin.com/in/vishnu-mk-a056a72b9/" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://www.behance.net/vishnu_mk" target="_blank" rel="noopener">Behance</a></li><li><a href="mailto:vishnu46mk@gmail.com">Email</a></li></ul></div>
-      </nav>
+  </main>
+  <footer class="site-footer home-footer">
+    <div class="frame">
+
+      <div class="footer-cta">
+        <div><span class="label">Let's work together</span><h2 data-reveal>Let's make<br><span class="heading-muted">something clear.</span></h2><p class="lead">Open to UI/UX roles and design collaborations.</p></div>
+        <a class="pill fill" href="contact.html">Let’s talk<span class="arrow" aria-hidden="true">↗</span></a>
+      </div>
+      <div class="footer-links">
+        <div><a href="mailto:vishnu46mk@gmail.com">vishnu46mk@gmail.com</a></div>
+        <nav aria-label="Footer pages"><a href="index.html">Home</a><a href="work.html">Work</a><a href="about.html">About</a><a href="skills.html">Skills</a><a href="contact.html">Contact</a></nav>
+        <nav aria-label="Social profiles"><a href="https://www.linkedin.com/in/vishnu-mk-a056a72b9/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.behance.net/vishnu_mk" target="_blank" rel="noopener">Behance</a><a href="https://www.instagram.com/vishmk_design/" target="_blank" rel="noopener">Instagram</a></nav>
+      </div>
+      <div class="footer-wordmark" aria-hidden="true"><span>VISHNU MK<b>.</b></span></div>
+      <div class="footer-end"><span>© <span data-year>2026</span> Vishnu MK · Pollachi, Tamil Nadu</span><a class="line-link" href="#top">Back to top<span class="arrow" aria-hidden="true">↑</span></a></div>
     </div>
-    <p class="footer__word" aria-hidden="true" data-reveal>Vishnu MK</p>
-    <div class="footer__bottom">
-      <span>© <span data-year>2026</span> Vishnu MK · Pollachi, Tamil Nadu</span>
-      <span class="footer__status"><span class="dot-live" aria-hidden="true"></span>Available for work</span>
-      <a class="text-link" href="#top">Back to top <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></a>
-    </div>
-  </div>
-</footer>
-<script src="site.js?v=16" defer></script>
-<script src="liquid.js?v=17" defer></script>
-<script src="motion.js?v=21" defer></script>
+  </footer>
 </body>
 </html>

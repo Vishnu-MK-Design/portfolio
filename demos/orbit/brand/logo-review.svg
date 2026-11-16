@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" fill="none">
+  <title>ORBIT — Connected O logo</title>
+  <defs>
+    <g id="mark"><path d="M52.845 22.28A23 23 0 1 1 41.72 11.155" stroke="currentColor" stroke-width="8"/><circle cx="48.263" cy="15.737" r="5.5" fill="currentColor"/></g>
+    <g id="primary"><path d="M52.845 22.28A23 23 0 1 1 41.72 11.155" stroke="#F7F8FA" stroke-width="8"/><circle cx="48.263" cy="15.737" r="5.5" fill="#5B8CFF"/></g>
+  </defs>
+  <path fill="#050608" d="M0 0h1200v800H0z"/>
+  <text x="64" y="66" fill="#8E95A5" font-family="Arial,sans-serif" font-size="15" letter-spacing="3">ORBIT / CONNECTED O</text>
+  <text x="1136" y="66" text-anchor="end" fill="#8E95A5" font-family="Arial,sans-serif" font-size="15">SELECTED DIRECTION 01</text>
+  <use href="#primary" transform="translate(196 132) scale(4.75)"/>
+  <text x="568" y="265" fill="#F7F8FA" font-family="Arial,sans-serif" font-size="40">Connected O</text>
+  <text x="568" y="309" fill="#8E95A5" font-family="Arial,sans-serif" font-size="20">One system. Every connection.</text>
+  <text x="568" y="366" fill="#8E95A5" font-family="Arial,sans-serif" font-size="15">OPEN RING + CONNECTION NODE</text>
+  <path d="M64 486h1072" stroke="#252B36"/>
+  <text x="64" y="536" fill="#8E95A5" font-family="Arial,sans-serif" font-size="13" letter-spacing="2">PRIMARY</text>
+  <use href="#primary" transform="translate(122 566) scale(1.75)"/>
+  <text x="420" y="536" fill="#8E95A5" font-family="Arial,sans-serif" font-size="13" letter-spacing="2">ONE COLOR / DARK BACKGROUND</text>
+  <use href="#mark" color="#F7F8FA" transform="translate(496 566) scale(1.75)"/>
+  <path fill="#F7F8FA" d="M820 514h316v202H820z"/>
+  <text x="842" y="546" fill="#050608" font-family="Arial,sans-serif" font-size="12" letter-spacing="1">ONE COLOR / LIGHT BACKGROUND</text>
+  <use href="#mark" color="#050608" transform="translate(922 571) scale(1.75)"/>
+  <text x="64" y="755" fill="#8E95A5" font-family="Arial,sans-serif" font-size="13">VECTOR MASTER / 64 × 64 / WHITE #F7F8FA / BLUE #5B8CFF</text>
+</svg>
