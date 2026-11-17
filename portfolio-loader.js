@@ -67,7 +67,7 @@
       overlay.setAttribute('role', 'status');
       overlay.tabIndex = -1;
       overlay.innerHTML = '<span class="portfolio-loader__status">Loading portfolio. Press Escape to skip.</span>' +
-        '<span class="portfolio-loader__logo" aria-hidden="true">VishnuMK<span class="portfolio-loader__dot">.</span></span>' +
+        '<span class="portfolio-loader__logo" aria-hidden="true"><span class="portfolio-loader__wordmark" data-wordmark="VishnuMK">VishnuMK</span><span class="portfolio-loader__dot">.</span></span>' +
         '<span class="portfolio-loader__count" data-loader-count aria-hidden="true">0%</span>' +
         '<span class="portfolio-loader__track" aria-hidden="true"><span class="portfolio-loader__fill" data-loader-fill></span></span>';
       restoreFocus = document.activeElement !== document.body ? document.activeElement : null;

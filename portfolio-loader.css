@@ -30,6 +30,27 @@ html[data-loader-pending]::before {
   transition: opacity 220ms ease, transform 400ms ease;
 }
 .portfolio-loader__dot { color: #b93823; }
+.portfolio-loader__wordmark { position: relative; display: inline-block; }
+@supports ((mask-image: linear-gradient(90deg, transparent, #000)) or (-webkit-mask-image: linear-gradient(90deg, transparent, #000))) {
+  .portfolio-loader__wordmark::after {
+    content: attr(data-wordmark);
+    position: absolute;
+    inset: 0;
+    color: #080808;
+    pointer-events: none;
+    -webkit-mask-image: linear-gradient(90deg, transparent 38%, #000 50%, transparent 62%);
+    mask-image: linear-gradient(90deg, transparent 38%, #000 50%, transparent 62%);
+    -webkit-mask-size: 300% 100%;
+    mask-size: 300% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    animation: portfolio-loader-sheen 1.5s ease-in-out infinite;
+  }
+}
+@keyframes portfolio-loader-sheen {
+  from { -webkit-mask-position: 100% 0; mask-position: 100% 0; }
+  to { -webkit-mask-position: 0 0; mask-position: 0 0; }
+}
 .portfolio-loader__count {
   position: absolute;
   right: var(--loader-gutter);
@@ -78,4 +99,5 @@ html[data-loader-pending]::before {
 .portfolio-loader.is-leaving .portfolio-loader__logo { opacity: 0; transform: translateY(-12px); }
 @media (prefers-reduced-motion: reduce) {
   .portfolio-loader, .portfolio-loader__logo { transition: none; }
+  .portfolio-loader__wordmark::after { display: none; animation: none; }
 }
