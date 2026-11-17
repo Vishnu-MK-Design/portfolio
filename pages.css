@@ -123,7 +123,7 @@
 }
 .case-page .showreel-card .project-showreel,
 .vplus-showreel .showreel-card video {
-  width: min(100%, 880px);
+  width: min(100%, 1040px);
   height: auto;
   margin-inline: auto;
   aspect-ratio: 16 / 9;
