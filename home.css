@@ -322,7 +322,8 @@
     width: 100%;
     mask-image: linear-gradient(#000 58%, transparent 97%);
   }
-  .hero-artwork { left: 50%; --portrait-anchor: 72%; }
+  .hero-artwork { left: 50%; --portrait-anchor: 72%; filter: brightness(.9); }
+  [data-theme="dark"] .hero-artwork::after { filter: brightness(.64) contrast(1.12); }
   .hero-grid {
     grid-template-rows: auto auto;
     gap: clamp(16px, 4vw, 28px);

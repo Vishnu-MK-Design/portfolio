@@ -5,18 +5,43 @@
 (function () {
   'use strict';
 
-  const showreel = document.querySelector('[data-project-showreel]');
-  if (showreel && 'IntersectionObserver' in window) {
+  document.querySelectorAll('[data-ambient-showreel]').forEach(video => {
     const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const playInView = new IntersectionObserver(([entry]) => {
-      if (entry.intersectionRatio < .35) return;
-      playInView.disconnect();
-      if (!motionPreference.matches && !navigator.connection?.saveData && showreel.paused && showreel.currentTime === 0) {
-        showreel.play().catch(() => {});
-      }
-    }, { threshold: .35 });
-    playInView.observe(showreel);
-  }
+    const name = video.dataset.showreelName || 'Project';
+    let inView = false;
+    let manuallyPaused = false;
+    let userStarted = false;
+    const describe = () => video.setAttribute('aria-label', (video.paused ? 'Play ' : 'Pause ') + name + ' showreel');
+    const resume = () => {
+      if (inView && !document.hidden && !manuallyPaused &&
+          (userStarted || (!motionPreference.matches && !navigator.connection?.saveData))) video.play().catch(() => {});
+    };
+    const toggle = () => {
+      userStarted = true;
+      manuallyPaused = !video.paused;
+      if (video.paused) video.play().catch(() => {});
+      else video.pause();
+    };
+    video.addEventListener('click', toggle);
+    video.addEventListener('keydown', event => {
+      if (event.key === ' ' || event.key === 'Enter') { event.preventDefault(); toggle(); }
+    });
+    video.addEventListener('play', describe);
+    video.addEventListener('pause', describe);
+    describe();
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(([entry]) => {
+        inView = entry.intersectionRatio >= .35;
+        if (entry.intersectionRatio < .15) video.pause();
+        else resume();
+      }, {threshold:[0, .15, .35]}).observe(video);
+    }
+    document.addEventListener('visibilitychange', () => { if (document.hidden) video.pause(); else resume(); });
+    motionPreference.addEventListener('change', () => {
+      if (motionPreference.matches) { manuallyPaused = true; video.pause(); }
+      else resume();
+    });
+  });
 
   document.querySelectorAll('[data-portrait-toggle]').forEach(button => {
     button.addEventListener('click', () => {

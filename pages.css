@@ -23,7 +23,7 @@
 .work-page .project-feature .project-question { margin-top: 24px; font-size: clamp(25px, 2.65vw, 40px); }
 .work-page .project-feature .project__desc { font-size: 15px; max-width: 45ch; }
 .work-page .project-feature .project-role { border: 0; margin-top: 24px; }
-.work-page .archive { padding-top: clamp(90px, 10vw, 160px); }
+.work-page .archive { padding-top: clamp(24px, 3vw, 48px); }
 .work-page .work-browser { align-items: center; gap: 24px; margin-bottom: 38px; }
 .work-page .work-browser > div:first-child > .label { display: none; }
 .work-page .work-filters { gap: 8px; }
@@ -113,6 +113,25 @@
 .case-page .case-cover img { border-radius: 20px; }
 .case-page.vplus-case .case-cover .mockup-cover { aspect-ratio: 16 / 9; }
 .case-page .case-cover figcaption { padding-top: 24px; }
+.showreel-card {
+  display: grid;
+  place-items: center;
+  padding: clamp(20px, 4vw, 64px);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: color-mix(in srgb, var(--panel) 68%, var(--bg));
+}
+.case-page .showreel-card .project-showreel,
+.vplus-showreel .showreel-card video {
+  width: min(100%, 880px);
+  height: auto;
+  margin-inline: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  box-shadow: 0 16px 48px rgb(0 0 0 / .12);
+  cursor: pointer;
+}
+.showreel-card video:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
 .case-page :is(.cs-meta, .v-facts .context) { gap: 16px; border: 0; }
 .case-page :is(.cs-meta > div, .v-facts .context > div) { padding: 24px; border: 1px solid var(--line); border-radius: 18px; background: color-mix(in srgb,var(--panel) 40%,transparent); }
 .case-page .case-layout { grid-template-columns: minmax(140px,.23fr) minmax(0,1fr); gap: 6%; padding-block: clamp(80px,9vw,140px); }

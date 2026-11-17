@@ -11,9 +11,9 @@
   <script src="portfolio-loader.js?v=1"></script>
   <script src="theme.js?v=5"></script>
   <link rel="stylesheet" href="portfolio.css?v=19">
-  <link rel="stylesheet" href="home.css?v=23">
-  <link rel="stylesheet" href="pages.css?v=7">
-  <script src="site.js?v=31" defer></script>
+  <link rel="stylesheet" href="home.css?v=24">
+  <link rel="stylesheet" href="pages.css?v=8">
+  <script src="site.js?v=32" defer></script>
 </head>
 <body id="top" class="work-page inner-page">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -41,14 +41,14 @@
       <h1 data-reveal id="work-title">Selected <span>work.</span></h1>
       <div class="title-detail"><p class="lead">Projects that make complex ideas easier to explore, understand, and use.</p><a class="line-link" href="#archive">Browse all projects<span class="arrow" aria-hidden="true">↓</span></a></div>
     </section>
-    <section class="frame work-feature" aria-label="Featured case study"><a class="project project-feature" href="vplus/index.html">
+    <section class="frame work-feature" aria-label="Featured case study" hidden><a class="project project-feature" href="vplus/index.html">
       <div class="project-media"><img class="mockup-cover" src="assets/projects/covers/vplus.webp" width="1280" height="720" alt="Window mockup of the V+ Windows home screen with Carrie and the movie catalogue" loading="lazy"></div>
       <div class="project-copy"><span class="label">Desktop media application · Independent project · 2026</span><div class="project-title"><h3>V+</h3><span class="arrow" aria-hidden="true">↗</span></div>
         <p class="project-question">How do discovery and playback become one continuous experience?</p><p class="project__desc">Cinematic discovery, mouse-friendly playback and saved progress, demonstrated with a working, openly licensed film catalogue.</p><ul class="project__tags"><li class="tag">Product design</li><li class="tag">Interaction design</li><li class="tag">Desktop UI</li><li class="tag">Working demo</li></ul><div class="project-role"><span class="label">Role · Product &amp; interaction design · AI-assisted implementation</span></div>
       </div>
     </a></section>
     <section class="frame band archive" id="archive" aria-labelledby="archive-title">
-      <div class="section-head"><div class="section-title"><span class="label">2024–2026</span><h2 id="archive-title">More <span class="heading-muted">work.</span></h2></div></div>
+      <h2 class="sr-only" id="archive-title">All projects</h2>
       <div class="work-browser" hidden>
       <div>
         <span class="label">Browse by focus</span>
@@ -78,35 +78,40 @@
           <p class="project__desc">A class-centered school workspace linking attendance, timetables, teacher allocation, fees, family updates, and student performance.</p>
         </div>
       </a>
+      <a class="project project-archive" href="vplus/index.html" data-category="product">
+      <div class="project-media"><img class="mockup-cover" src="assets/projects/covers/vplus.webp" width="1280" height="720" alt="Window mockup of the V+ Windows home screen with Carrie and the movie catalogue" loading="lazy"></div>
+      <div class="project-copy"><span class="label">Desktop media application · Independent project · 2026</span><div class="project-title"><h3>V+</h3><span class="arrow" aria-hidden="true">↗</span></div>
+        <p class="project__desc">Cinematic discovery, mouse-friendly playback and saved progress, demonstrated with a working, openly licensed film catalogue.</p>
+      </div>
+    </a>
       <a class="project project-archive" href="work-cloudy.html" data-category="product">
       <div class="project-media"><img class="mockup-cover" src="assets/projects/covers/cloudy.webp" width="1280" height="720" alt="Phone mockup of the Cloudy app showing a streamer profile and game categories" loading="lazy"></div>
       <div class="project-copy"><span class="label">Mobile app · Game streaming &amp; cloud gaming · 2024</span><div class="project-title"><h3>Cloudy</h3><span class="arrow" aria-hidden="true">↗</span></div>
         <p class="project__desc">A game streaming and cloud gaming app that helps people discover streamers, keep up with their schedules and find a community around the games they play.</p>
       </div>
-    </a><a class="project project-archive" href="work-playanime.html" data-category="web">
+    </a>
+      <a class="project project-archive" href="work-playanime.html" data-category="web">
       <div class="project-media"><img class="mockup-cover" src="assets/projects/covers/playanime.webp" width="1280" height="720" alt="Browser mockup of the Play Anime homepage featuring Blue Lock" loading="lazy"></div>
       <div class="project-copy"><span class="label">Streaming · Anime website · 2024</span><div class="project-title"><h3>Play Anime</h3><span class="arrow" aria-hidden="true">↗</span></div>
         <p class="project__desc">A website for watching anime in high quality, built to surface what is top ranked, what is popular and what is releasing next.</p>
       </div>
-    </a><a class="project project-archive" href="work-redmagic.html" data-category="product">
+    </a>
+      <a data-work-more class="project project-archive" href="work-redmagic.html" data-category="product">
       <div class="project-media"><img class="mockup-cover" src="assets/projects/covers/redmagic.webp" width="1280" height="720" alt="Mockup of the REDMAGIC 9 Pro product page on an orange stage" loading="lazy"></div>
       <div class="project-copy"><span class="label">E-commerce · Product page prototype · 2024</span><div class="project-title"><h3>REDMAGIC 9 Pro</h3><span class="arrow" aria-hidden="true">↗</span></div>
         <p class="project__desc">An interactive product page prototype for the REDMAGIC 9 Pro gaming phone, letting shoppers browse the phone, compare variants and buy.</p>
       </div>
-    </a><a class="project project-archive" href="work-social-posters.html" data-category="visual" data-work-more>
+    </a>
+      <a data-work-more class="project project-archive" href="work-social-posters.html" data-category="visual">
       <div class="project-media"><img class="mockup-cover" src="assets/projects/covers/social-posters.webp" width="1280" height="720" alt="Presentation mockup of the ROG Carnyx social campaign graphics" loading="lazy"></div>
       <div class="project-copy"><span class="label">Graphic design · Social media · 2024</span><div class="project-title"><h3>Social Media Posters</h3><span class="arrow" aria-hidden="true">↗</span></div>
         <p class="project__desc">Concept social media posts for Nothing Phone (2), Apple Vision Pro, the ROG Carnyx microphone and an Xbox controller.</p>
       </div>
-    </a><a class="project project-archive" href="work-sunscape.html" data-category="visual" data-work-more>
+    </a>
+      <a data-work-more class="project project-archive" href="work-sunscape.html" data-category="visual">
       <div class="project-media"><img class="mockup-cover" src="assets/projects/covers/sunscape.webp" width="1280" height="720" alt="Print mockup of the yellow Sunscape Resorts promotional poster" loading="lazy"></div>
       <div class="project-copy"><span class="label">Graphic design · Print poster · 2024</span><div class="project-title"><h3>Sunscape Resorts</h3><span class="arrow" aria-hidden="true">↗</span></div>
         <p class="project__desc">A promotional poster for a tropical resort that sells the stay, the facilities and a limited offer in a single glance.</p>
-      </div>
-    </a><a class="project project-archive" href="vplus/index.html" data-category="product" data-work-more="">
-      <div class="project-media"><img class="mockup-cover" src="assets/projects/covers/vplus.webp" width="1280" height="720" alt="Window mockup of the V+ Windows home screen with Carrie and the movie catalogue" loading="lazy"></div>
-      <div class="project-copy"><span class="label">Desktop media application · Independent project · 2026</span><div class="project-title"><h3>V+</h3><span class="arrow" aria-hidden="true">↗</span></div>
-        <p class="project__desc">Cinematic discovery, mouse-friendly playback and saved progress, demonstrated with a working, openly licensed film catalogue.</p>
       </div>
     </a></div>
       <div class="projects-more" data-work-more-controls hidden>
