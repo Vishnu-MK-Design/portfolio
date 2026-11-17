@@ -1,0 +1,81 @@
+:root { --portfolio-loader-ready: 1; }
+html.portfolio-is-loading { overflow: hidden; }
+html[data-loader-pending]::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 2147483646;
+  background: #080808;
+}
+.portfolio-loader {
+  --loader-gutter: clamp(24px, 4.5vw, 80px);
+  position: fixed;
+  inset: 0;
+  z-index: 2147483646;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #080808;
+  color: #f7f7f5;
+  font-family: Geist, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  transition: transform 650ms cubic-bezier(.76, 0, .24, 1);
+}
+.portfolio-loader__logo {
+  margin: 0;
+  font-size: clamp(42px, 7.1vw, 112px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -.07em;
+  transition: opacity 220ms ease, transform 400ms ease;
+}
+.portfolio-loader__dot { color: #b93823; }
+.portfolio-loader__count {
+  position: absolute;
+  right: var(--loader-gutter);
+  bottom: calc(var(--loader-gutter) + 27px);
+  font-size: clamp(32px, 4vw, 64px);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -.06em;
+  line-height: 1;
+}
+.portfolio-loader__track {
+  position: absolute;
+  right: var(--loader-gutter);
+  bottom: max(var(--loader-gutter), env(safe-area-inset-bottom));
+  left: var(--loader-gutter);
+  height: 1px;
+  overflow: hidden;
+  background: #333332;
+}
+.portfolio-loader__fill {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #f7f7f5;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.portfolio-loader__fill::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4px;
+  height: 100%;
+  background: #b93823;
+}
+.portfolio-loader__status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.portfolio-loader.is-leaving { transform: translateY(-100%); }
+.portfolio-loader.is-leaving .portfolio-loader__logo { opacity: 0; transform: translateY(-12px); }
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-loader, .portfolio-loader__logo { transition: none; }
+}
