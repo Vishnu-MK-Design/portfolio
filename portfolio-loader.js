@@ -35,6 +35,7 @@
     reducedMotion.removeEventListener('change', reduce);
     window.removeEventListener('pageshow', restored);
     try { sessionStorage.setItem(sessionKey, 'seen'); } catch { /* The page still opens without storage. */ }
+    window.dispatchEvent(new Event('portfolio:loader-complete'));
   };
   const complete = () => {
     if (completed || cleaned) return;

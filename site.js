@@ -211,7 +211,8 @@
       if (hero) {
         const rect = hero.getBoundingClientRect();
         const depth = motion.matches && desktopHero.matches ? clamp(-rect.top / rect.height) : 0;
-        hero.style.setProperty('--portrait-drift', depth * 28 + 'px');
+        hero.style.setProperty('--portrait-drift', depth * 54 + 'px');
+        hero.style.setProperty('--hero-scroll', String(depth));
       }
       if (!frame) { previousTime = 0; frame = requestAnimationFrame(draw); }
     };
@@ -223,7 +224,6 @@
     window.addEventListener('resize', () => {measureLines(); queueScroll();});
     window.addEventListener('pageshow', updateScroll);
     updateScroll();
-    document.body.classList.add('hero-enter');
     motion.addEventListener('change', () => {
       if (!motion.matches) {
         cancelAnimationFrame(frame);
@@ -231,7 +231,10 @@
         observer.disconnect();
         document.querySelectorAll('.line-reveal, .section-reveal').forEach(el => el.classList.add('is-revealed'));
         scrubs.forEach(({words}) => words.forEach(word => word.style.opacity = '1'));
-        if (hero) hero.style.setProperty('--portrait-drift', '0px');
+        if (hero) {
+          hero.style.setProperty('--portrait-drift', '0px');
+          hero.style.setProperty('--hero-scroll', '0');
+        }
       }
     });
   } else {
