@@ -210,3 +210,9 @@
   .about-page .balance li { padding: 16px; }
   .contact-page .email-address { font-size: clamp(21px,6vw,28px); }
 }
+
+/* Theme-aware mockup previews retain their full 16:9 composition. */
+.work-page .project-media .project-preview { display: block; width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
+.preview-controls { display: flex; justify-content: flex-end; margin-bottom: 24px; }
+.preview-controls:has([hidden]) { display: none; }
+.project-site-links { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; margin-top: 30px; }
